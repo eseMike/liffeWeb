@@ -305,9 +305,11 @@ p {
    margin-bottom: 20px;
 }
 
-.logo-superior img,
+.logo-superior img {
+   width: 150px;
+}
 .logo-inferior img {
-   width: 80px;
+   width: 100px;
 }
 
 // Sección de valores con diseño moderno
@@ -620,8 +622,11 @@ p {
 }
 
 .navbar-expand-lg .navbar-nav {
-   flex-direction: row;
+   flex-direction: column;
    gap: 0.5rem;
+   @media (min-width: 768px) {
+      flex-direction: row;
+   }
 }
 
 // VALORES
@@ -768,7 +773,6 @@ p {
             border-radius: 15px;
             width: 300px;
             text-align: center;
-
             img {
                width: 100%;
                border-radius: 15px;
@@ -792,9 +796,19 @@ p {
                font-size: 16px;
                margin-top: 15px;
                line-height: 1.4;
+               color: white;
             }
          }
       }
+   }
+}
+
+.aux-btn {
+   justify-content: center;
+   margin-top: 1rem;
+   @media (min-width: 768px) {
+      justify-content: initial;
+      margin-top: initial;
    }
 }
 
