@@ -36,10 +36,6 @@
   border-color: white;
 }
 
-.navbar-toggler-icon {
-  filter: invert(1);
-}
-
 .divider {
   width: 1px;
   height: 30px;
@@ -91,7 +87,6 @@
   position: relative;
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
 }
 
 .soluciones-title {
@@ -100,10 +95,21 @@
   line-height: 1.1;
   margin-bottom: 30px;
   margin-top: 3rem;
-  position: relative;
-  right: -10rem;
   color: black;
   text-align: start;
+}
+@media (min-width: 768px) {
+  .soluciones-title {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    margin-top: 3rem;
+    position: relative;
+    right: -10rem;
+    color: black;
+    text-align: start;
+  }
 }
 
 p {
@@ -163,9 +169,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
   width: 100%;
-  margin-top: 9rem;
 }
 .mainSecond .orange {
   width: 200px;
@@ -180,7 +184,6 @@ p {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-top: 5rem;
   text-align: start;
 }
 
@@ -233,6 +236,12 @@ p {
 
 .bg-2 {
   background: url(assets/fondos/second.png) no-repeat center center/cover;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .bg-2 {
+    margin-top: initial;
+  }
 }
 
 .bg-3 {
@@ -249,6 +258,12 @@ p {
 .bg-4 {
   background: url(assets/fondos/last.png) no-repeat center center/cover;
   height: 600px;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .bg-4 {
+    margin-top: initial;
+  }
 }
 
 .tarjeta img {
@@ -771,6 +786,56 @@ p {
 @media (min-width: 768px) {
   .aux-btn {
     justify-content: initial;
+    margin-top: initial;
+  }
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important; /* Bordes blancos */
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  position: relative;
+}
+
+/* 🔥 Ahora aseguramos que haya TRES líneas en el ícono */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white !important;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+/* ✅ Agregamos la tercera línea en el centro */
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-expand-lg .navbar-nav {
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .navbar-expand-lg .navbar-nav {
     margin-top: initial;
   }
 }/*# sourceMappingURL=styles.css.map */
