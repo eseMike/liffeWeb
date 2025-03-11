@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Toolbar Bootstrap</title>
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="styles.css" />
+      <!-- Archivo compilado de SCSS -->
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+         <div class="container">
+            <a class="navbar-brand" href="#">
+               <img src="assets/logoToolbar.svg" alt="Liffe" />
+            </a>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarNav">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Headhunting</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Corporate</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Liffe Skills</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Contact</a>
+                  </li>
+               </ul>
+               <div class="d-flex align-items-center">
+                  <a href="#" class="nav-link">Log in</a>
+                  <a href="#" class="btn btn-signup ms-2">Sign up</a>
+               </div>
+            </div>
+         </div>
+      </nav>
+
+      <div class="video-container">
+         <video autoplay muted loop playsinline>
+            <source src="assets/video.mp4" type="video/mp4" />
+            Tu navegador no soporta videos HTML5.
+         </video>
+      </div>
+
+      <section class="soluciones">
+         <div class="container">
+            <div class="row mainSecond">
+               <div class="col-lg-4 col-md-6 mb-4 auxFit">
+                  <h2 class="soluciones-title">
+                     Soluciones <br />
+                     liffe
+                  </h2>
+               </div>
+               <div class="col-lg-8">
+                  <div class="row txtFlexFirst">
+                     <div class="col-md-4 mb-4 textual">
+                        <h3 class="soluciones-subtitle">
+                           Para tu desarrollo <br />
+                           personal
+                        </h3>
+                        <p>Desarrolla las fortalezas que necesitas para tener éxito.</p>
+                        <a href="#" class="arrow-link">
+                           <img src="flecha.png" alt="Flecha" />
+                        </a>
+                     </div>
+                     <div class="col-md-4 mb-4">
+                        <h3 class="soluciones-subtitle">
+                           Para el desarrollo de <br />
+                           tu organización y/o <br />
+                           equipo
+                        </h3>
+                        <p>
+                           Eleva el potencial de tu organización desarrollando a tu gente.
+                        </p>
+                        <a href="#" class="arrow-link">
+                           <img src="flecha.png" alt="Flecha" />
+                        </a>
+                     </div>
+                     <div class="col-md-4 mb-4">
+                        <h3 class="soluciones-subtitle">
+                           Para reclutar al <br />
+                           talento que necesitas
+                        </h3>
+                        <p>Atrae a los mejores del mercado a tu organización.</p>
+                        <a href="#" class="arrow-link">
+                           <img src="flecha.png" alt="Flecha" />
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="tarjetas">
+       <div class="container-fluid">
+    <div class="row d-flex justify-content-center gx-5 gy-4">
+        <div class="col-lg-3 col-md-6 tarjeta tarjeta-izq">
+            <div class="tarjeta-content bg-1 text-center">
+                <h3>Las personas son la clave</h3>
+                <p style="color: white;">El éxito de una organización comienza y termina <strong>con la gente.</strong></p>
+                <img src="assets/fondos/firstPhoto.png" alt="Imagen 1" />
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 tarjeta tarjeta-centro">
+            <div class="tarjeta-content bg-2 text-center">
+                <h3>Crecimiento</h3>
+                <p style="color: white;">Te acompañamos a crecer en eso que no te enseñaron en la <strong>universidad.</strong></p>
+                <img src="assets/fondos/secondPhoto.png" alt="Imagen 2" />
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 tarjeta tarjeta-der">
+            <div class="tarjeta-content bg-3 text-center">
+                <div class="bgSecond">
+                <h3 style="color: black;">Síndromes</h3>
+                <p>Si te sientes como un impostor, nuestra plataforma es para ti.</p>
+                </div>
+                <!-- <img src="assets/fondos/thirdPhoto.png" alt="Imagen 3" />  -->
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 tarjeta tarjeta-derecha">
+            <div class="tarjeta-content bg-4 text-center">
+                <h3>Fortalezas</h3>
+                <p>Para alcanzar tu máximo potencial, debes moverte en el área de tus fortalezas.</p>
+                <!-- <img src="assets/fondos/last.png" alt="Imagen 4" />  -->
+            </div>
+        </div>
+    </div>
+</div>
+
+      </section>
+
+      <section class="pasión">
+         <div class="container text-center">
+            <div class="logo-superior">
+               <img src="logo-arriba.png" alt="Logo Superior" />
+            </div>
+            <h2 class="pasión-texto">
+               ESTAMOS APASIONADOS POR EL CRECIMIENTO Y DESARROLLO DE OTROS.
+            </h2>
+            <div class="logo-inferior">
+               <img src="logo-abajo.png" alt="Logo Inferior" />
+            </div>
+         </div>
+      </section>
+ 
+  <section class="valores">
+    <div class="container">
+        <div class="grid-valores">
+            <!-- Primera imagen y título -->
+            <div class="item imagen-grande">
+                <div class="iconsFlexBlue">
+                    <h3 class="titulo">PASIÓN</h3>
+                    <span class="icono icono-pasion">
+                    </span>
+                </div>
+                <img src="assets/blueIcons/imagen.png" alt="Evento">
+            </div>
+
+            <!-- Texto en la parte superior derecha -->
+            <div class="item texto-derecha">
+                <h3 class="titulo">RESPONSABILIDAD</h3>
+                <p style="color: white;">Por eso, después de tener el privilegio de trabajar en toda América Latina por más de <strong>30 años</strong>,
+                    nos sentimos <strong>responsables</strong> de vaciar nuestras copas. Eso es lo que nos motiva.</p>
+                <span class="icono icono-responsabilidad">
+                    <img src="" alt="">
+                </span>
+            </div>
+
+            <!-- Segunda imagen y título -->
+            <div class="item imagen-pequena">
+                <img src="assets/blueIcons/imagen2.png" alt="Equipo brindando">
+                <h3 class="titulo">DIFERENCIADORES</h3>
+                <span class="icono icono-diferenciadores"></span>
+            </div>
+
+            <!-- Texto a la derecha -->
+            <div class="item texto-derecha">
+                <h3 class="titulo">PRIVILEGIO</h3>
+                <span class="icono icono-privilegio"></span>
+            </div>
+
+            <!-- Texto grande con énfasis -->
+            <div class="item texto-grande">
+                <p>
+                    <span  class="subrayado">CREEMOS EN EL POTENCIAL</span> DE LAS PERSONAS Y <span class="subrayado">EL IMPACTO</span>
+                    POSITIVO QUE TODOS PODEMOS CAUSAR.
+                </p>
+            </div>
+
+            <!-- Imagen inferior derecha -->
+            <div class="item imagen-pequena">
+                <img src="assets/blueIcons/imagen3.png" alt="Manos unidas">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+      <section class="valores-destacados">
+         <div class="container text-center">
+            <p class="intro-texto">
+               Eso nos ha llevado a identificar los <br />
+               <strong class="texto-destacado">
+                  valores que nos unen y que permean lo que hacemos.
+               </strong>
+            </p>
+
+            <div class="valores-grid">
+               <div class="valor-item">
+                  <img src="icono-familia.png" alt="Familia" class="icono-valor" />
+                  <button class="valor-boton negro">
+                     Priorizamos la vida en familia
+                  </button>
+               </div>
+
+               <div class="valor-item">
+                  <img src="icono-sabiduria.png" alt="Sabiduría" class="icono-valor" />
+                  <button class="valor-boton rojo">Perseguimos la sabiduría</button>
+               </div>
+
+               <div class="valor-item central">
+                  <img
+                     src="icono-generosidad.png"
+                     alt="Generosidad"
+                     class="icono-valor" />
+                  <button class="valor-boton naranja">Somos generosos</button>
+               </div>
+
+               <div class="valor-item">
+                  <img src="icono-integridad.png" alt="Integridad" class="icono-valor" />
+                  <button class="valor-boton rojo">Actuamos con integridad</button>
+               </div>
+
+               <div class="valor-item">
+                  <img src="icono-pasion.png" alt="Pasión" class="icono-valor" />
+                  <button class="valor-boton negro">Vivimos apasionadamente</button>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section class="distinguen">
+   <div class="container">
+      <p class="pregunta">A veces nos preguntan</p>
+      <h2>¿CÓMO SE DISTINGUEN DE LOS DEMÁS?</h2>
+      <button class="respuesta">Y nuestra respuesta es esta:</button>
+
+      <div class="contenedor-cards">
+         <div class="card">
+            <img src="assets/experiencia-multisectorial.jpg" alt="Experiencia Multisectorial">
+            <p><strong>Por la combinación de:</strong><br> Experiencia multisectorial</p>
+         </div>
+
+         <div class="card">
+            <img src="assets/cultura-latina.jpg" alt="Cultura Latina">
+            <p><strong>Comprensión de</strong><br> la cultura latina</p>
+         </div>
+
+         <div class="card">
+            <img src="assets/autoconocimiento.jpg" alt="Autoconocimiento">
+            <p><strong>Enfoque en el autoconocimiento</strong><br> y desarrollo de personas y equipos.</p>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+      <section class="testimonios">
+    <div class="container">
+        <h2 class="testimonios-titulo">Testimonios</h2>
+        <p class="testimonios-subtitulo">Más de 10,000 diseños de listas de curso en línea</p>
+        
+        <div class="testimonios-slider">
+            <div class="slide activo">
+                <span class="comillas">❝</span>
+                <p class="testimonio-texto">
+                    No es exagerado decir que esta experiencia de Educrat fue transformadora, tanto a nivel profesional como personal.
+                    Este taller seguirá siendo durante mucho tiempo un punto culminante de mi vida.
+                </p>
+                <p class="testimonio-autor">
+                    <strong>Ali Tufan</strong><br>
+                    Gerente de Producto, Apple Inc.
+                </p>
+            </div>
+
+            <div class="slide">
+                <span class="comillas">❝</span>
+                <p class="testimonio-texto">
+                    La formación ha sido clave en mi desarrollo. He adquirido conocimientos que he aplicado de inmediato en mi entorno profesional.
+                </p>
+                <p class="testimonio-autor">
+                    <strong>Mariana López</strong><br>
+                    CEO, Tech Solutions
+                </p>
+            </div>
+
+            <div class="slide">
+                <span class="comillas">❝</span>
+                <p class="testimonio-texto">
+                    El curso ha sido una experiencia de aprendizaje increíble. Los instructores son expertos y el contenido es muy valioso.
+                </p>
+                <p class="testimonio-autor">
+                    <strong>David Pérez</strong><br>
+                    Desarrollador Web, Google
+                </p>
+            </div>
+        </div>
+
+        <div class="paginacion">
+            <span class="dot activo" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="clientes">
+        <h3 class="clientes-titulo">Nuestros Clientes</h3>
+        <div class="clientes-logos">
+            <img src="./assets/LOGOS CLIENTES _ GRIS/ GRIS-01.svg" alt="Daimler">
+            <img src="./assets/LOGOS CLIENTES _ GRIS/ GRIS-02.svg" alt="Pemex">
+            <img src="./assets/LOGOS CLIENTES _ GRIS/ GRIS-03.svg" alt="Liebherr">
+            <img src="./assets/LOGOS CLIENTES _ GRIS/ GRIS-04.svg" alt="Tecnológico de Monterrey">
+            <img src="./assets/LOGOS CLIENTES _ GRIS/ GRIS-05.svg" alt="Lear Corporation">
+            <img src="./assets/LOGOS CLIENTES _ GRIS/ GRIS-06.svg" alt="UANE">
+        </div>
+    </div>
+
+    <div class="footer-content">
+        <div class="social">
+            <p>Síguenos en las redes sociales</p>
+            <div class="social-icons">
+                <a href="#"><img src="icono-facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="./assets/redesSociales/ÍCONOS-77.svg" alt="X"></a>
+                <a href="#"><img src="./assets/redesSociales/ÍCONOS-78.svg" alt="Instagram"></a>
+                <a href="#"><img src="icono-linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+        <div class="logo-footer">
+            <img src="assets/logoToolbar.svg" alt="Liffe">
+        </div>
+
+        <button class="boton-arriba" id="botonArriba">
+            <img src="icono-flecha-arriba.png" alt="Ir Arriba">
+        </button>
+    </div>
+</footer>
+
+
+<script src="testimonios.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+  AOS.init();
+</script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   </body>
+</html>
