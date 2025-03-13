@@ -266,6 +266,11 @@ p {
   }
 }
 
+.footer-text {
+  text-align: center;
+  padding: 20px;
+}
+
 .tarjeta img {
   width: 100%;
   border-radius: 20px;
@@ -393,6 +398,7 @@ p {
   justify-content: center;
   gap: 20px;
   max-width: 800px;
+  align-items: center;
   margin: auto;
 }
 
@@ -406,6 +412,7 @@ p {
 .icono-valor {
   width: 50px;
   margin-bottom: 10px;
+  height: 60px;
 }
 
 .valor-boton {
@@ -521,7 +528,7 @@ p {
 .footer {
   background-color: #111;
   color: white;
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   text-align: center;
 }
 
@@ -557,10 +564,17 @@ p {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px 50px;
   flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .footer-content {
+    justify-content: space-between;
+    gap: initial;
+  }
 }
 
 .social p {
@@ -571,11 +585,16 @@ p {
 .social-icons {
   display: flex;
   gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-icons img {
   width: 30px;
   transition: transform 0.3s ease;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .social-icons a:hover img {
@@ -584,6 +603,12 @@ p {
 
 .logo-footer img {
   max-width: 150px;
+  height: 43px;
+}
+@media (min-width: 768px) {
+  .logo-footer img {
+    height: initial;
+  }
 }
 
 .boton-arriba {
@@ -747,8 +772,15 @@ p {
 }
 .distinguen .container .contenedor-cards {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 30px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .distinguen .container .contenedor-cards {
+    flex-direction: row;
+  }
 }
 .distinguen .container .contenedor-cards .card {
   background: #1a1a1a;
@@ -805,37 +837,148 @@ p {
 }
 
 /* 🔥 Ahora aseguramos que haya TRES líneas en el ícono */
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after,
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important; /* Quitamos la imagen de Bootstrap */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  position: relative;
+}
+
+/* 🔥 Aseguramos que haya TRES líneas en el ícono */
 .navbar-toggler-icon span {
-  content: "";
   display: block;
   width: 100%;
   height: 3px;
   background-color: white !important;
   border-radius: 2px;
-  position: absolute;
 }
 
-.navbar-toggler-icon::before {
-  top: 0;
+/* Espaciado entre las líneas */
+.navbar-toggler-icon span:nth-child(1) {
+  align-self: flex-start;
 }
 
-.navbar-toggler-icon::after {
-  bottom: 0;
+.navbar-toggler-icon span:nth-child(2) {
+  align-self: center;
 }
 
-/* ✅ Agregamos la tercera línea en el centro */
-.navbar-toggler-icon span {
-  top: 50%;
-  transform: translateY(-50%);
+.navbar-toggler-icon span:nth-child(3) {
+  align-self: flex-end;
 }
 
-.navbar-expand-lg .navbar-nav {
+.custom-slider-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.custom-slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.custom-slide {
+  flex: 0 0 50%; /* 2 tarjetas por página en escritorio */
+  text-align: center;
+  padding: 10px;
+}
+
+.custom-slide img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-slider-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.custom-dot {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-dot.active {
+  background-color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .custom-slide {
+    flex: 0 0 100%; /* 1 tarjeta por página en móvil */
+  }
+}
+#navbarNav {
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
-  .navbar-expand-lg .navbar-nav {
-    margin-top: initial;
+  #navbarNav {
+    margin-top: 0;
+  }
+}
+
+/* Estilos del Slider de Clientes */
+.clientes-slider-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.clientes-slider-wrapper {
+  display: flex;
+  gap: 20px;
+  animation: scrollClientes 20s linear infinite;
+  align-items: center;
+}
+
+.clientes-slide {
+  flex: 0 0 16.6666666667%; /* 6 logos en escritorio */
+  text-align: center;
+}
+
+.clientes-slide img {
+  width: 100px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.clientes-slide img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+@keyframes scrollClientes {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .clientes-slide {
+    flex: 0 0 33.3333333333%; /* 3 logos en móvil */
+  }
+  .clientes-slider-wrapper {
+    animation-duration: 15s; /* Movemos un poco más rápido en móviles */
   }
 }/*# sourceMappingURL=styles.css.map */
