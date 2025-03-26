@@ -12,6 +12,7 @@
     <!-- Archivo compilado de SCSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
@@ -37,16 +38,16 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Headhunting</a>
+              <a class="nav-link" href="headhunting.html">Headhunting</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Corporate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Liffe Skills</a>
+              <a class="nav-link" href="lifeSkills.html">Liffe Skills</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -61,19 +62,19 @@
     </nav>
 
     <!-- Video de fondo -->
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
+    <div class="video-container" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto">
         <source src="assets/video.mp4" type="video/mp4" />
         Tu navegador no soporta videos HTML5.
       </video>
     </div>
 
-    <!-- Soluciones liffe  -->
-    <section class="soluciones">
+    <!-- Soluciones liffe -->
+    <section class="soluciones" aria-labelledby="soluciones-title">
       <div class="container">
         <div class="row mainSecond">
           <div class="col-lg-4 col-md-6 mb-4 auxFit">
-            <h2 class="soluciones-title">
+            <h2 class="soluciones-title" id="soluciones-title">
               Soluciones <br />
               liffe
             </h2>
@@ -144,36 +145,49 @@
       <div class="custom-slider-pagination"></div>
     </section>
 
-    <!-- Enlaza los archivos separados -->
-    <link rel="stylesheet" href="slider.css" />
-    <script src="slider.js" defer></script>
-
-    <!-- CARDS  -->
-    <section class="pasión">
+    <!-- CARDS -->
+    <section class="pasión" aria-labelledby="pasion-heading">
       <div class="container text-center">
         <div class="logo-superior">
-          <img src="/assets/icono2.png" alt="Logo Superior" />
+          <img
+            src="assets/icono2.png"
+            alt="Logo Superior"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <h2 class="pasión-texto">
+        <h2 class="pasión-texto" id="pasion-heading">
           ESTAMOS APASIONADOS POR EL CRECIMIENTO Y DESARROLLO DE OTROS.
         </h2>
-
         <div class="logo-inferior">
-          <img src="/assets/icono1.png" alt="Logo Inferior" />
+          <img
+            src="assets/icono1.png"
+            alt="Logo Inferior"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
 
-    <section class="valores">
+    <!-- Sección valores -->
+    <section class="valores" aria-labelledby="valores-heading">
       <div class="container">
         <div class="grid-valores">
           <!-- Primera imagen y título -->
           <div class="item imagen-grande">
             <div class="iconsFlexBlue">
               <h3 class="titulo">PASIÓN</h3>
-              <span class="icono icono-pasion"> </span>
+              <span class="icono icono-pasion" aria-hidden="true"></span>
             </div>
-            <img src="assets/blueIcons/imagen.png" alt="Evento" />
+            <img
+              src="assets/blueIcons/imagen.png"
+              alt="Evento"
+              loading="lazy"
+              width="480"
+              height="320"
+              decoding="async"
+            />
           </div>
 
           <!-- Texto en la parte superior derecha -->
@@ -181,46 +195,62 @@
             <h3 class="titulo">RESPONSABILIDAD</h3>
             <p style="color: white">
               Por eso, después de tener el privilegio de trabajar en toda
-              América Latina por más de <strong>30 años</strong>, nos sentimos
+              América Latina por más de
+              <strong>30 años</strong>, nos sentimos
               <strong>responsables</strong> de vaciar nuestras copas. Eso es lo
               que nos motiva.
             </p>
-            <span class="icono icono-responsabilidad">
-              <img src="" alt="" />
-            </span>
+            <span class="icono icono-responsabilidad" aria-hidden="true"></span>
           </div>
 
           <!-- Segunda imagen y título -->
           <div class="item imagen-pequena">
-            <img src="assets/home/manos.png" alt="Equipo brindando" />
+            <img
+              src="assets/home/manos.png"
+              alt="Equipo brindando"
+              loading="lazy"
+              width="320"
+              height="240"
+              decoding="async"
+            />
             <h3 class="titulo">DIFERENCIADORES</h3>
-            <span class="icono icono-diferenciadores"></span>
+            <span class="icono icono-diferenciadores" aria-hidden="true"></span>
           </div>
 
           <!-- Texto a la derecha -->
           <div class="item texto-derecha">
             <h3 class="titulo">PRIVILEGIO</h3>
-            <span class="icono icono-privilegio"></span>
+            <span class="icono icono-privilegio" aria-hidden="true"></span>
           </div>
 
           <!-- Texto grande con énfasis -->
           <div class="item texto-grande">
             <p>
               <span class="subrayado">CREEMOS EN EL POTENCIAL</span> DE LAS
-              PERSONAS Y <span class="subrayado">EL IMPACTO</span>
-              POSITIVO QUE TODOS PODEMOS CAUSAR.
+              PERSONAS Y <span class="subrayado">EL IMPACTO</span> POSITIVO QUE
+              TODOS PODEMOS CAUSAR.
             </p>
           </div>
 
           <!-- Imagen inferior derecha -->
           <div class="item imagen-pequena">
-            <img src="assets/home/manos2.png" alt="Manos unidas" />
+            <img
+              src="assets/home/manos2.png"
+              alt="Manos unidas"
+              loading="lazy"
+              width="320"
+              height="240"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="valores-destacados">
+    <section
+      class="valores-destacados"
+      aria-labelledby="valores-destacados-heading"
+    >
       <div class="container text-center">
         <p class="intro-texto">
           Eso nos ha llevado a identificar los <br />
@@ -229,60 +259,92 @@
           </strong>
         </p>
 
-        <div class="valores-grid">
-          <div class="valor-item">
-            <img src="assets/pt6/ico1.svg" alt="Familia" class="icono-valor" />
+        <div class="valores-grid" role="list">
+          <div class="valor-item" role="listitem">
+            <img
+              src="assets/pt6/ico1.svg"
+              alt="Familia"
+              class="icono-valor"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
             <button class="valor-boton negro">
               Priorizamos la vida en familia
             </button>
           </div>
 
-          <div class="valor-item">
+          <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico3.svg"
               alt="Sabiduría"
               class="icono-valor"
+              width="80"
+              height="80"
+              loading="lazy"
             />
             <button class="valor-boton rojo">Perseguimos la sabiduría</button>
           </div>
 
-          <div class="valor-item central">
+          <div class="valor-item central" role="listitem">
             <img
               src="assets/pt6/ico2.svg"
               alt="Generosidad"
               class="icono-valor"
+              width="80"
+              height="80"
+              loading="lazy"
             />
             <button class="valor-boton naranja">Somos generosos</button>
           </div>
 
-          <div class="valor-item">
+          <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico4.svg"
               alt="Integridad"
               class="icono-valor"
+              width="80"
+              height="80"
+              loading="lazy"
             />
             <button class="valor-boton rojo">Actuamos con integridad</button>
           </div>
 
-          <div class="valor-item">
-            <img src="assets/pt6/ico5.svg" alt="Pasión" class="icono-valor" />
+          <div class="valor-item" role="listitem">
+            <img
+              src="assets/pt6/ico5.svg"
+              alt="Pasión"
+              class="icono-valor"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
             <button class="valor-boton negro">Vivimos apasionadamente</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="distinguen">
+    <section class="distinguen" aria-labelledby="distinguen-title">
       <div class="container">
         <p class="pregunta">A veces nos preguntan</p>
-        <h2>¿CÓMO SE DISTINGUEN DE LOS DEMÁS?</h2>
-        <button class="respuesta">Y nuestra respuesta es esta:</button>
+        <h2 id="distinguen-title">¿CÓMO SE DISTINGUEN DE LOS DEMÁS?</h2>
+        <button
+          class="respuesta"
+          aria-label="Respuesta sobre cómo nos distinguimos"
+        >
+          Y nuestra respuesta es esta:
+        </button>
 
-        <div class="contenedor-cards">
-          <div class="card">
+        <div class="contenedor-cards" role="list">
+          <div class="card" role="listitem">
             <img
               src="assets/pt6/FOTOS FINAL-125.png"
               alt="Experiencia Multisectorial"
+              width="300"
+              height="200"
+              loading="lazy"
+              decoding="async"
             />
             <p>
               <strong>Por la combinación de:</strong><br />
@@ -290,16 +352,30 @@
             </p>
           </div>
 
-          <div class="card">
-            <img src="assets/pt6/FOTOS FINAL-124.png" alt="Cultura Latina" />
+          <div class="card" role="listitem">
+            <img
+              src="assets/pt6/FOTOS FINAL-124.png"
+              alt="Comprensión de la cultura latina"
+              width="300"
+              height="200"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               <strong>Comprensión de</strong><br />
               la cultura latina
             </p>
           </div>
 
-          <div class="card">
-            <img src="assets/pt6/FOTOS FINAL-123.png" alt="Autoconocimiento" />
+          <div class="card" role="listitem">
+            <img
+              src="assets/pt6/FOTOS FINAL-123.png"
+              alt="Autoconocimiento y desarrollo de personas y equipos"
+              width="300"
+              height="200"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               <strong>Enfoque en el autoconocimiento</strong><br />
               y desarrollo de personas y equipos.
@@ -309,6 +385,7 @@
       </div>
     </section>
 
+    <!-- Testimonios  -->
     <section class="testimonios">
       <div class="container">
         <h2 class="testimonios-titulo">Testimonios</h2>
@@ -316,9 +393,14 @@
           Más de 10,000 diseños de listas de curso en línea
         </p>
 
-        <div class="testimonios-slider">
-          <div class="slide activo">
-            <span class="comillas">❝</span>
+        <div class="testimonios-slider" aria-label="Slider de testimonios">
+          <div
+            class="slide activo"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Testimonio 1 de 3"
+          >
+            <span class="comillas" aria-hidden="true">❝</span>
             <p class="testimonio-texto">
               No es exagerado decir que esta experiencia de Educrat fue
               transformadora, tanto a nivel profesional como personal. Este
@@ -331,8 +413,13 @@
             </p>
           </div>
 
-          <div class="slide">
-            <span class="comillas">❝</span>
+          <div
+            class="slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Testimonio 2 de 3"
+          >
+            <span class="comillas" aria-hidden="true">❝</span>
             <p class="testimonio-texto">
               La formación ha sido clave en mi desarrollo. He adquirido
               conocimientos que he aplicado de inmediato en mi entorno
@@ -344,8 +431,13 @@
             </p>
           </div>
 
-          <div class="slide">
-            <span class="comillas">❝</span>
+          <div
+            class="slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Testimonio 3 de 3"
+          >
+            <span class="comillas" aria-hidden="true">❝</span>
             <p class="testimonio-texto">
               El curso ha sido una experiencia de aprendizaje increíble. Los
               instructores son expertos y el contenido es muy valioso.
@@ -357,142 +449,104 @@
           </div>
         </div>
 
-        <div class="paginacion">
-          <span class="dot activo" data-slide="0"></span>
-          <span class="dot" data-slide="1"></span>
-          <span class="dot" data-slide="2"></span>
+        <div
+          class="paginacion"
+          role="tablist"
+          aria-label="Navegación del slider"
+        >
+          <button
+            class="dot activo"
+            data-slide="0"
+            role="tab"
+            aria-selected="true"
+            aria-label="Ver testimonio 1"
+          ></button>
+          <button
+            class="dot"
+            data-slide="1"
+            role="tab"
+            aria-selected="false"
+            aria-label="Ver testimonio 2"
+          ></button>
+          <button
+            class="dot"
+            data-slide="2"
+            role="tab"
+            aria-selected="false"
+            aria-label="Ver testimonio 3"
+          ></button>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="clientes">
-        <h3 class="clientes-titulo">Nuestros Clientes</h3>
-        <!-- SLIDER DE CLIENTES -->
-        <!-- SLIDER DE LOGOS DE CLIENTES -->
-        <section class="clientes-slider-container">
-          <div class="clientes-slider-wrapper">
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/aptiv01.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/ternium02.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/johnoson03.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/iinyx04.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/ge05.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/gm06.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/ahorro07.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/motus08.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/scoti09.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/delphi10.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/magna11.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/rosei12.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/penske13.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/evelen14.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/daimle15.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/lear16.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img
-                src="assets/logosClientesGris/liebherr17.svg"
-                alt="Cliente 1"
-              />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/pemex18.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/tec19.svg" alt="Cliente 1" />
-            </div>
-            <div class="clientes-slide">
-              <img src="assets/logosClientesGris/uane20.svg" alt="Cliente 1" />
-            </div>
-          </div>
-        </section>
-      </div>
-
       <div class="footer-content">
         <div class="social">
           <p style="color: white">Síguenos en las redes sociales</p>
           <div class="social-icons">
-            <a href="#"
-              ><img src="assets/redesSociales/logoFB.png" alt="Facebook"
-            /></a>
-            <a href="#"
-              ><img src="./assets/redesSociales/logoX.png" alt="X"
-            /></a>
-            <a href="#"
-              ><img src="./assets/redesSociales/logoIg.png" alt="Instagram"
-            /></a>
-            <a href="#"
-              ><img src="./assets/redesSociales/logoLink.png" alt="LinkedIn"
-            /></a>
+            <a href="#" aria-label="Facebook">
+              <img
+                src="assets/redesSociales/logoFB.png"
+                alt="Facebook"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+            </a>
+            <a href="#" aria-label="X">
+              <img
+                src="assets/redesSociales/logoX.png"
+                alt="X"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <img
+                src="assets/redesSociales/logoIg.png"
+                alt="Instagram"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <img
+                src="assets/redesSociales/logoLink.png"
+                alt="LinkedIn"
+                width="24"
+                height="24"
+                loading="lazy"
+              />
+            </a>
           </div>
         </div>
 
         <div class="logo-footer">
-          <img src="assets/logoToolbar.svg" alt="Liffe" />
+          <img
+            src="assets/logoToolbar.svg"
+            alt="Liffe"
+            width="130"
+            height="32"
+            loading="lazy"
+          />
         </div>
 
-        <button class="boton-arriba" id="botonArriba">
-          <img src="icono-flecha-arriba.png" alt="Ir Arriba" />
+        <button class="boton-arriba" id="botonArriba" aria-label="Ir arriba">
+          <img
+            src="assets/iconos/icono-flecha-arriba.svg"
+            alt="Ir Arriba"
+            width="20"
+            height="20"
+            loading="lazy"
+          />
         </button>
       </div>
     </footer>
-
-    <script src="testimonios.js"></script>
-    <script src="script.js"></script>
   </body>
 
+  <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();

@@ -51,6 +51,12 @@
   align-items: center;
   overflow: hidden;
   position: relative;
+  z-index: -1;
+}
+@media (min-width: 768px) {
+  .video-container {
+    height: 80vh;
+  }
 }
 
 .video-container video {
@@ -58,6 +64,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  pointer-events: none;
 }
 
 .header-soluciones {
@@ -519,6 +526,7 @@ p {
   margin: 0 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  padding: 0;
 }
 
 .dot.activo {
@@ -528,7 +536,7 @@ p {
 .footer {
   background-color: #111;
   color: white;
-  padding: 40px 0 0 0;
+  padding: 30px 0;
   text-align: center;
 }
 
@@ -795,15 +803,6 @@ p {
   border: 5px solid transparent;
   transition: all 0.3s ease-in-out;
 }
-.distinguen .container .contenedor-cards .card:nth-child(1) img {
-  border-color: #1e87a4;
-}
-.distinguen .container .contenedor-cards .card:nth-child(2) img {
-  border-color: #e84923;
-}
-.distinguen .container .contenedor-cards .card:nth-child(3) img {
-  border-color: #1e87a4;
-}
 .distinguen .container .contenedor-cards .card p {
   font-size: 16px;
   margin-top: 15px;
@@ -980,5 +979,963 @@ p {
   }
   .clientes-slider-wrapper {
     animation-duration: 15s; /* Movemos un poco más rápido en móviles */
+  }
+}
+.headhunting {
+  background: #f4f4f4;
+  color: #111;
+  padding: 40px 0;
+}
+.headhunting .headhunting-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.headhunting .image-container img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+.headhunting .text-container {
+  max-width: 600px;
+}
+.headhunting .text-container h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.headhunting .text-container h2 .icon img {
+  width: 40px;
+  height: auto;
+}
+.headhunting .text-container .headhunting-text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.headhunting .divider {
+  width: 2px;
+  height: 60px;
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .headhunting-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .headhunting-text {
+    flex-direction: column;
+    align-items: center;
+  }
+  .divider {
+    width: 60px;
+    height: 2px;
+  }
+}
+.quote {
+  background-image: url(assets/headhunting/fondoHeadHuntingfirst.png);
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  height: 700px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quote blockquote {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.why-us {
+  background: #f4f4f4;
+  padding: 40px 0;
+  text-align: center;
+  gap: 1rem;
+}
+.why-us h2 span {
+  color: #e94e77;
+}
+.why-us .image-container img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+  top: -4rem;
+}
+.why-us .usAux {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .why-us .usAux {
+    flex-direction: row;
+    gap: initial;
+  }
+}
+.why-us .usAux .txtUx {
+  text-align: start;
+}
+
+.benefits {
+  background: white;
+  padding: 40px 0;
+}
+.benefits div h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+@media (min-width: 768px) {
+  .benefits .benefits-grid {
+    justify-items: initial;
+  }
+}
+.benefits .benefit-card {
+  background: #205b65;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  height: 350px;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 15px;
+}
+.benefits .benefit-card:first-child {
+  background: #62ba97;
+}
+@media (min-width: 768px) {
+  .benefits .benefit-card:first-child {
+    transform: translateY(20px);
+  }
+}
+.benefits .benefit-card:nth-child(2) {
+  background: #374a68;
+}
+@media (min-width: 768px) {
+  .benefits .benefit-card:nth-child(2) {
+    transform: translateY(-30px);
+  }
+}
+.benefits .benefit-card:nth-child(3) {
+  background: #205b65;
+}
+@media (min-width: 768px) {
+  .benefits .benefit-card:nth-child(3) {
+    transform: translateY(0px);
+  }
+}
+.benefits .benefit-card:nth-child(4) {
+  background: #e84920;
+}
+@media (min-width: 768px) {
+  .benefits .benefit-card:nth-child(4) {
+    transform: translateY(-20px);
+  }
+}
+.benefits .benefit-card:last-child {
+  background: #062a16;
+}
+@media (min-width: 768px) {
+  .benefits .benefit-card:last-child {
+    transform: translateY(10px);
+  }
+}
+.benefits .benefit-card img {
+  width: 70px;
+  height: auto;
+}
+
+.payment-options {
+  background: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.payment-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-switch::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  transition: all 0.3s ease;
+}
+
+.payment-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.payment-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  text-align: center;
+}
+
+.payment-card.one-time {
+  border-top: 6px solid #1e3932;
+}
+
+.payment-card.monthly {
+  background: #62ba97;
+  color: white;
+  border-top: 6px solid #1e3932;
+}
+
+button {
+  background: #1e3932;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #163029;
+}
+
+@media (max-width: 768px) {
+  .payment-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .headhunting-content,
+  .benefits-grid,
+  .payment-grid {
+    flex-direction: column;
+  }
+  .image-container img {
+    max-width: 100%;
+  }
+}
+ul {
+  text-align: initial;
+}
+
+.liffe-skills {
+  background: #000;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+.liffe-skills .skills-header {
+  margin-bottom: 30px;
+}
+.liffe-skills .skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.liffe-skills .skills-header h2 .highlight {
+  color: white;
+}
+.liffe-skills .skills-header p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+.liffe-skills .skills-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.liffe-skills .skills-icons svg {
+  width: 40px;
+  height: 40px;
+}
+.liffe-skills .skills-icons svg:nth-of-type(1) {
+  color: #4a9bae;
+}
+.liffe-skills .skills-icons svg:nth-of-type(2) {
+  color: #1c4740;
+}
+.liffe-skills .skills-icons svg:nth-of-type(3) {
+  color: #f15a2d;
+}
+.liffe-skills .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.liffe-skills .skill-item {
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  min-width: 220px;
+}
+.liffe-skills .skill-item.red {
+  background: linear-gradient(45deg, #e84920, #ff6933);
+  color: white;
+}
+.liffe-skills .skill-item.white {
+  background: white;
+  color: #e84920;
+}
+
+@media (max-width: 768px) {
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+  .skills-icons {
+    gap: 10px;
+  }
+  .skills-icons img {
+    width: 40px;
+  }
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-item {
+    width: 80%;
+    text-align: center;
+  }
+}
+.liffe-skills {
+  background: #000;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+.liffe-skills .skills-header {
+  margin-bottom: 30px;
+}
+.liffe-skills .skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.liffe-skills .skills-header h2 .highlight {
+  color: white;
+}
+.liffe-skills .skills-header p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+.liffe-skills .skills-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.liffe-skills .skills-icons img {
+  width: 50px;
+  height: auto;
+}
+.liffe-skills .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.liffe-skills .skill-item {
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  min-width: 220px;
+}
+.liffe-skills .skill-item.red {
+  background: linear-gradient(45deg, #e84920, #ff6933);
+  color: white;
+}
+.liffe-skills .skill-item.white {
+  background: white;
+  color: #e84920;
+}
+
+@media (max-width: 768px) {
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+  .skills-icons {
+    gap: 10px;
+  }
+  .skills-icons img {
+    width: 40px;
+  }
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-item {
+    width: 80%;
+    text-align: center;
+  }
+}
+.liffe-skills {
+  background: #000;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+.liffe-skills .skills-header {
+  margin-bottom: 30px;
+}
+.liffe-skills .skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.liffe-skills .skills-header h2 .highlight {
+  color: white;
+}
+.liffe-skills .skills-header p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+.liffe-skills .skills-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.liffe-skills .skills-icons img {
+  width: 50px;
+  height: auto;
+}
+.liffe-skills .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.liffe-skills .skill-item {
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  min-width: 220px;
+}
+.liffe-skills .skill-item.red {
+  background: linear-gradient(45deg, #e84920, #ff6933);
+  color: white;
+}
+.liffe-skills .skill-item.white {
+  background: white;
+  color: #e84920;
+}
+
+@media (max-width: 768px) {
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+  .skills-icons {
+    gap: 10px;
+  }
+  .skills-icons img {
+    width: 40px;
+  }
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-item {
+    width: 80%;
+    text-align: center;
+  }
+}
+.como-funciona {
+  background: url("assets/lifeSkills/sectionComofunciona/fondo_optimizado.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+.como-funciona .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.como-funciona .steps-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.como-funciona .steps-grid .step-card {
+  position: relative;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  padding: 20px 15px 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.como-funciona .steps-grid .step-card picture {
+  width: 100%;
+}
+.como-funciona .steps-grid .step-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.como-funciona .steps-grid .step-card .step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.como-funciona .steps-grid .step-card p {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+.como-funciona .enfoque-central {
+  margin-top: 80px;
+}
+.como-funciona .enfoque-central h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.como-funciona .enfoque-central .enfoque-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  margin-top: 20px;
+  color: white;
+}
+.como-funciona .enfoque-central .enfoque-text p {
+  position: relative;
+  max-width: 600px;
+  font-size: 1rem;
+  color: white;
+}
+.como-funciona .enfoque-central .enfoque-text p .icon-point {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.como-funciona .enfoque-central .enfoque-text p .red {
+  background: #ff5733;
+}
+.como-funciona .enfoque-central .enfoque-text p .blue {
+  background: #2c82c9;
+}
+.como-funciona .enfoque-central .enfoque-text p .dark {
+  background: #111;
+}
+.como-funciona .filosofia {
+  margin-top: 80px;
+}
+.como-funciona .filosofia h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.como-funciona .filosofia .filosofia-steps {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.como-funciona .filosofia .filosofia-steps .filo-item {
+  text-align: center;
+  max-width: 220px;
+}
+.como-funciona .filosofia .filosofia-steps .filo-item img {
+  width: 40px;
+}
+.como-funciona .filosofia .filosofia-steps .filo-item p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.accesibilidad {
+  background: #ffffff;
+  color: #000;
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  text-align: center;
+}
+.accesibilidad h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.accesibilidad .subtitulo {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 40px;
+}
+.accesibilidad .accesibilidad-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.accesibilidad .accesibilidad-grid .acceso-item {
+  max-width: 300px;
+  text-align: center;
+}
+.accesibilidad .accesibilidad-grid .acceso-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+.accesibilidad .accesibilidad-grid .acceso-item p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.como-funciona {
+  background: url("assets/lifeSkills/sectionComofunciona/fondo_optimizado.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+.como-funciona .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.como-funciona .steps-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.como-funciona .steps-grid .step-card {
+  position: relative;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  padding: 20px 15px 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.como-funciona .steps-grid .step-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.como-funciona .steps-grid .step-card .step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.como-funciona .steps-grid .step-card p {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+.como-funciona .enfoque-central {
+  margin-top: 80px;
+}
+.como-funciona .enfoque-central h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.como-funciona .enfoque-central .enfoque-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  margin-top: 20px;
+}
+.como-funciona .enfoque-central .enfoque-text p {
+  position: relative;
+  max-width: 600px;
+  font-size: 1rem;
+}
+.como-funciona .enfoque-central .enfoque-text p .icon-point {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.como-funciona .enfoque-central .enfoque-text p .red {
+  background: #ff5733;
+}
+.como-funciona .enfoque-central .enfoque-text p .blue {
+  background: #2c82c9;
+}
+.como-funciona .enfoque-central .enfoque-text p .dark {
+  background: #111;
+}
+.como-funciona .filosofia {
+  margin-top: 80px;
+}
+.como-funciona .filosofia h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.como-funciona .filosofia .filosofia-steps {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.como-funciona .filosofia .filosofia-steps .filo-item {
+  text-align: center;
+  max-width: 220px;
+}
+.como-funciona .filosofia .filosofia-steps .filo-item img {
+  width: 40px;
+}
+.como-funciona .filosofia .filosofia-steps .filo-item p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.cursos-section {
+  background-color: #111;
+  color: white;
+  padding: 60px 0 30px;
+  text-align: center;
+}
+.cursos-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.cursos-section .categorias-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cursos-section .categorias-grid .categoria {
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease;
+}
+.cursos-section .categorias-grid .categoria.activa {
+  background: linear-gradient(to right, #d62828, #f77f00);
+  color: white;
+}
+
+.cursos-categorias {
+  background-color: black;
+  color: white;
+  padding: 60px 0 30px;
+  text-align: center;
+}
+.cursos-categorias .container h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.cursos-categorias .container .categorias-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cursos-categorias .container .categorias-grid .categoria {
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease;
+}
+.cursos-categorias .container .categorias-grid .categoria.activa {
+  background: linear-gradient(to right, #d62828, #f77f00);
+  color: white;
+}
+
+.cursos-listado {
+  background-color: #fff;
+  padding: 60px 0;
+}
+.cursos-listado .grid-cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.cursos-listado .curso-card {
+  max-width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.cursos-listado .curso-card:hover {
+  transform: translateY(-5px);
+}
+.cursos-listado .curso-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cursos-listado .curso-card .curso-info {
+  padding: 15px;
+  text-align: left;
+}
+.cursos-listado .curso-card .curso-info .curso-rating {
+  font-size: 0.9rem;
+  color: #ffb400;
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.cursos-listado .curso-card .curso-info h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 5px 0 10px;
+  color: #222;
+}
+.cursos-listado .curso-card .curso-info .curso-detalles {
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.cursos-listado .curso-card .curso-info .curso-precio {
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cursos-listado .curso-card .curso-info .curso-precio .precio-original {
+  text-decoration: line-through;
+  color: #999;
+}
+.cursos-listado .curso-card .curso-info .curso-precio .precio-descuento {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .como-funciona .steps-grid,
+  .como-funciona .filosofia-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .como-funciona .enfoque-central .enfoque-text {
+    text-align: center;
   }
 }/*# sourceMappingURL=styles.css.map */
