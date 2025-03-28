@@ -2599,6 +2599,8 @@ ul {
   display: flex;
   animation: scroll 30s linear infinite;
   gap: 2rem;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .slider__item {

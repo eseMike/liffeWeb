@@ -2839,6 +2839,7 @@ ul {
   display: flex;
   animation: scroll 30s linear infinite;
   gap: 2rem;
+  width: max-content; // Esto evita cortes al animar
 }
 
 .slider__item {

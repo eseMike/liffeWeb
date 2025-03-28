@@ -111,3 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 });
+
+// Slider de empleados
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.slider__track');
+  if (!track) return;
+
+  const items = [...track.children]; // copia todos los slider__item originales
+  const clone = items.map((item) => item.cloneNode(true)); // los clona
+
+  clone.forEach((clonedItem) => {
+    track.appendChild(clonedItem); // los añade al final del slider
+  });
+});
