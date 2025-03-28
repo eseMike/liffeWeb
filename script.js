@@ -90,3 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.style.animation = 'scrollClientes 20s linear infinite';
   }
 });
+
+// Formulario
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+  const mensajeConfirmacion = document.getElementById('mensajeConfirmacion');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevenir el envío real (por ahora)
+
+    // Mostrar el mensaje de confirmación
+    mensajeConfirmacion.style.display = 'block';
+
+    // Ocultar después de 5 segundos (opcional)
+    setTimeout(() => {
+      mensajeConfirmacion.style.display = 'none';
+    }, 5000);
+
+    // También puedes limpiar el formulario si quieres:
+    form.reset();
+  });
+});
