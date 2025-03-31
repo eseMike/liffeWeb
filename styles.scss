@@ -1,7 +1,40 @@
+@font-face {
+  font-family: 'NectoMono';
+  src: url('assets/fonts/NectoMono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.monoespaciado {
+  font-family: 'NectoMono', monospace;
+}
+
 $primary-color: #111; // Color de fondo de la navbar
 $border-color: white;
 $button-color: #ff5722;
 $button-hover: #e64a19;
+
+// Fonts
+// Títulos y subtítulos
+.titulo-principal,
+h1,
+h2,
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+}
+
+// Subtítulos
+.subtitulo,
+h4,
+h5 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif !important;
+}
 
 * {
   margin: 0;
@@ -76,8 +109,18 @@ body {
   overflow: hidden;
   position: relative;
   z-index: -1; // Para que quede al fondo (si no lo necesitas encima)
-  @media (min-width: 768px) {
-    height: 80vh; // Ocupa toda la altura de la ventana
+
+  // Ajustes específicos para iPad (modo vertical y horizontal)
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .video-container {
+      height: 100vh;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .video-container {
+      height: 100vh;
+    }
   }
 }
 .video-container video {
@@ -710,10 +753,11 @@ p {
       text-align: center;
       img {
         width: 100%;
+        height: auto; // ✅ mantiene proporción
         border-radius: 15px;
         display: block;
+        object-fit: cover; // opcional si quieres que llene todo el contenedor sin deformarse
       }
-
       .titulo {
         font-size: 18px;
         font-weight: bold;
@@ -831,6 +875,8 @@ p {
         text-align: center;
         img {
           width: 100%;
+          height: auto; // <- Asegura proporción correcta
+          object-fit: cover; // <- Recorta sin deformar
           border-radius: 15px;
           border: 5px solid transparent;
           transition: all 0.3s ease-in-out;
@@ -1145,6 +1191,56 @@ $button-hover: #e64a19;
   }
 }
 
+// Corrección para que la imagen no se vea aplastada en móviles y tablets
+.why-us {
+  background: $primary-light;
+  padding: 40px 0;
+  text-align: center;
+  gap: 1rem;
+
+  h2 span {
+    color: $highlight-color;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    top: -4rem;
+
+    @media (max-width: 1024px) {
+      max-height: 300px;
+      top: -2rem;
+    }
+
+    @media (max-width: 768px) {
+      max-height: 250px;
+      top: -1rem;
+    }
+  }
+
+  .usAux {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: initial;
+    }
+
+    .txtUx {
+      text-align: start;
+    }
+  }
+}
+
 // Beneficios
 .benefits {
   background: white;
@@ -1161,10 +1257,17 @@ $button-hover: #e64a19;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     justify-items: center;
-    @media (min-width: 768px) {
-      justify-items: initial;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+
+      .benefit-card:nth-child(4),
+      .benefit-card:nth-child(5) {
+        grid-column: 2 / 3; // Ambas centradas en la columna 2
+      }
     }
   }
+
   .benefit-card {
     background: #205b65; // Azul medio
     color: white;

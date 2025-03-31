@@ -1,4 +1,33 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "NectoMono";
+  src: url("assets/fonts/NectoMono-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.monoespaciado {
+  font-family: "NectoMono", monospace;
+}
+
+.titulo-principal,
+h1,
+h2,
+h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+}
+
+.subtitulo,
+h4,
+h5 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  font-family: "DM Sans", sans-serif !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,9 +100,14 @@ body {
   position: relative;
   z-index: -1;
 }
-@media (min-width: 768px) {
-  .video-container {
-    height: 80vh;
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .video-container .video-container {
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .video-container .video-container {
+    height: 100vh;
   }
 }
 
@@ -706,8 +740,11 @@ p {
 }
 .valores .grid-valores .item img {
   width: 100%;
+  height: auto;
   border-radius: 15px;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .valores .grid-valores .item .titulo {
   font-size: 18px;
@@ -817,6 +854,9 @@ p {
 }
 .distinguen .container .contenedor-cards .card img {
   width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
   border: 5px solid transparent;
   transition: all 0.3s ease-in-out;
@@ -1104,6 +1144,55 @@ p {
   text-align: start;
 }
 
+.why-us {
+  background: #f4f4f4;
+  padding: 40px 0;
+  text-align: center;
+  gap: 1rem;
+}
+.why-us h2 span {
+  color: #e94e77;
+}
+.why-us .image-container img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  top: -4rem;
+}
+@media (max-width: 1024px) {
+  .why-us .image-container img {
+    max-height: 300px;
+    top: -2rem;
+  }
+}
+@media (max-width: 768px) {
+  .why-us .image-container img {
+    max-height: 250px;
+    top: -1rem;
+  }
+}
+.why-us .usAux {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .why-us .usAux {
+    flex-direction: row;
+    gap: initial;
+  }
+}
+.why-us .usAux .txtUx {
+  text-align: start;
+}
+
 .benefits {
   background: white;
   padding: 40px 0;
@@ -1119,9 +1208,13 @@ p {
   gap: 20px;
   justify-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .benefits .benefits-grid {
-    justify-items: initial;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .benefits .benefits-grid .benefit-card:nth-child(4),
+  .benefits .benefits-grid .benefit-card:nth-child(5) {
+    grid-column: 2/3;
   }
 }
 .benefits .benefit-card {
