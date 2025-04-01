@@ -159,13 +159,12 @@ body {
 }
 @media (min-width: 768px) {
   .soluciones-title {
-    font-size: 3rem;
+    font-size: 70px;
     font-weight: bold;
     line-height: 1.1;
     margin-bottom: 30px;
     margin-top: 3rem;
     position: relative;
-    right: -10rem;
     color: black;
     text-align: start;
   }
@@ -187,10 +186,15 @@ p {
 
 .soluciones-subtitle {
   color: #ff5722;
-  font-size: 1.3rem;
+  font-size: 35px;
   font-weight: bold;
   margin-bottom: 10px;
   height: 90px;
+}
+
+.txtSubAux {
+  font-size: 30px;
+  margin-top: 4rem;
 }
 
 .arrow-link {
@@ -361,10 +365,20 @@ p {
 }
 
 .pasión-texto {
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: bold;
-  max-width: 700px;
+  max-width: 990px;
   margin: 30px auto;
+}
+@media (min-width: 768px) {
+  .pasión-texto {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .pasión-texto {
+    font-size: 60px;
+  }
 }
 
 .logo-superior,
@@ -376,11 +390,23 @@ p {
 }
 
 .logo-superior img {
-  width: 150px;
+  width: 140px;
+  position: relative;
+  top: -2rem;
+}
+@media (min-width: 768px) {
+  .logo-superior img {
+    width: 170px;
+  }
 }
 
 .logo-inferior img {
   width: 100px;
+}
+@media (min-width: 768px) {
+  .logo-inferior img {
+    width: 130px;
+  }
 }
 
 .valores {
@@ -438,10 +464,18 @@ p {
   padding: 60px 0;
   text-align: center;
   border-radius: 40px;
+  height: auto;
+  display: grid;
+  place-content: center;
+}
+@media (min-width: 768px) {
+  .valores-destacados {
+    height: 600px;
+  }
 }
 
 .intro-texto {
-  font-size: 1.5rem;
+  font-size: 35px;
   font-weight: normal;
   margin-bottom: 30px;
 }
@@ -808,6 +842,8 @@ p {
   color: white;
   padding: 60px 0;
   border-radius: 20px 20px 0 0;
+  display: grid;
+  place-content: center;
 }
 .distinguen .container {
   max-width: 1200px;
@@ -820,7 +856,6 @@ p {
 }
 .distinguen .container h2 {
   font-size: 32px;
-  font-family: "Courier New", Courier, monospace;
   margin-bottom: 20px;
 }
 .distinguen .container .respuesta {
@@ -828,10 +863,11 @@ p {
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 60px;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 40px;
+  height: 60px;
 }
 .distinguen .container .contenedor-cards {
   display: flex;
@@ -846,8 +882,7 @@ p {
   }
 }
 .distinguen .container .contenedor-cards .card {
-  background: #1a1a1a;
-  padding: 15px;
+  background: transparent;
   border-radius: 15px;
   width: 300px;
   text-align: center;
@@ -858,7 +893,7 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
-  border: 5px solid transparent;
+  border: 0px solid transparent;
   transition: all 0.3s ease-in-out;
 }
 .distinguen .container .contenedor-cards .card p {
@@ -866,6 +901,20 @@ p {
   margin-top: 15px;
   line-height: 1.4;
   color: white;
+}
+.distinguen .container .flexSaul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+}
+@media (min-width: 768px) {
+  .distinguen .container .flexSaul {
+    flex-direction: row;
+  }
+}
+.distinguen .container .flexSaul div {
+  text-align: start;
 }
 
 .aux-btn {

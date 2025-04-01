@@ -171,13 +171,13 @@ body {
   color: black;
   text-align: start;
   @media (min-width: 768px) {
-    font-size: 3rem;
+    font-size: 70px;
     font-weight: bold;
     line-height: 1.1;
     margin-bottom: 30px;
     margin-top: 3rem;
     position: relative;
-    right: -10rem;
+    // right: -10rem;
     color: black;
     text-align: start;
   }
@@ -198,10 +198,14 @@ p {
 
 .soluciones-subtitle {
   color: #ff5722;
-  font-size: 1.3rem;
+  font-size: 35px;
   font-weight: bold;
   margin-bottom: 10px;
   height: 90px;
+}
+.txtSubAux {
+  font-size: 30px;
+  margin-top: 4rem;
 }
 
 .arrow-link {
@@ -376,10 +380,16 @@ p {
 }
 
 .pasión-texto {
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: bold;
-  max-width: 700px;
+  max-width: 990px;
   margin: 30px auto;
+  @media (min-width: 768px) {
+    font-size: 50px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 60px;
+  }
 }
 
 .logo-superior,
@@ -391,10 +401,18 @@ p {
 }
 
 .logo-superior img {
-  width: 150px;
+  width: 140px;
+  position: relative;
+  top: -2rem;
+  @media (min-width: 768px) {
+    width: 170px;
+  }
 }
 .logo-inferior img {
   width: 100px;
+  @media (min-width: 768px) {
+    width: 130px;
+  }
 }
 
 // Sección de valores con diseño moderno
@@ -454,10 +472,16 @@ p {
   padding: 60px 0;
   text-align: center;
   border-radius: 40px;
+  height: auto;
+  display: grid;
+  place-content: center;
+  @media (min-width: 768px) {
+    height: 600px;
+  }
 }
 
 .intro-texto {
-  font-size: 1.5rem;
+  font-size: 35px;
   font-weight: normal;
   margin-bottom: 30px;
 }
@@ -833,19 +857,18 @@ p {
   color: white;
   padding: 60px 0;
   border-radius: 20px 20px 0 0;
-
+  display: grid;
+  place-content: center;
   .container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-
     .pregunta {
       font-size: 16px;
       color: #ccc;
     }
     h2 {
       font-size: 32px;
-      font-family: 'Courier New', Courier, monospace;
       margin-bottom: 20px;
     }
     .respuesta {
@@ -853,10 +876,11 @@ p {
       color: white;
       border: none;
       padding: 10px 20px;
-      border-radius: 25px;
+      border-radius: 60px;
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 40px;
+      height: 60px;
     }
     .contenedor-cards {
       display: flex;
@@ -868,8 +892,8 @@ p {
         flex-direction: row;
       }
       .card {
-        background: #1a1a1a;
-        padding: 15px;
+        background: transparent;
+        // padding: 15px;
         border-radius: 15px;
         width: 300px;
         text-align: center;
@@ -878,7 +902,7 @@ p {
           height: auto; // <- Asegura proporción correcta
           object-fit: cover; // <- Recorta sin deformar
           border-radius: 15px;
-          border: 5px solid transparent;
+          border: 0px solid transparent;
           transition: all 0.3s ease-in-out;
         }
 
@@ -888,6 +912,18 @@ p {
           line-height: 1.4;
           color: white;
         }
+      }
+    }
+    .flexSaul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-end;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      div {
+        text-align: start;
       }
     }
   }
