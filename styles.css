@@ -235,7 +235,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2.7rem;
   }
 }
 .soluciones .txtFlexFirst > div {
