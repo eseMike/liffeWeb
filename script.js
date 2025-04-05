@@ -124,3 +124,47 @@ document.addEventListener('DOMContentLoaded', () => {
     track.appendChild(clonedItem); // los añade al final del slider
   });
 });
+
+// Slider de clientes
+document.addEventListener('DOMContentLoaded', () => {
+  const customSlides = document.querySelectorAll('.custom-slide');
+  const customPagination = document.querySelector('.custom-slider-pagination');
+  const sliderWrapper = document.querySelector('.custom-slider-wrapper');
+
+  if (customSlides.length && customPagination && sliderWrapper) {
+    let customCurrentIndex = 0;
+    const customTotalSlides = customSlides.length;
+
+    // Generar un punto por cada slide
+    const dotCount = customTotalSlides;
+    customPagination.innerHTML = '';
+
+    for (let i = 0; i < dotCount; i++) {
+      const dot = document.createElement('span');
+      dot.className = `custom-dot${i === 0 ? ' active' : ''}`;
+      dot.dataset.index = i;
+      customPagination.appendChild(dot);
+    }
+
+    const updateCustomSlider = () => {
+      const offset = -(customCurrentIndex * 100);
+      sliderWrapper.style.transform = `translateX(${offset}%)`;
+
+      document
+        .querySelectorAll('.custom-dot')
+        .forEach((dot) => dot.classList.remove('active'));
+      const activeDot =
+        document.querySelectorAll('.custom-dot')[customCurrentIndex];
+      if (activeDot) activeDot.classList.add('active');
+    };
+
+    customPagination.addEventListener('click', (e) => {
+      if (e.target.classList.contains('custom-dot')) {
+        customCurrentIndex = parseInt(e.target.dataset.index);
+        updateCustomSlider();
+      }
+    });
+
+    updateCustomSlider();
+  }
+});

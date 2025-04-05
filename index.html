@@ -77,10 +77,13 @@
     </div>
 
     <!-- Soluciones liffe -->
-    <section class="soluciones" aria-labelledby="soluciones-title">
+    <section
+      class="soluciones soluciones-bg"
+      aria-labelledby="soluciones-title"
+    >
       <div class="container">
-        <div class="row mainSecond">
-          <div class="col-lg-4 col-md-6 mb-4 auxFit">
+        <div class="row mainSecond2">
+          <div class="col-12 col-md-12 col-lg-4 mb-4 auxFit">
             <h2 class="soluciones-title monoespaciado" id="soluciones-title">
               Soluciones <br />
               liffe
@@ -124,40 +127,39 @@
     </section>
 
     <!-- SLIDER DE TARJETAS -->
-    <section class="custom-slider-container">
-      <div class="custom-slider-wrapper">
-        <div class="custom-slide">
-          <img
-            src="assets/fondos/FOTOS-121.png"
-            alt="Las personas son la clave"
-          />
-        </div>
-        <div class="custom-slide">
-          <img
-            src="assets/fondos/FOTOS-122.png"
-            alt="Las personas son la clave"
-          />
-        </div>
-        <div class="custom-slide">
-          <img
-            src="assets/fondos/FOTOS-123.png"
-            alt="Las personas son la clave"
-          />
-        </div>
-        <div class="custom-slide">
-          <img
-            src="assets/fondos/FOTOS-124.png"
-            alt="Las personas son la clave"
-          />
-        </div>
+    <section class="tarjetas-section">
+      <div class="tarjetas-fondo"></div>
+
+      <!-- Contenedor estático solo visible en escritorio -->
+      <div class="tarjetas-desktop">
+        <img src="assets/fondos/FOTOS-121.png" alt="Tarjeta 1" />
+        <img src="assets/fondos/FOTOS-122.png" alt="Tarjeta 2" />
+        <img src="assets/fondos/FOTOS-123.png" alt="Tarjeta 3" />
+        <img src="assets/fondos/FOTOS-124.png" alt="Tarjeta 4" />
       </div>
 
-      <!-- Botones de paginación -->
-      <div class="custom-slider-pagination"></div>
+      <!-- Contenedor del slider (visible solo en móvil y tablet) -->
+      <div class="custom-slider-container">
+        <div class="custom-slider-wrapper">
+          <div class="custom-slide">
+            <img src="assets/fondos/FOTOS-121.png" alt="Tarjeta 1" />
+          </div>
+          <div class="custom-slide">
+            <img src="assets/fondos/FOTOS-122.png" alt="Tarjeta 2" />
+          </div>
+          <div class="custom-slide">
+            <img src="assets/fondos/FOTOS-123.png" alt="Tarjeta 3" />
+          </div>
+          <div class="custom-slide">
+            <img src="assets/fondos/FOTOS-124.png" alt="Tarjeta 4" />
+          </div>
+        </div>
+        <div class="custom-slider-pagination"></div>
+      </div>
     </section>
 
     <!-- CARDS -->
-    <section class="pasión" aria-labelledby="pasion-heading">
+    <section class="pasion" aria-labelledby="pasion-heading">
       <div class="container text-center">
         <div class="logo-superior">
           <img
@@ -182,78 +184,79 @@
     </section>
 
     <!-- Sección valores -->
-    <section class="valores" aria-labelledby="valores-heading">
-      <div class="container">
-        <div class="grid-valores">
-          <!-- Primera imagen y título -->
-          <div class="item imagen-grande">
-            <div class="iconsFlexBlue">
-              <h3 class="titulo monoespaciado">PASIÓN</h3>
-              <span class="icono icono-pasion" aria-hidden="true"></span>
-            </div>
+    <section class="valores">
+      <div class="valores-wrapper">
+        <!-- Pasion  -->
+        <div class="bloque bloque--pasion">
+          <h3 class="titulo">PASIÓN</h3>
+          <img
+            src="assets/home/icono1Blue.png"
+            alt="Icono pasión"
+            class="icono"
+          />
+          <img
+            src="assets/home/imagen.png"
+            alt="Imagen pasión"
+            class="img-bloque"
+          />
+        </div>
+        <!-- Responsabilidad  -->
+        <div class="bloque bloque--responsabilidad">
+          <div class="encabezado-bloque">
+            <h3 class="titulo">RESPONSABILIDAD</h3>
             <img
-              src="assets/blueIcons/imagen.png"
-              alt="Evento"
-              loading="lazy"
-              width="480"
-              height="320"
-              decoding="async"
+              src="assets/home/icono2Blue.svg"
+              alt="Icono responsabilidad"
+              class="icono"
             />
           </div>
 
-          <!-- Texto en la parte superior derecha -->
-          <div class="item texto-derecha">
-            <h3 class="titulo monoespaciado">RESPONSABILIDAD</h3>
-            <p style="color: white">
-              Por eso, después de tener el privilegio de trabajar en toda
-              América Latina por más de
-              <strong>30 años</strong>, nos sentimos
-              <strong>responsables</strong> de vaciar nuestras copas. Eso es lo
-              que nos motiva.
-            </p>
-            <span class="icono icono-responsabilidad" aria-hidden="true"></span>
-          </div>
+          <p class="parrafo">
+            Por eso, después de tener el privilegio de trabajar en toda América
+            Latina por más de <strong>30 años</strong>, nos sentimos
+            responsables de vaciar nuestras copas. Eso es lo que nos motiva.
+          </p>
+        </div>
 
-          <!-- Segunda imagen y título -->
-          <div class="item imagen-pequena">
+        <!-- Privilegio  -->
+        <div class="bloque bloque--privilegio">
+          <h3 class="titulo">PRIVILEGIO</h3>
+          <img
+            src="assets/home/icono4Blue.svg"
+            alt="Icono privilegio"
+            class="icono"
+          />
+        </div>
+
+        <!-- Diferenciadores  -->
+        <div class="bloque bloque--diferenciadores">
+          <div class="encabezado-bloque">
+            <h3 class="titulo">DIFERENCIADORES</h3>
             <img
-              src="assets/home/manos.png"
-              alt="Equipo brindando"
-              loading="lazy"
-              width="320"
-              height="240"
-              decoding="async"
-            />
-            <h3 class="titulo monoespaciado">DIFERENCIADORES</h3>
-            <span class="icono icono-diferenciadores" aria-hidden="true"></span>
-          </div>
-
-          <!-- Texto a la derecha -->
-          <div class="item texto-derecha">
-            <h3 class="titulo monoespaciado">PRIVILEGIO</h3>
-            <span class="icono icono-privilegio" aria-hidden="true"></span>
-          </div>
-
-          <!-- Texto grande con énfasis -->
-          <div class="item texto-grande">
-            <p class="monoespaciado">
-              <span class="subrayado">CREEMOS EN EL POTENCIAL</span> DE LAS
-              PERSONAS Y <span class="subrayado">EL IMPACTO</span> POSITIVO QUE
-              TODOS PODEMOS CAUSAR.
-            </p>
-          </div>
-
-          <!-- Imagen inferior derecha -->
-          <div class="item imagen-pequena">
-            <img
-              src="assets/home/manos2.png"
-              alt="Manos unidas"
-              loading="lazy"
-              width="320"
-              height="240"
-              decoding="async"
+              src="assets/home/icono3Blue.svg"
+              alt="Icono diferenciadores"
+              class="icono"
             />
           </div>
+
+          <img
+            src="assets/home/imagen2.png"
+            alt="Imagen diferenciadores"
+            class="img-bloque"
+          />
+
+          <p class="parrafo">
+            <span class="subrayado2">CREEMOS</span> EN EL POTENCIAL DE LAS
+            PERSONAS Y EL <span class="destacado">IMPACTO</span> POSITIVO QUE
+            TODOS PODEMOS CAUSAR.
+          </p>
+
+          <div class="decorativo decorativo--asterisco">*</div>
+          <img
+            src="assets/home/imagen3.png"
+            alt="Manos unidas"
+            class="img-extra"
+          />
         </div>
       </div>
     </section>
@@ -263,9 +266,15 @@
       aria-labelledby="valores-destacados-heading"
     >
       <div class="container text-center">
-        <p class="intro-texto">Eso nos ha llevado a identificar los <br /></p>
+        <p class="intro-texto">
+          Eso nos ha llevado a identificar los <br />
+          <span class="intro-resaltado">
+            valores que nos unen y que permean lo que hacemos.
+          </span>
+        </p>
 
         <div class="valores-grid" role="list">
+          <!-- Valor 1 -->
           <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico1.svg"
@@ -280,10 +289,11 @@
             </button>
           </div>
 
-          <div class="valor-item central" role="listitem">
+          <!-- Valor 2 -->
+          <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico3.svg"
-              alt="Sabiduría"
+              alt="Generosidad"
               class="icono-valor"
               width="80"
               height="80"
@@ -292,19 +302,20 @@
             <button class="valor-boton naranja">Somos generosos</button>
           </div>
 
+          <!-- Valor 3 -->
           <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico2.svg"
-              alt="Generosidad"
+              alt="Sabiduría"
               class="icono-valor"
               width="80"
               height="80"
               loading="lazy"
             />
-
             <button class="valor-boton rojo">Perseguimos la sabiduría</button>
           </div>
 
+          <!-- Valor 4 -->
           <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico4.svg"
@@ -317,6 +328,7 @@
             <button class="valor-boton rojo">Actuamos con integridad</button>
           </div>
 
+          <!-- Valor 5 -->
           <div class="valor-item" role="listitem">
             <img
               src="assets/pt6/ico5.svg"
@@ -331,6 +343,7 @@
         </div>
       </div>
     </section>
+    |
 
     <section class="distinguen" aria-labelledby="distinguen-title">
       <div class="container">
