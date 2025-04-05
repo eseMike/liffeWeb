@@ -166,7 +166,7 @@ body {
   .soluciones .soluciones-title {
     font-size: 70px;
     margin-top: 3rem;
-    left: -20rem;
+    left: -26.5rem;
   }
 }
 @media (min-width: 768px) and (max-width: 999px) {
@@ -204,7 +204,7 @@ body {
 }
 @media (min-width: 768px) {
   .soluciones .txtSubAux {
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     margin-top: 0.8rem;
   }
 }
@@ -235,6 +235,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin-top: 2rem;
   }
 }
 .soluciones .txtFlexFirst > div {
@@ -449,6 +450,8 @@ body {
 
 .logo-inferior img {
   width: 100px;
+  position: relative;
+  bottom: -1rem;
 }
 @media (min-width: 768px) {
   .logo-inferior img {
@@ -456,17 +459,25 @@ body {
   }
 }
 
+h2 {
+  font-size: 4rem;
+}
+
 .valores {
-  background-image: url("assets/home/bgHome4.webp");
+  background-image: url("assets/home/bgHome4.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   padding: 100px 20px;
+  position: relative;
+  top: -6rem;
+  padding-bottom: 20rem;
 }
 .valores .valores-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  top: 3rem;
 }
 .valores .bloque {
   position: relative;
@@ -481,7 +492,6 @@ body {
   padding-left: 40px;
 }
 .valores .bloque--pasion .icono {
-  margin-top: 10px;
   width: 45px;
 }
 @media (max-width: 768px) {
@@ -498,15 +508,19 @@ body {
 }
 .valores .bloque--responsabilidad .parrafo {
   font-family: "NectoMono", monospace;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: white;
   line-height: 1.4;
-  margin-top: 10px;
+  margin-top: 118px;
+  text-align: end;
+  margin-right: -5rem;
 }
 .valores .bloque--responsabilidad .encabezado-bloque {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: 1.3rem;
+  margin-left: -5rem;
 }
 @media (max-width: 768px) {
   .valores .bloque--responsabilidad {
@@ -516,7 +530,7 @@ body {
 }
 .valores .bloque--privilegio {
   position: absolute;
-  top: 320px;
+  top: 645px;
   right: 60px;
   display: flex;
   flex-direction: column;
@@ -528,6 +542,14 @@ body {
     margin-top: 30px;
     align-items: flex-start;
   }
+}
+.valores .bloque--privilegio h3 {
+  position: relative;
+  left: 6.7rem;
+}
+.valores .bloque--privilegio img {
+  position: relative;
+  left: 1.7rem;
 }
 .valores .bloque--diferenciadores {
   margin-top: 40px;
@@ -544,11 +566,10 @@ body {
   }
 }
 .valores .bloque--diferenciadores .titulo {
-  background-color: black;
-  color: #ffd600;
+  color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 @media (max-width: 768px) {
   .valores .bloque--diferenciadores .titulo {
@@ -562,12 +583,13 @@ body {
 }
 .valores .bloque--diferenciadores .parrafo {
   font-family: "NectoMono", monospace;
-  font-size: 1.3rem;
+  font-size: 3rem;
   color: white;
   margin-top: 20px;
   line-height: 1.5;
-  max-width: 500px;
+  max-width: 800px;
   margin-bottom: 20px;
+  margin-left: -9rem;
 }
 @media (max-width: 768px) {
   .valores .bloque--diferenciadores .parrafo {
@@ -629,13 +651,14 @@ body {
 }
 .valores .bloque--diferenciadores .decorativo--asterisco {
   position: absolute;
-  bottom: 100px;
-  left: 70%;
+  bottom: -27rem;
+  left: 62%;
   transform: translateX(-50%);
-  font-size: 2.5rem;
+  font-size: 20.5rem;
   color: #ff3c00;
   font-family: "NectoMono", monospace;
   z-index: 2;
+  display: initial;
 }
 @media (max-width: 768px) {
   .valores .bloque--diferenciadores .decorativo--asterisco {
@@ -652,12 +675,12 @@ body {
 }
 .valores .bloque--diferenciadores .img-extra {
   position: absolute;
-  bottom: 30px;
-  right: 40px;
+  bottom: -219px;
+  right: -32px;
   width: 270px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 40px;
+  width: 400px;
 }
 @media (max-width: 768px) {
   .valores .bloque--diferenciadores .img-extra {
@@ -668,7 +691,7 @@ body {
 }
 .valores .titulo {
   font-family: "NectoMono", monospace;
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
   margin: 0;
 }
@@ -683,9 +706,8 @@ body {
   }
 }
 .valores .icono {
-  width: 50px;
+  width: 80px;
   height: auto;
-  margin-top: 10px;
 }
 @media (max-width: 768px) {
   .valores .icono {
@@ -695,15 +717,19 @@ body {
 }
 .valores .img-bloque {
   width: 100%;
-  max-width: 500px;
   border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 70px;
+  position: relative;
+  left: 19rem;
 }
 @media (max-width: 768px) {
   .valores .img-bloque {
     max-width: 100%;
   }
+}
+.valores .bloqueFirst {
+  width: 1236px;
+  left: -26rem;
 }
 
 .valores-destacados {
@@ -722,15 +748,14 @@ body {
 }
 
 .intro-texto {
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 2rem;
   color: #000;
   line-height: 1.4;
   margin-bottom: 40px;
 }
 .intro-texto .intro-resaltado {
   font-weight: 700;
-  background: linear-gradient(90deg, #e42e2e 0%, #fc7c1f 100%);
+  background: black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -744,7 +769,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: auto auto auto;
-  gap: 30px 50px;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
@@ -797,11 +821,12 @@ body {
   border: none;
   border-radius: 9999px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: "DM Sans", sans-serif;
   color: white;
   text-align: center;
   transition: all 0.3s ease-in-out;
+  width: 400px;
 }
 .valor-boton.negro {
   background-color: #000;
@@ -3544,4 +3569,16 @@ ul {
 
 .imgFirst {
   width: 700px !important;
+}
+
+.icono--pasion {
+  margin-top: 0;
+}
+
+.difImg {
+  width: 400px !important;
+  height: auto;
+  left: -155px !important;
+  margin-top: 14px !important;
+  position: relative !important;
 }/*# sourceMappingURL=styles.css.map */
