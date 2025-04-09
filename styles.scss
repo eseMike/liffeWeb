@@ -958,7 +958,11 @@ h2 {
   width: 100%;
   margin: 0;
   padding: 0;
-
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 1200px) {
+    padding-top: 33rem;
+  }
   .fondo {
     position: absolute;
     top: 0;
@@ -1224,11 +1228,22 @@ h2 {
   opacity: 1;
 }
 
-.comillas {
-  font-size: 2rem;
-  color: #e67e22;
+.comillas-icon {
+  width: 32px;
+  height: auto;
+  margin: 0 auto 1rem;
   display: block;
-  margin-bottom: 15px;
+
+  // Puedes modificar el tamaño aquí si quieres más grande o más pequeño
+  @media (min-width: 768px) {
+    width: 52px;
+  }
+}
+
+.comillas-icon--derecha {
+  transform: rotate(180deg);
+  margin-top: 2rem; // Separación del texto o botones
+  margin-bottom: 0.5rem;
 }
 
 .testimonio-texto {
@@ -1291,12 +1306,12 @@ h2 {
 
 .clientes-logos img {
   max-width: 120px;
-  filter: grayscale(100%);
+  filter: grayscale(100%) brightness(15%) !important;
   transition: filter 0.3s ease;
 }
 
 .clientes-logos img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(100%) !important;
 }
 
 .footer-content {
@@ -1819,9 +1834,15 @@ $button-hover: #e64a19;
 
   .image-container img {
     width: 100%;
-    max-width: 300px;
+    // max-width: 300px;
     border-radius: 10px;
     display: block;
+  }
+
+  .imgHead {
+    max-width: 376px;
+    position: relative;
+    top: 2.5rem;
   }
 
   .text-container {
@@ -1882,6 +1903,8 @@ $button-hover: #e64a19;
         @media (min-width: 768px) {
           font-size: 70px;
           margin-top: 17rem;
+          position: relative;
+          left: 1rem;
         }
 
         .icon img {
@@ -1917,12 +1940,12 @@ $button-hover: #e64a19;
     align-items: center;
     padding: 0 1rem;
     padding-top: 3rem;
-
     @media (min-width: 768px) {
       flex-direction: row;
       padding-top: 5rem;
       gap: 2rem;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: space-between;
     }
 
     @media (min-width: 992px) {
@@ -1954,38 +1977,27 @@ $button-hover: #e64a19;
 }
 
 // Frase Inspiradora
-.quote {
-  background-image: url(assets/headhunting/fondoHeadHuntingfirst.png);
+.headhunting-banner {
   width: 100%;
-  color: white;
-  text-align: center;
-  padding: 40px 0;
-  height: 550px;
-  background-position: center center;
+  height: 400px; // Ajusta según necesidad
+  background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  blockquote {
-    font-size: 1.7rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    @media (min-width: 768px) {
-      font-size: 3rem;
-    }
-    @media (min-width: 1014px) {
-      font-size: 4rem;
-    }
-    .elonTXT {
-      font-size: 1.9rem;
-      @media (min-width: 768px) {
-        font-size: 2.5rem;
-      }
-    }
+  position: relative;
+  height: 800px;
+  .headhunting-overlay {
+    width: 100%;
+    height: 100%;
   }
-  @media (min-width: 768px) {
-    height: 700px;
-  }
+
+  // @media (max-width: 1024px) {
+  //   background-image: url('../assets/headhunting/bg-tablet.jpg');
+  // }
+
+  // @media (max-width: 768px) {
+  //   background-image: url('../assets/headhunting/bg-mobile.jpg');
+  // }
 }
 
 // Sección "¿Por qué nosotros?"
@@ -2003,7 +2015,6 @@ $button-hover: #e64a19;
     max-width: 500px;
     border-radius: 10px;
     position: relative;
-    top: -4rem;
   }
 
   .usAux {
@@ -2035,7 +2046,7 @@ $button-hover: #e64a19;
   .image-container img {
     width: 100%;
     height: auto;
-    max-width: 500px;
+    max-width: 630px;
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
@@ -2059,7 +2070,6 @@ $button-hover: #e64a19;
     justify-content: center;
     flex-direction: column;
     gap: 4rem;
-
     @media (min-width: 768px) {
       flex-direction: row;
       // gap: initial;
@@ -2080,6 +2090,10 @@ $button-hover: #e64a19;
         font-size: 30px;
       }
     }
+    .sponsorImg {
+      position: relative;
+      right: -11rem;
+    }
   }
 }
 
@@ -2092,7 +2106,7 @@ $button-hover: #e64a19;
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 2rem;
-      font-size: 1.6rem;
+      font-size: 2.6rem !important;
       @media (min-width: 768px) {
         font-size: initial;
       }
@@ -2103,10 +2117,9 @@ $button-hover: #e64a19;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     justify-items: center;
-
+    margin-top: 7rem;
     @media (min-width: 768px) and (max-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
-
       .benefit-card:nth-child(4),
       .benefit-card:nth-child(5) {
         grid-column: 2 / 3; // Ambas centradas en la columna 2
@@ -4180,4 +4193,9 @@ ul {
   left: -155px !important;
   margin-top: 14px !important;
   position: relative !important;
+}
+
+.headerFlexTXT {
+  position: relative;
+  left: -0.5rem;
 }

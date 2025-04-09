@@ -76,12 +76,13 @@
               alt="Representación visual del reclutamiento"
               loading="lazy"
               decoding="async"
+              class="imgHead"
             />
           </div>
 
           <div class="text-container">
             <div class="headhunting-header">
-              <h2 class="monoespaciado" id="headhunting-title">
+              <h2 class="monoespaciado headerFlexTXT" id="headhunting-title">
                 Liffe
                 <span class="icon">
                   <img
@@ -116,20 +117,12 @@
     </section>
 
     <!-- Frase Inspiradora -->
-    <section class="quote" aria-labelledby="frase-inspiradora">
-      <div class="container">
-        <blockquote
-          id="frase-inspiradora"
-          cite="https://es.wikipedia.org/wiki/Elon_Musk"
-        >
-          <span class="monoespaciado">
-            “Tu compañía es tan <br />
-            buena como el talento <br />
-            que contratas” </span
-          ><br />
-          <span class="elonTXT">– Elon Musk</span>
-        </blockquote>
-      </div>
+    <!-- Banner HeadHunting con fondo responsivo -->
+    <section
+      class="headhunting-banner"
+      aria-label="Banner principal de headhunting"
+    >
+      <div class="headhunting-overlay"></div>
     </section>
 
     <!-- Sección "¿Por qué nosotros?" -->
@@ -278,13 +271,19 @@
         </p>
 
         <div class="testimonios-slider" aria-label="Slider de testimonios">
+          <!-- Después -->
+          <img
+            src="assets/home/comillas.svg"
+            alt="Icono de comillas"
+            class="comillas-icon"
+            loading="lazy"
+          />
           <div
             class="slide activo"
             role="group"
             aria-roledescription="slide"
             aria-label="Testimonio 1 de 3"
           >
-            <span class="comillas" aria-hidden="true">❝</span>
             <p class="testimonio-texto">
               No es exagerado decir que esta experiencia de Educrat fue
               transformadora, tanto a nivel profesional como personal. Este
@@ -303,7 +302,6 @@
             aria-roledescription="slide"
             aria-label="Testimonio 2 de 3"
           >
-            <span class="comillas" aria-hidden="true">❝</span>
             <p class="testimonio-texto">
               La formación ha sido clave en mi desarrollo. He adquirido
               conocimientos que he aplicado de inmediato en mi entorno
@@ -321,7 +319,6 @@
             aria-roledescription="slide"
             aria-label="Testimonio 3 de 3"
           >
-            <span class="comillas" aria-hidden="true">❝</span>
             <p class="testimonio-texto">
               El curso ha sido una experiencia de aprendizaje increíble. Los
               instructores son expertos y el contenido es muy valioso.
@@ -332,7 +329,13 @@
             </p>
           </div>
         </div>
-
+        <!-- Después -->
+        <img
+          src="assets/home/comillas.svg"
+          alt="Icono de comillas"
+          class="comillas-icon comillas-icon--derecha"
+          loading="lazy"
+        />
         <div
           class="paginacion"
           role="tablist"
