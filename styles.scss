@@ -2092,6 +2092,10 @@ $button-hover: #e64a19;
       text-align: center;
       text-transform: uppercase;
       margin-bottom: 2rem;
+      font-size: 1.6rem;
+      @media (min-width: 768px) {
+        font-size: initial;
+      }
     }
   }
   .benefits-grid {
@@ -2172,6 +2176,14 @@ $button-hover: #e64a19;
   background: #f8f8f8;
   padding: 40px 0;
   text-align: center;
+  div {
+    h2 {
+      font-size: 1.6rem;
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  }
 }
 
 .payment-toggle {
