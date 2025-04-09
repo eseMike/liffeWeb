@@ -1385,7 +1385,7 @@ h2 {
 .headhunting .imgHead {
   max-width: 376px;
   position: relative;
-  top: 2.5rem;
+  top: 4.5rem;
 }
 .headhunting .text-container {
   max-width: 848px;
@@ -1524,165 +1524,6 @@ h2 {
   .divider {
     width: 60px;
     height: 2px;
-  }
-}
-.headhunting-banner {
-  width: 100%;
-  aspect-ratio: 9/16;
-  background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .headhunting-banner {
-    width: 100%;
-    aspect-ratio: 9/16;
-    background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .headhunting-banner * {
-    position: relative;
-    z-index: 2;
-  }
-  .headhunting-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-}
-@media (max-width: 768px) {
-  .headhunting-banner {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    background-size: cover !important;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    background-color: black !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-  }
-  .headhunting-banner * {
-    z-index: 2;
-    position: relative;
-  }
-  .headhunting-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-}
-@media (max-width: 768px) {
-  section,
-  .why-us {
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: transparent !important;
-  }
-  .headhunting-banner + * {
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: transparent !important;
-  }
-}
-@media (max-width: 768px) {
-  .headhunting-banner {
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-color: transparent !important;
-    height: 100dvh !important;
-    min-height: unset !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden;
-    display: block;
-  }
-  .headhunting-banner + section,
-  .headhunting-banner + .why-us {
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: transparent !important;
-    height: auto !important;
-    min-height: unset !important;
-  }
-  .why-us {
-    margin-top: -1px !important;
-    padding-top: 0 !important;
-    background-color: transparent !important;
-  }
-}
-.headhunting-banner + section {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  height: auto !important;
-  min-height: unset !important;
-}
-
-@media (max-width: 768px) {
-  .headhunting-banner {
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-color: transparent !important;
-    height: 100dvh !important;
-    min-height: unset !important;
-    padding: 0;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    overflow: hidden;
-    display: block;
-  }
-  .why-us {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    background: transparent !important;
-  }
-  .headhunting-banner + section {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    height: auto !important;
-    min-height: unset !important;
-  }
-  .headhunting-banner + .why-us {
-    margin-block-start: 0 !important;
-    padding-block-start: 0 !important;
-    background-color: transparent !important;
   }
 }
 .why-us {
@@ -3376,10 +3217,6 @@ ul {
     padding: 0 !important;
     margin: 0 !important;
   }
-  .headhunting-banner {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
   section {
     margin: 0;
     padding: 0;
@@ -3391,10 +3228,6 @@ ul {
   }
 }
 @media (max-width: 768px) {
-  .headhunting-banner {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
   .why-us .container,
   .why-us .usAux,
   .why-us .txtUx,
@@ -3413,63 +3246,20 @@ ul {
 }
 .headhunting-banner {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  aspect-ratio: 16/9;
   background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0;
-  margin: 0;
   overflow: hidden;
 }
-
-@media (max-width: 768px) {
-  .headhunting-banner {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    background-size: cover !important;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    background-color: black !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    position: relative;
-  }
-  .headhunting-banner * {
-    z-index: 2;
-    position: relative;
-  }
-  .headhunting-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-  .headhunting-banner .headhunting-text {
-    width: 100%;
-    max-width: 600px;
-    padding: 1rem;
-    color: white;
-    text-align: center;
-  }
-  .headhunting-banner .headhunting-text h2 {
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
-  .headhunting-banner .headhunting-text p {
-    font-size: 0.9rem;
-  }
+.headhunting-banner * {
+  position: relative;
+  z-index: 2;
 }/*# sourceMappingURL=styles.css.map */
