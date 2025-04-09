@@ -2034,6 +2034,7 @@ ul {
   justify-content: center;
   max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 .liffe-skills .skill-item {
   padding: 15px 25px;
@@ -2229,9 +2230,13 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 80px 0;
+  padding: 100px 0 80px;
   color: white;
   text-align: center;
+  overflow: visible;
+}
+.como-funciona .container {
+  overflow: visible !important;
 }
 .como-funciona .section-title {
   font-size: 2.5rem;
@@ -2243,14 +2248,15 @@ ul {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  position: relative;
 }
 .como-funciona .steps-grid .step-card {
   position: relative;
   max-width: 300px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 25px;
-  padding: 20px 15px 15px;
-  overflow: hidden;
+  padding: 60px 15px 15px;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2265,20 +2271,21 @@ ul {
 }
 .como-funciona .steps-grid .step-card .step-number {
   position: absolute;
-  top: -15px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background-color: white;
   color: black;
   font-weight: bold;
   font-size: 1rem;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .como-funciona .steps-grid .step-card p {
   font-size: 1rem;
@@ -2299,13 +2306,11 @@ ul {
   gap: 20px;
   text-align: left;
   margin-top: 20px;
-  color: white;
 }
 .como-funciona .enfoque-central .enfoque-text p {
   position: relative;
   max-width: 600px;
   font-size: 1rem;
-  color: white;
 }
 .como-funciona .enfoque-central .enfoque-text p .icon-point {
   display: inline-block;
@@ -2341,15 +2346,44 @@ ul {
   text-align: center;
   max-width: 220px;
 }
-.como-funciona .filosofia .filosofia-steps .filo-item img {
+.como-funciona .filosofia .filosofia-steps .filo-item .circle-number {
   width: 40px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
 }
 .como-funciona .filosofia .filosofia-steps .filo-item p {
-  margin-top: 10px;
   font-size: 0.9rem;
   color: white;
 }
 
+@media (max-width: 768px) {
+  .como-funciona .steps-grid,
+  .como-funciona .filosofia-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .como-funciona .enfoque-central .enfoque-text {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .como-funciona .steps-grid,
+  .como-funciona .filosofia-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .como-funciona .enfoque-central .enfoque-text {
+    text-align: center;
+  }
+}
 .accesibilidad {
   background: #ffffff;
   color: #000;
