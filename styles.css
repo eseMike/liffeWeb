@@ -1989,7 +1989,7 @@ ul {
 }
 
 .liffe-skills {
-  background: #000;
+  background: #000 !important;
   color: white;
   padding: 60px 0;
   text-align: center;
@@ -2035,6 +2035,7 @@ ul {
   max-width: 900px;
   margin: 0 auto;
   margin-bottom: 2rem;
+  margin: 2rem 0 !important;
 }
 .liffe-skills .skill-item {
   padding: 15px 25px;
@@ -2098,7 +2099,6 @@ ul {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 40px;
 }
 .liffe-skills .skills-icons img {
   width: 50px;
@@ -2174,7 +2174,6 @@ ul {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 40px;
 }
 .liffe-skills .skills-icons img {
   width: 50px;

@@ -2472,7 +2472,7 @@ ul {
 
 // Sección Liffe Skills
 .liffe-skills {
-  background: #000;
+  background: #000 !important;
   color: white;
   padding: 60px 0;
   text-align: center;
@@ -2524,6 +2524,7 @@ ul {
     max-width: 900px;
     margin: 0 auto;
     margin-bottom: 2rem;
+    margin: 2rem 0 !important;
   }
 
   .skill-item {
@@ -2599,7 +2600,7 @@ ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
 
     img {
       width: 50px;
@@ -2687,7 +2688,7 @@ ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
 
     img {
       width: 50px;
