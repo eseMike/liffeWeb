@@ -4076,12 +4076,16 @@ ul {
   overflow: hidden;
   position: relative;
 }
-
 .slider__track {
   display: flex;
-  animation: scroll 30s linear infinite;
+  animation: scroll 60s linear infinite; // ⬅ Más lento (antes era 30s)
   gap: 2rem;
-  width: max-content; // Esto evita cortes al animar
+  width: max-content;
+
+  // Detener al pasar el cursor
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 .slider__item {
@@ -4136,6 +4140,12 @@ ul {
   .slider__item .slider__nombre {
     font-size: 0.7rem;
     padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (hover: none) {
+  .slider__track:hover {
+    animation-play-state: running; // En dispositivos táctiles, que no se pause
   }
 }
 
