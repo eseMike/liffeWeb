@@ -3086,33 +3086,43 @@ ul {
   }
 }
 .corporate__impacto {
-  display: flex;
-  flex-wrap: wrap;
-  background: linear-gradient(135deg, #052c29, #0e3a3b);
-  color: white;
-  padding: 4rem 2rem;
   position: relative;
-}
-.corporate__impacto-contenido {
-  flex: 1 1 50%;
-  z-index: 2;
-}
-.corporate__impacto-imagen {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.corporate__impacto-imagen img {
-  max-width: 100%;
+  background: url("assets/corporate/pt. 2/fondo.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
   height: auto;
+  display: grid;
+  place-content: center;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+@media (min-width: 768px) {
+  .corporate__impacto {
+    height: auto;
+    min-height: 100%;
+  }
+}
+.corporate__impacto .corporate__impacto-overlay {
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
 }
 .corporate__impacto .impacto__texto {
   font-family: monospace;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  letter-spacing: 0.05em;
+  padding: 0 1rem;
+}
+.corporate__impacto .subrayado-contagiado {
+  border-bottom: 2px solid red;
+  border-radius: 999px;
+  padding: 0 4px;
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.1);
 }
 .corporate__impacto .impacto__info {
   display: flex;
@@ -3120,25 +3130,13 @@ ul {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
-.corporate__impacto .impacto__info .impacto__badge img {
+.corporate__impacto .impacto__badge img {
   width: 40px;
   height: 40px;
-  animation: flotar 3s ease-in-out infinite;
 }
-@keyframes flotar {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.corporate__impacto .impacto__info .impacto__texto-badge {
+.corporate__impacto .impacto__texto-badge {
   background: #0037a3;
   color: white;
   padding: 1rem 1.5rem;
@@ -3149,17 +3147,9 @@ ul {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   max-width: 400px;
   text-align: left;
-}
-@media (max-width: 768px) {
-  .corporate__impacto .impacto__info .impacto__texto-badge {
-    font-size: 0.85rem;
-    text-align: center;
-  }
-}
-.corporate__impacto .impacto__info .impacto__texto-badge {
   position: relative;
 }
-.corporate__impacto .impacto__info .impacto__texto-badge::after {
+.corporate__impacto .impacto__texto-badge::after {
   content: "";
   position: absolute;
   left: -10px;
@@ -3170,28 +3160,19 @@ ul {
   border-right: 10px solid #0037a3;
   border-bottom: 10px solid transparent;
 }
-@media (max-width: 768px) {
-  .corporate__impacto .impacto__info .impacto__texto-badge::after {
-    display: none;
-  }
-}
 .corporate__impacto .impacto__footer {
   font-family: "Courier New", monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-  text-align: center;
   max-width: 600px;
   margin: 0 auto;
   color: #b0f0d6;
-  margin-top: 1.5rem;
 }
 .corporate__impacto .impacto__sello {
   width: 80px;
   position: absolute;
   top: 2rem;
   right: 2rem;
-}
-.corporate__impacto .impacto__sello {
   animation: giroLento 12s linear infinite;
 }
 @keyframes giroLento {
@@ -3205,23 +3186,101 @@ ul {
 
 @media (max-width: 768px) {
   .corporate__impacto {
-    flex-direction: column;
-    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+  .corporate__impacto .corporate__impacto-overlay {
+    padding: 0 1rem;
+  }
+  .corporate__impacto .impacto__texto {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .corporate__impacto .subrayado-contagiado {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 0 6px;
+    border-bottom: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.15);
   }
   .corporate__impacto .impacto__info {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .corporate__impacto .impacto__info .impacto__badge img {
+    width: 30px;
+    height: 30px;
   }
   .corporate__impacto .impacto__info .impacto__texto-badge {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+    background: #1a39a8;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  .corporate__impacto .impacto__info .impacto__texto-badge::after {
+    display: none;
+  }
+  .corporate__impacto .impacto__footer {
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+  .corporate__impacto .impacto__sello {
+    width: 50px;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .corporate__impacto {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  .corporate__impacto-contenido .impacto__texto {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .corporate__impacto-contenido .impacto__info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+  }
+  .corporate__impacto-contenido .impacto__info .impacto__badge {
+    width: 40px;
+    height: 40px;
+  }
+  .corporate__impacto-contenido .impacto__info .impacto__badge img {
+    width: 20px;
+  }
+  .corporate__impacto-contenido .impacto__info .impacto__texto-badge {
     margin: 1rem 0;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.2rem;
+    background: #1a39a8;
+  }
+  .corporate__impacto-contenido .impacto__info .impacto__texto-badge::after {
+    display: none;
+  }
+  .corporate__impacto-contenido .impacto__footer {
+    font-size: 0.85rem;
+    margin-top: 2rem;
   }
   .corporate__impacto .corporate__impacto-imagen {
     margin-top: 2rem;
   }
   .corporate__impacto .impacto__sello {
+    width: 60px;
     top: 1rem;
     right: 1rem;
-    width: 60px;
   }
 }
 .subrayado {

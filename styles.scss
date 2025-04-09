@@ -3749,97 +3749,82 @@ ul {
 
 // Segunda sección
 .corporate__impacto {
-  display: flex;
-  flex-wrap: wrap;
-  background: linear-gradient(135deg, #052c29, #0e3a3b);
-  color: white;
-  padding: 4rem 2rem;
   position: relative;
+  background: url('assets/corporate/pt. 2/fondo.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  height: auto;
+  display: grid;
+  place-content: center;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 
-  &-contenido {
-    flex: 1 1 50%;
-    z-index: 2;
+  @media (min-width: 768px) {
+    height: auto;
+    min-height: 100%;
   }
-
-  &-imagen {
-    flex: 1 1 50%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+  .corporate__impacto-overlay {
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
   }
 
   .impacto__texto {
     font-family: monospace;
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 2rem;
-    letter-spacing: 0.05em; // Un poco más de espacio entre letras
+    padding: 0 1rem;
   }
+
+  .subrayado-contagiado {
+    border-bottom: 2px solid red;
+    border-radius: 999px;
+    padding: 0 4px;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+
   .impacto__info {
     display: flex;
     align-items: center;
-    justify-content: center; // Cambiamos a centrado
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+  }
 
-    .impacto__badge img {
-      width: 40px;
-      height: 40px;
-      animation: flotar 3s ease-in-out infinite;
-    }
+  .impacto__badge img {
+    width: 40px;
+    height: 40px;
+  }
 
-    @keyframes flotar {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    .impacto__texto-badge {
-      background: #0037a3; // azul más brillante
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 15px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      max-width: 400px;
-      text-align: left;
-      @media (max-width: 768px) {
-        font-size: 0.85rem;
-        text-align: center;
-      }
-    }
+  .impacto__texto-badge {
+    background: #0037a3;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    text-align: left;
+    position: relative;
 
-    .impacto__texto-badge {
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        left: -10px;
-        top: 20px;
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-right: 10px solid #0037a3;
-        border-bottom: 10px solid transparent;
-
-        @media (max-width: 768px) {
-          display: none; // oculta la flechita en móvil
-        }
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid #0037a3;
+      border-bottom: 10px solid transparent;
     }
   }
 
@@ -3847,11 +3832,9 @@ ul {
     font-family: 'Courier New', monospace;
     font-size: 0.95rem;
     line-height: 1.6;
-    text-align: center;
     max-width: 600px;
     margin: 0 auto;
     color: #b0f0d6;
-    margin-top: 1.5rem;
   }
 
   .impacto__sello {
@@ -3859,9 +3842,6 @@ ul {
     position: absolute;
     top: 2rem;
     right: 2rem;
-  }
-
-  .impacto__sello {
     animation: giroLento 12s linear infinite;
   }
 
@@ -3877,15 +3857,111 @@ ul {
 
 @media (max-width: 768px) {
   .corporate__impacto {
-    flex-direction: column;
-    text-align: center;
+    padding: 3rem 1.5rem;
+
+    .corporate__impacto-overlay {
+      padding: 0 1rem;
+    }
+
+    .impacto__texto {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .subrayado-contagiado {
+      font-size: 1rem;
+      display: inline-block;
+      padding: 0 6px;
+      border-bottom: 2px solid red;
+      background-color: rgba(255, 0, 0, 0.15);
+    }
 
     .impacto__info {
       flex-direction: column;
       align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+
+      .impacto__badge img {
+        width: 30px;
+        height: 30px;
+      }
 
       .impacto__texto-badge {
-        margin: 1rem 0;
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 1rem;
+        background: #1a39a8;
+        max-width: 100%;
+        border-radius: 12px;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .impacto__footer {
+      font-size: 0.85rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+
+    .impacto__sello {
+      width: 50px;
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+}
+
+// Responsive general
+@media (max-width: 768px) {
+  .corporate__impacto {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    text-align: center;
+
+    &-contenido {
+      .impacto__texto {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .impacto__info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 1rem;
+
+        .impacto__badge {
+          width: 40px;
+          height: 40px;
+
+          img {
+            width: 20px;
+          }
+        }
+
+        .impacto__texto-badge {
+          margin: 1rem 0;
+          font-size: 0.95rem;
+          width: 100%;
+          text-align: center;
+          padding: 1rem 1.2rem;
+          background: #1a39a8;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .impacto__footer {
+        font-size: 0.85rem;
+        margin-top: 2rem;
       }
     }
 
@@ -3894,9 +3970,9 @@ ul {
     }
 
     .impacto__sello {
+      width: 60px;
       top: 1rem;
       right: 1rem;
-      width: 60px;
     }
   }
 }
