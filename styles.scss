@@ -3488,73 +3488,21 @@ ul {
 }
 
 // CORPORATE
-// Estilo para título en escritorio
-// Estilo base (desktop)
 .corporateBase {
   position: relative;
   background-color: #f5f5f5;
-  height: 780px;
+  padding: 0;
+  height: auto;
 
-  .corporate__image-wrapper {
-    position: relative;
-
-    .corporate__image {
-      width: 100%;
-      height: auto;
-      max-height: 780px;
-      object-fit: cover;
-      border-radius: 2rem;
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .corporate__title {
-      position: absolute;
-      top: 1.5rem;
-      left: 2rem;
-      border-radius: 2rem 0 2rem 0;
-      padding: 3rem 4rem;
-      line-height: 1.2;
-      max-width: 420px;
-      font-size: 3.8rem;
-      z-index: 3;
-      color: #000;
-
-      span {
-        display: block;
-        font-weight: 300;
-      }
-    }
-
-    .corporate__text-box {
-      position: absolute;
-      bottom: 3.5rem;
-      left: 3rem;
-
-      border-radius: 0 2.5rem 0 2.5rem;
-      padding: 1.5rem 2rem;
-      max-width: 620px;
-      z-index: 3;
-
-      .corporate__paragraph {
-        font-size: 1.5rem;
-        line-height: 1.6;
-        text-align: left;
-        padding: 0;
-        max-width: 100%;
-        width: auto;
-        position: relative;
-        bottom: -4rem;
-        position: relative;
-        bottom: -4rem;
-        right: -20rem;
-        strong {
-          font-weight: 700;
-        }
-      }
-    }
+  .corporate__image-only {
+    width: 100%;
+    height: 100vh;
+    background: url('assets/corporate/pt. 1/fondoEscritorio.jpg') no-repeat
+      center center;
+    background-size: cover;
+    background-position: center;
   }
 
-  // Decorativos
   .decor {
     position: absolute;
     z-index: 2;
@@ -3574,95 +3522,12 @@ ul {
   }
 }
 
-// ─────────────────────────────
-// MOBILE (hasta 768px)
-@media (max-width: 768px) {
-  .corporateBase {
-    height: auto;
-
-    .corporate__image-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .corporate__image {
-        width: 100%;
-        border-radius: 0;
-        max-height: none;
-      }
-
-      .corporate__title {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        font-size: 2.2rem;
-        padding: 1.5rem 2rem;
-        max-width: 80%;
-        border-radius: 1.5rem 0 1.5rem 0;
-      }
-
-      .corporate__text-box {
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        max-width: 85%;
-        padding: 1.2rem 1.5rem;
-        border-radius: 0 1.5rem 0 1.5rem;
-
-        .corporate__paragraph {
-          font-size: 1rem;
-          line-height: 1.5;
-        }
-      }
-    }
-
-    .decor--rays {
-      top: 20% !important;
-      left: 8% !important;
-      width: 45px !important;
-    }
-
-    .decor--x {
-      bottom: 5% !important;
-      right: 8% !important;
-      width: 55px !important;
-    }
-  }
-}
-
-// ─────────────────────────────
 // TABLET (769px - 1024px)
 @media (min-width: 769px) and (max-width: 1024px) {
   .corporateBase {
-    height: 680px;
-
-    .corporate__image-wrapper {
-      .corporate__image {
-        max-height: 680px;
-        border-radius: 1.5rem;
-      }
-
-      .corporate__title {
-        font-size: 3rem;
-        top: 2rem;
-        left: 2rem;
-        padding: 2rem 2.5rem;
-        max-width: 400px;
-        border-radius: 1.5rem 0 1.5rem 0;
-      }
-
-      .corporate__text-box {
-        bottom: 2rem;
-        left: 2rem;
-        max-width: 520px;
-        padding: 1.5rem 2rem;
-        border-radius: 0 1.5rem 0 1.5rem;
-
-        .corporate__paragraph {
-          font-size: 1.1rem;
-          line-height: 1.5;
-        }
-      }
+    .corporate__image-only {
+      height: 85vh;
+      background-image: url('assets/corporate/pt. 1/fondoEscritorio.jpg');
     }
 
     .decor--rays {
@@ -3679,78 +3544,52 @@ ul {
   }
 }
 
+// MOBILE (hasta 767px)
 @media (max-width: 767px) {
   .corporateBase {
-    height: auto;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #f5f5f5;
+    overflow: hidden;
 
-    .corporate__image-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .corporate__image-only {
+      width: 100%;
+      background-image: url('assets/corporate/pt. 1/fondoMobile.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top center;
+      background-color: #f5f5f5;
+      animation: fadeIn 0.8s ease-in-out;
+      padding-top: 107.2%; // proporción exacta 444 / 414
+      margin: 0 auto;
+      overflow: hidden;
 
-      .corporate__image {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-      }
-
-      .corporate__title {
-        position: relative;
-        background: white;
-        padding: 1.5rem 2rem;
-        font-size: 2.2rem;
-        max-width: 90%;
-        border-radius: 1.5rem 0 1.5rem 0;
-        z-index: 4;
-        margin-top: 1rem;
-        line-height: 1.1;
-        span {
-          display: block;
-          font-weight: 300;
-        }
-      }
-
-      .corporate__text-box {
-        position: relative;
-        margin-top: 1.5rem;
-        max-width: 90%;
-        padding: 1.5rem;
-        background: white;
-        border-radius: 0 1.5rem 0 1.5rem;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-        z-index: 3;
-
-        .corporate__paragraph {
-          font-size: 1rem;
-          line-height: 1.5;
-          text-align: left;
-        }
-      }
+      // Este height anula el heredado de escritorio que causaba la deformación
+      height: auto !important;
     }
+  }
 
-    .decor--rays {
-      top: 12% !important;
-      left: 8% !important;
-      width: 40px !important;
-      z-index: 1;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
 
-    .decor--x {
-      bottom: 4% !important;
-      right: 8% !important;
-      width: 50px !important;
-      z-index: 1;
-    }
+  // Por si hay espacio adicional entre secciones
+  .corporateBase + section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }
 
 // Segunda sección
 .corporate__impacto {
   position: relative;
-  background: url('assets/corporate/pt. 2/fondo.png') no-repeat center center;
+  background: url('assets/corporate/CORPORATEFONDOMOVIL.jpg') no-repeat center
+    center;
   background-size: cover;
   color: white;
   padding: 5rem 2rem;
@@ -3760,10 +3599,11 @@ ul {
   place-content: center;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
-
+  height: 597px;
   @media (min-width: 768px) {
-    height: auto;
+    height: 2283px;
     min-height: 100%;
+    background: url('assets/corporate/corporate.jpg') no-repeat center center;
   }
   .corporate__impacto-overlay {
     max-width: 900px;
