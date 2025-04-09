@@ -1914,6 +1914,7 @@ $button-hover: #e64a19;
         position: relative;
         left: 0;
         margin: 1.5rem 0 0 0;
+        margin-top: 4rem;
         @media (min-width: 768px) {
           font-size: 70px;
           margin-top: 17rem;
@@ -1953,7 +1954,8 @@ $button-hover: #e64a19;
     flex-wrap: wrap;
     align-items: center;
     padding: 0 1rem;
-    padding-top: 3rem;
+    padding-top: 0;
+
     @media (min-width: 768px) {
       flex-direction: row;
       padding-top: 5rem;
@@ -2660,17 +2662,25 @@ ul {
   text-align: center;
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 10px;
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
   .subtitulo {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #444;
     margin-bottom: 40px;
+    position: relative;
+    top: -1rem;
+    @media (min-width: 768px) {
+      font-size: 1.9rem;
+    }
   }
 
   .accesibilidad-grid {
@@ -2680,7 +2690,7 @@ ul {
     gap: 30px;
 
     .acceso-item {
-      max-width: 300px;
+      max-width: 356px;
       text-align: center;
 
       img {
@@ -2888,10 +2898,13 @@ ul {
   // background-size: cover;
   padding: 4rem 2rem;
   animation: fadeInUp 1s ease forwards;
-  min-height: 100vh; // <-- agrega esto
+  height: auto; // <-- agrega esto
   width: 100%; // <-- asegura el ancho
   overflow-x: hidden;
   gap: 3rem;
+  @media (min-width: 768px) {
+    height: 77vh; // <-- agrega esto
+  }
   &__formulario,
   &__info {
     opacity: 0;
@@ -2900,7 +2913,7 @@ ul {
   }
 
   &__formulario {
-    flex: 1 1 55%;
+    // flex: 1 1 55%;
     max-width: 700px; // para limitar su expansión horizontal
     color: white;
     animation-delay: 0.3s;
@@ -3062,7 +3075,7 @@ ul {
 
     &__formulario,
     &__info {
-      flex: 1 1 100%;
+      // flex: 1 1 100%;
       max-width: 100%;
       margin-left: 0;
     }
@@ -3204,9 +3217,8 @@ ul {
 // Segunda sección
 .corporate__impacto {
   position: relative;
-  background: url('assets/corporate/CORPORATEFONDOMOVIL.jpg') no-repeat center
-    center;
-  background-size: cover;
+  background: url('assets/corporate/corporate.jpg') no-repeat center center;
+  background-size: contain !important;
   color: white;
   padding: 5rem 2rem;
   text-align: center;
@@ -3220,6 +3232,7 @@ ul {
     height: 2283px;
     min-height: 100%;
     background: url('assets/corporate/corporate.jpg') no-repeat center center;
+    background-size: cover !important;
   }
   .corporate__impacto-overlay {
     max-width: 900px;
@@ -3672,8 +3685,10 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: 2rem;
+    @media (min-width: 768px) {
+      flex-wrap: wrap;
+    }
   }
 
   .diferenciador__info {
@@ -3685,11 +3700,14 @@ ul {
     .diferenciador__titulo {
       font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 1rem;
+      margin-bottom: -8rem;
+      @media (min-width: 768px) {
+        margin-bottom: 1rem;
+      }
 
       .diferenciador__highlight {
         display: inline-block;
-        margin-top: 0.5rem;
+        margin-top: 1.5rem;
 
         img {
           max-width: 180px;
@@ -3704,6 +3722,8 @@ ul {
       position: relative;
       right: -5rem;
       top: -5rem;
+      visibility: hidden;
+      display: block;
     }
 
     .diferenciador__texto {
@@ -3763,7 +3783,7 @@ ul {
 
       img {
         max-width: 90%;
-        box-shadow: 8px 8px 0 #e94e1b;
+        // box-shadow: 8px 8px 0 #e94e1b;
       }
     }
   }
@@ -3773,7 +3793,7 @@ ul {
   background-color: #e94e1b;
   color: white;
   // font-family: monospace;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 0.3rem 1rem;
   border-radius: 999px;
   display: inline-block;
@@ -3949,7 +3969,7 @@ ul {
 .headhunting-banner {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9; // ✅ Proporción perfecta para escritorio
+  aspect-ratio: 10 / 9; // ✅ Proporción perfecta para escritorio
   background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
   background-size: cover; // 🔥 Para que se ajuste y no se corte
   background-position: center center;

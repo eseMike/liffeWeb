@@ -1448,6 +1448,7 @@ h2 {
   position: relative;
   left: 0;
   margin: 1.5rem 0 0 0;
+  margin-top: 4rem;
 }
 @media (min-width: 768px) {
   .headhunting .text-container .headhunting-header h2 {
@@ -1490,7 +1491,7 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   padding: 0 1rem;
-  padding-top: 3rem;
+  padding-top: 0;
 }
 @media (min-width: 768px) {
   .headhunting .mainSecond2 {
@@ -2136,16 +2137,28 @@ ul {
   text-align: center;
 }
 .accesibilidad h2 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+@media (min-width: 768px) {
+  .accesibilidad h2 {
+    font-size: 3rem;
+  }
+}
 .accesibilidad .subtitulo {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #444;
   margin-bottom: 40px;
+  position: relative;
+  top: -1rem;
+}
+@media (min-width: 768px) {
+  .accesibilidad .subtitulo {
+    font-size: 1.9rem;
+  }
 }
 .accesibilidad .accesibilidad-grid {
   display: flex;
@@ -2154,7 +2167,7 @@ ul {
   gap: 30px;
 }
 .accesibilidad .accesibilidad-grid .acceso-item {
-  max-width: 300px;
+  max-width: 356px;
   text-align: center;
 }
 .accesibilidad .accesibilidad-grid .acceso-item img {
@@ -2329,10 +2342,15 @@ ul {
   background: url("../assets/contact/fondo.png") no-repeat center center;
   padding: 4rem 2rem;
   animation: fadeInUp 1s ease forwards;
-  min-height: 100vh;
+  height: auto;
   width: 100%;
   overflow-x: hidden;
   gap: 3rem;
+}
+@media (min-width: 768px) {
+  .contacto {
+    height: 77vh;
+  }
 }
 .contacto__formulario, .contacto__info {
   opacity: 0;
@@ -2340,7 +2358,6 @@ ul {
   animation: fadeInUp 1s ease forwards;
 }
 .contacto__formulario {
-  flex: 1 1 55%;
   max-width: 700px;
   color: white;
   animation-delay: 0.3s;
@@ -2487,7 +2504,6 @@ ul {
     padding: 3rem 1.5rem;
   }
   .contacto__formulario, .contacto__info {
-    flex: 1 1 100%;
     max-width: 100%;
     margin-left: 0;
   }
@@ -2603,8 +2619,8 @@ ul {
 }
 .corporate__impacto {
   position: relative;
-  background: url("assets/corporate/CORPORATEFONDOMOVIL.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("assets/corporate/corporate.jpg") no-repeat center center;
+  background-size: contain !important;
   color: white;
   padding: 5rem 2rem;
   text-align: center;
@@ -2620,6 +2636,7 @@ ul {
     height: 2283px;
     min-height: 100%;
     background: url("assets/corporate/corporate.jpg") no-repeat center center;
+    background-size: cover !important;
   }
 }
 .corporate__impacto .corporate__impacto-overlay {
@@ -3005,8 +3022,12 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .corporate__diferenciador .diferenciador__container {
+    flex-wrap: wrap;
+  }
 }
 .corporate__diferenciador .diferenciador__info {
   flex: 1 1 50%;
@@ -3017,11 +3038,16 @@ ul {
 .corporate__diferenciador .diferenciador__info .diferenciador__titulo {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: -8rem;
+}
+@media (min-width: 768px) {
+  .corporate__diferenciador .diferenciador__info .diferenciador__titulo {
+    margin-bottom: 1rem;
+  }
 }
 .corporate__diferenciador .diferenciador__info .diferenciador__titulo .diferenciador__highlight {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }
 .corporate__diferenciador .diferenciador__info .diferenciador__titulo .diferenciador__highlight img {
   max-width: 180px;
@@ -3032,6 +3058,8 @@ ul {
   position: relative;
   right: -5rem;
   top: -5rem;
+  visibility: hidden;
+  display: block;
 }
 .corporate__diferenciador .diferenciador__info .diferenciador__texto {
   color: rgba(255, 255, 255, 0.8);
@@ -3081,13 +3109,12 @@ ul {
   }
   .corporate__diferenciador .diferenciador__imagen img {
     max-width: 90%;
-    box-shadow: 8px 8px 0 #e94e1b;
   }
 }
 .diferenciador__highlight {
   background-color: #e94e1b;
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 0.3rem 1rem;
   border-radius: 999px;
   display: inline-block;
@@ -3247,7 +3274,7 @@ ul {
 .headhunting-banner {
   width: 100%;
   height: auto;
-  aspect-ratio: 16/9;
+  aspect-ratio: 10/9;
   background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
   background-size: cover;
   background-position: center center;
