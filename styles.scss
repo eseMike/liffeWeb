@@ -1,3 +1,4 @@
+// Fuentes personalizadas
 @font-face {
   font-family: 'NectoMono';
   src: url('assets/fonts/NectoMono-Regular.otf') format('opentype');
@@ -5,17 +6,18 @@
   font-style: normal;
 }
 
+// Utilidad de fuente monoespaciada
 .monoespaciado {
   font-family: 'NectoMono', monospace;
 }
 
-$primary-color: #111; // Color de fondo de la navbar
+// Colores base
+$primary-color: #111; // Fondo navbar
 $border-color: white;
 $button-color: #ff5722;
 $button-hover: #e64a19;
 
-// Fonts
-// Títulos y subtítulos
+// Tipografías principales
 .titulo-principal,
 h1,
 h2,
@@ -24,7 +26,6 @@ h3 {
   font-weight: 700;
 }
 
-// Subtítulos
 .subtitulo,
 h4,
 h5 {
@@ -36,57 +37,67 @@ body {
   font-family: 'DM Sans', sans-serif !important;
 }
 
+// Reset básico y consistencia visual
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-main {
-  margin: 0;
-  min-height: 100dvh;
-}
-
 html,
 body {
-  height: 100%;
   width: 100%;
-  overflow-x: hidden; // ✅ Muy útil para asegurar el fondo completo
+  height: 100%;
+  overflow-x: hidden; // ✅ Evita scroll lateral
 }
+
+main {
+  margin: 0;
+  min-height: 100dvh; // ✅ Mínimo alto de viewport completo
+}
+
+// =========================
+// Estilos para Navbar
+// =========================
 
 .navbar {
   background-color: $primary-color;
-  padding: 15px 0; // Agregamos más espacio en la navbar
+  padding: 15px 0; // Espaciado vertical en navbar
 }
 
 .navbar-brand img {
-  height: 40px; // Ajusta según el logo
+  height: 40px; // Tamaño del logo
 }
 
+// Estilos para enlaces de navegación
 .nav-link {
   border: 1px solid $border-color;
   border-radius: 50px;
-  padding: 10px 20px; // Más espacio en los botones
-  margin: 0 5px; // Separación entre botones
+  padding: 10px 20px;
+  margin: 0 5px;
   color: white;
   transition: all 0.3s ease-in-out;
+
   &:hover {
     background-color: white;
     color: black;
   }
 }
 
+// Botón "Sign up"
 .btn-signup {
   background-color: $button-color;
   border-radius: 50px;
   color: white;
   padding: 10px 20px;
   border: none;
+
   &:hover {
     background-color: $button-hover;
   }
 }
 
+// Botón de hamburguesa en responsive
 .navbar-toggler {
   border-color: white;
 }
@@ -99,35 +110,38 @@ body {
   margin: 0 10px;
 }
 
-// Estilos para el video
 .video-container {
   width: 100%;
-  height: auto; // Ocupa toda la altura de la ventana
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  z-index: -1; // Para que quede al fondo (si no lo necesitas encima)
+  z-index: -1; // Coloca el video detrás del contenido
+}
 
-  // Ajustes específicos para iPad (modo vertical y horizontal)
-  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .video-container {
-      height: 100vh;
-    }
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .video-container {
-      height: 100vh;
-    }
+// =========================
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait),
+  screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .video-container {
+    height: 100vh;
   }
 }
+
 .video-container video {
   width: 100%;
   height: 100%;
-  object-fit: cover; // Asegura que el video se vea bien en todas las pantallas
-  pointer-events: none; // Evita clics sobre el video
+  object-fit: cover; // Escala el video sin deformarlo
+  pointer-events: none; // Bloquea clics sobre el video
+}
+
+// Ajustes específicos para iPad en modo vertical y horizontal
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait),
+  screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .video-container {
+    height: 100vh;
+  }
 }
 
 // Sección de soluciones con diseño más preciso
@@ -1017,7 +1031,7 @@ h2 {
 
   // MOBILE (intacto)
   @media (max-width: 480px) {
-    padding-bottom: 250%;
+    padding-bottom: 100%;
 
     .fondo-3 {
       display: block;
@@ -1979,25 +1993,178 @@ $button-hover: #e64a19;
 // Frase Inspiradora
 .headhunting-banner {
   width: 100%;
-  height: 400px; // Ajusta según necesidad
+  aspect-ratio: 9 / 16;
   background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
   position: relative;
-  height: 800px;
-  .headhunting-overlay {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .headhunting-banner {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 9 / 16; // ✅ Esto mantiene proporción y evita el fondo blanco
+    background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
   }
 
-  // @media (max-width: 1024px) {
-  //   background-image: url('../assets/headhunting/bg-tablet.jpg');
-  // }
+  .headhunting-banner * {
+    position: relative;
+    z-index: 2;
+  }
 
-  // @media (max-width: 768px) {
-  //   background-image: url('../assets/headhunting/bg-mobile.jpg');
-  // }
+  .headhunting-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+// Corrección para mobile
+@media (max-width: 768px) {
+  .headhunting-banner {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .headhunting-banner * {
+    z-index: 2;
+    position: relative;
+  }
+
+  .headhunting-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  section,
+  .why-us {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+
+  .headhunting-banner + * {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+}
+
+// SOLO PARA MOBILE
+@media (max-width: 768px) {
+  .headhunting-banner {
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    height: 100dvh !important;
+    min-height: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    display: block;
+  }
+
+  .headhunting-banner + section,
+  .headhunting-banner + .why-us {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .why-us {
+    margin-top: -1px !important; // Fuerza unión exacta
+    padding-top: 0 !important;
+    background-color: transparent !important;
+  }
+}
+
+.headhunting-banner + section {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  height: auto !important;
+  min-height: unset !important;
+}
+
+@media (max-width: 768px) {
+  .headhunting-banner {
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    height: 100dvh !important;
+    min-height: unset !important;
+    padding: 0;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden;
+    display: block; // 👈 clave para evitar el espacio raro
+  }
+
+  .why-us {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    background: transparent !important;
+  }
+
+  .headhunting-banner + section {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .headhunting-banner + .why-us {
+    margin-block-start: 0 !important;
+    padding-block-start: 0 !important;
+    background-color: transparent !important;
+  }
 }
 
 // Sección "¿Por qué nosotros?"
@@ -3362,21 +3529,24 @@ ul {
       position: absolute;
       bottom: 3.5rem;
       left: 3rem;
-      background: white;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
       border-radius: 0 2.5rem 0 2.5rem;
       padding: 1.5rem 2rem;
       max-width: 620px;
       z-index: 3;
 
       .corporate__paragraph {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         line-height: 1.6;
         text-align: left;
         padding: 0;
         max-width: 100%;
         width: auto;
-
+        position: relative;
+        bottom: -4rem;
+        position: relative;
+        bottom: -4rem;
+        right: -20rem;
         strong {
           font-weight: 700;
         }
@@ -4182,7 +4352,7 @@ ul {
   width: 700px !important;
 }
 
-// Aux
+// Auxxf
 .icono--pasion {
   margin-top: 0;
 }
@@ -4198,4 +4368,124 @@ ul {
 .headerFlexTXT {
   position: relative;
   left: -0.5rem;
+}
+
+@media (max-width: 768px) {
+  body,
+  html {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .headhunting-banner {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  section {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .headhunting-banner {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .why-us .container,
+  .why-us .usAux,
+  .why-us .txtUx,
+  .why-us .image-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+
+  .why-us img {
+    display: none !important;
+  }
+
+  .why-us p,
+  .why-us h2 {
+    display: none !important;
+  }
+}
+
+// Frase Inspiradora
+.headhunting-banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #000; // fallback por si no carga la imagen
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+// Forzar 100% altura real en mobile con dvh moderno
+@media (max-width: 768px) {
+  .headhunting-banner {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  .headhunting-banner * {
+    z-index: 2;
+    position: relative;
+  }
+
+  .headhunting-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./assets/headhunting/fondoHeadHuntingfirst.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .headhunting-banner .headhunting-text {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+
+    h2 {
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
 }
