@@ -93,32 +93,24 @@ main {
 .video-container {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   position: relative;
   z-index: -1;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait), screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .video-container {
-    height: 100vh;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 .video-container video {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
   pointer-events: none;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait), screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .video-container {
-    height: 100vh;
-  }
-}
 .header-soluciones {
   background-color: black;
   width: 100vw;
@@ -717,6 +709,24 @@ h2 {
   box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .valor-boton {
+    max-width: 400px;
+    width: 90%;
+    font-size: 1.5rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .valor-item {
+    width: 100%;
+  }
+  .icono-valor {
+    width: 80px;
+    height: 80px;
+  }
+}
 @media (min-width: 1024px) {
   .valores-grid {
     display: grid;
@@ -755,14 +765,6 @@ h2 {
   }
   .valor-boton {
     max-width: 400px;
-  }
-}
-@media (max-width: 1023px) {
-  .valor-boton {
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 .testimonios {
@@ -1527,6 +1529,50 @@ h2 {
     height: 2px;
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mainSecond2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 0;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .imgHead {
+    max-width: 320px;
+    top: 0;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 5rem;
+  }
+  .text-container {
+    max-width: 90%;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .headhunting-header h2 {
+    font-size: 2.5rem;
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
+    left: 0 !important;
+    position: relative;
+    text-align: center;
+  }
+  .headhunting-text {
+    font-size: 1.2rem;
+    padding: 0;
+    gap: 1rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
 .why-us {
   background: #f4f4f4;
   padding: 40px 0;
@@ -2087,46 +2133,16 @@ ul {
   }
 }
 .como-funciona {
-  padding: 100px 0 0;
-  min-height: 3471px;
-  height: auto;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-  background-image: url("assets/lifeSkills/lifeSkilsBG.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-}
-.como-funciona .container {
-  overflow: visible !important;
-  max-width: 1200px;
+  position: relative;
   width: 100%;
-  padding: 0 20px;
-  margin: 0 auto;
+  overflow: hidden;
 }
-.como-funciona .section-title {
-  display: none;
+.como-funciona .fondo-como-funciona {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-@media (max-width: 768px) {
-  html,
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-  .como-funciona {
-    min-height: 765px;
-    height: auto;
-    background-size: 100% auto;
-    background-position: top center;
-    background-repeat: no-repeat;
-  }
-  .como-funciona .enfoque-central .enfoque-text {
-    text-align: center;
-  }
-}
 .accesibilidad {
   background: #ffffff;
   color: #000;
@@ -2315,16 +2331,6 @@ ul {
   color: #e74c3c;
 }
 
-@media (max-width: 768px) {
-  .como-funciona .steps-grid,
-  .como-funciona .filosofia-steps {
-    flex-direction: column;
-    align-items: center;
-  }
-  .como-funciona .enfoque-central .enfoque-text {
-    text-align: center;
-  }
-}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -2568,10 +2574,18 @@ ul {
   width: 90px;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .corporateBase .corporate__image-only {
-    height: 85vh;
+    width: 100%;
     background-image: url("assets/corporate/pt. 1/fondoEscritorio.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    background-color: #f5f5f5;
+    padding-top: 56.25%;
+    height: auto !important;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-in-out;
   }
   .corporateBase .decor--rays {
     top: 22%;
@@ -2620,24 +2634,14 @@ ul {
 .corporate__impacto {
   position: relative;
   background: url("assets/corporate/corporate.jpg") no-repeat center center;
-  background-size: contain !important;
+  background-size: cover;
+  background-color: #0d2c25;
   color: white;
-  padding: 5rem 2rem;
   text-align: center;
-  height: auto;
+  padding: 5rem 2rem;
   display: grid;
   place-content: center;
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
-  height: 597px;
-}
-@media (min-width: 768px) {
-  .corporate__impacto {
-    height: 2283px;
-    min-height: 100%;
-    background: url("assets/corporate/corporate.jpg") no-repeat center center;
-    background-size: cover !important;
-  }
+  min-height: 700px;
 }
 .corporate__impacto .corporate__impacto-overlay {
   max-width: 900px;
@@ -2667,11 +2671,11 @@ ul {
   flex-wrap: wrap;
   margin: 2rem 0;
 }
-.corporate__impacto .impacto__badge img {
+.corporate__impacto .impacto__info .impacto__badge img {
   width: 40px;
   height: 40px;
 }
-.corporate__impacto .impacto__texto-badge {
+.corporate__impacto .impacto__info .impacto__texto-badge {
   background: #0037a3;
   color: white;
   padding: 1rem 1.5rem;
@@ -2684,7 +2688,7 @@ ul {
   text-align: left;
   position: relative;
 }
-.corporate__impacto .impacto__texto-badge::after {
+.corporate__impacto .impacto__info .impacto__texto-badge::after {
   content: "";
   position: absolute;
   left: -10px;
@@ -2719,29 +2723,20 @@ ul {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .corporate__impacto {
     padding: 3rem 1.5rem;
-  }
-  .corporate__impacto .corporate__impacto-overlay {
-    padding: 0 1rem;
+    min-height: 700px;
+    aspect-ratio: 4/5;
   }
   .corporate__impacto .impacto__texto {
     font-size: 1rem;
     line-height: 1.6;
   }
-  .corporate__impacto .subrayado-contagiado {
-    font-size: 1rem;
-    display: inline-block;
-    padding: 0 6px;
-    border-bottom: 2px solid red;
-    background-color: rgba(255, 0, 0, 0.15);
-  }
   .corporate__impacto .impacto__info {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin: 2rem 0;
   }
   .corporate__impacto .impacto__info .impacto__badge img {
     width: 30px;
@@ -2769,60 +2764,6 @@ ul {
     right: 1rem;
   }
 }
-@media (max-width: 768px) {
-  .corporate__impacto {
-    flex-direction: column;
-    padding: 3rem 1rem;
-    text-align: center;
-  }
-  .corporate__impacto-contenido .impacto__texto {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-  .corporate__impacto-contenido .impacto__info {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 1rem;
-  }
-  .corporate__impacto-contenido .impacto__info .impacto__badge {
-    width: 40px;
-    height: 40px;
-  }
-  .corporate__impacto-contenido .impacto__info .impacto__badge img {
-    width: 20px;
-  }
-  .corporate__impacto-contenido .impacto__info .impacto__texto-badge {
-    margin: 1rem 0;
-    font-size: 0.95rem;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 1.2rem;
-    background: #1a39a8;
-  }
-  .corporate__impacto-contenido .impacto__info .impacto__texto-badge::after {
-    display: none;
-  }
-  .corporate__impacto-contenido .impacto__footer {
-    font-size: 0.85rem;
-    margin-top: 2rem;
-  }
-  .corporate__impacto .corporate__impacto-imagen {
-    margin-top: 2rem;
-  }
-  .corporate__impacto .impacto__sello {
-    width: 60px;
-    top: 1rem;
-    right: 1rem;
-  }
-}
-.subrayado {
-  text-decoration: underline;
-  color: #b5d9ff;
-}
-
 .corporate__liderazgo {
   background: #f2f2f2;
   color: #111;
@@ -2928,48 +2869,6 @@ ul {
   }
   .corporate__liderazgo .liderazgo__final {
     font-size: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  .corporate__impacto {
-    padding: 3rem 1rem;
-  }
-  .corporate__impacto-contenido .impacto__texto {
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .corporate__impacto-contenido .impacto__info {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    background: #0d2c25;
-    border-radius: 1rem;
-  }
-  .corporate__impacto-contenido .impacto__badge {
-    width: 40px;
-    height: 40px;
-  }
-  .corporate__impacto-contenido .impacto__badge img {
-    width: 20px;
-  }
-  .corporate__impacto-contenido .impacto__texto-badge {
-    font-size: 0.95rem;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 1.2rem;
-    background: #1a39a8;
-  }
-  .corporate__impacto-contenido .impacto__footer {
-    font-size: 0.85rem;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  .corporate__impacto .impacto__sello {
-    width: 40px;
-    top: 0.5rem;
-    right: 0.5rem;
   }
 }
 .impacto__info {
