@@ -60,7 +60,10 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
-          <div class="aux-btn d-flex align-items-center">
+          <div
+            class="aux-btn d-flex align-items-center"
+            style="display: none !important"
+          >
             <a href="#" class="nav-link">Log in</a>
             <a href="#" class="btn btn-signup ms-2">Sign up</a>
           </div>
@@ -100,7 +103,7 @@
                   Desarrolla las fortalezas que necesitas para tener éxito.
                 </p>
               </div>
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4 mb-4 centro">
                 <h3 class="soluciones-subtitle">
                   Para el desarrollo de <br />
                   tu organización y/o <br />
@@ -111,6 +114,7 @@
                   gente.
                 </p>
               </div>
+
               <div class="col-md-4 mb-4">
                 <h3 class="soluciones-subtitle">
                   Para reclutar al <br />
@@ -289,12 +293,15 @@
               DE LOS DEMÁS?
             </h2>
           </div>
-          <button
-            class="respuesta"
-            aria-label="Respuesta sobre cómo nos distinguimos"
-          >
-            Y nuestra respuesta es esta:
-          </button>
+          <div class="auxQuestion">
+            <button
+              class="respuesta"
+              aria-label="Respuesta sobre cómo nos distinguimos"
+            >
+              Y nuestra respuesta es esta:
+            </button>
+            <p>Por la combinación de:</p>
+          </div>
         </div>
 
         <div class="contenedor-cards" role="list">
@@ -307,10 +314,8 @@
               loading="lazy"
               decoding="async"
             />
-            <p>
-              <strong>Por la combinación de:</strong><br />
-              Experiencia multisectorial
-            </p>
+            <p>Experiencia multisectorial</p>
+            <p></p>
           </div>
 
           <div class="card" role="listitem">
@@ -323,7 +328,7 @@
               decoding="async"
             />
             <p>
-              <strong>Comprensión de</strong><br />
+              Comprensión de<br />
               la cultura latina
             </p>
           </div>
@@ -338,7 +343,7 @@
               decoding="async"
             />
             <p>
-              <strong>Enfoque en el autoconocimiento</strong><br />
+              Enfoque en el autoconocimiento<br />
               y desarrollo de personas y equipos.
             </p>
           </div>
@@ -657,7 +662,7 @@
                 loading="lazy"
               />
             </a>
-            <a href="#" aria-label="X">
+            <!-- <a href="#" aria-label="X">
               <img
                 src="assets/redesSociales/logoX.png"
                 alt="X"
@@ -665,7 +670,7 @@
                 height="24"
                 loading="lazy"
               />
-            </a>
+            </a> -->
             <a href="#" aria-label="Instagram">
               <img
                 src="assets/redesSociales/logoIg.png"
