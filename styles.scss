@@ -2939,24 +2939,17 @@ ul {
 
 // Segunda sección
 .corporate__impacto {
-  position: relative;
-  background: url('assets/corporate/corporate.jpg') no-repeat center center;
-  background-size: cover;
-  background-color: #0d2c25; // fondo de respaldo
-  color: white;
-  text-align: center;
-  padding: 5rem 2rem;
-  display: grid;
-  place-content: center;
-  min-height: 700px; // 👈 Ajusta según el tamaño real de la imagen
-
-  .corporate__impacto-overlay {
-    max-width: 900px;
-    margin: 0 auto;
-    z-index: 2;
-    position: relative;
-  }
-
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 196vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('assets/corporate/corporate.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; // 🔥 MOSTRAR TODA LA IMAGEN sin cortes
+  background-color: transparent !important;
   .impacto__texto {
     font-family: monospace;
     font-size: 1.2rem;
@@ -3044,9 +3037,9 @@ ul {
 @media (max-width: 1023px) {
   .corporate__impacto {
     padding: 3rem 1.5rem;
-    min-height: 700px; // ajustable según lo que necesites
+    height: auto; // ajustable según lo que necesites
     aspect-ratio: 4 / 5;
-
+    background-size: contain;
     .impacto__texto {
       font-size: 1rem;
       line-height: 1.6;

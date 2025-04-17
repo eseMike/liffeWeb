@@ -2730,22 +2730,17 @@ ul {
   }
 }
 .corporate__impacto {
-  position: relative;
-  background: url("assets/corporate/corporate.jpg") no-repeat center center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 196vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("assets/corporate/corporate.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
-  background-color: #0d2c25;
-  color: white;
-  text-align: center;
-  padding: 5rem 2rem;
-  display: grid;
-  place-content: center;
-  min-height: 700px;
-}
-.corporate__impacto .corporate__impacto-overlay {
-  max-width: 900px;
-  margin: 0 auto;
-  z-index: 2;
-  position: relative;
+  background-color: transparent !important;
 }
 .corporate__impacto .impacto__texto {
   font-family: monospace;
@@ -2824,8 +2819,9 @@ ul {
 @media (max-width: 1023px) {
   .corporate__impacto {
     padding: 3rem 1.5rem;
-    min-height: 700px;
+    height: auto;
     aspect-ratio: 4/5;
+    background-size: contain;
   }
   .corporate__impacto .impacto__texto {
     font-size: 1rem;
