@@ -49,6 +49,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden; // ✅ Evita scroll lateral
+  scroll-behavior: smooth;
 }
 
 main {
@@ -109,6 +110,15 @@ main {
   background-color: white;
   margin: 0 10px;
 }
+
+.nav-link.active {
+  background-color: white;
+  color: black !important;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); // efecto de brillo suave
+}
+
+// Video de fondo
 .video-container {
   width: 100%;
   height: auto;
@@ -913,6 +923,7 @@ h2 {
   background-color: #333;
 }
 
+// Footer
 .footer {
   background-color: #111;
   color: white;
@@ -927,7 +938,7 @@ h2 {
 }
 
 .clientes-titulo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 20px;
   color: #555;
@@ -995,28 +1006,27 @@ h2 {
 }
 
 .boton-arriba {
-  background: none;
+  background: transparent; // eliminamos fondo gris
   border: none;
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
+  bottom: 180px; // ← o más si el logo está más alto
   right: 20px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.3s ease;
-}
+  transition: transform 0.3s ease;
 
-.boton-arriba img {
-  width: 30px;
-}
+  img {
+    width: 50px;
+    transition: transform 0.3s ease;
+  }
 
-.boton-arriba:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  &:hover {
+    transform: scale(1.2); // se agranda suavemente
+  }
 }
 
 // Links
@@ -1290,6 +1300,22 @@ h2 {
     }
   }
 
+  .tarjetas-desktop img:hover {
+    transform: scale(1.05);
+    transition:
+      transform 0.8s ease,
+      box-shadow 0.8s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .custom-slide img:hover {
+    transform: scale(1.05);
+    transition:
+      transform 0.8s ease,
+      box-shadow 0.8s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
   .custom-slider-container {
     display: none;
   }
@@ -1356,7 +1382,6 @@ h2 {
     flex: 0 0 100%; /* 1 tarjeta por página en móvil */
   }
 }
-
 /* Estilos del Slider de Clientes */
 .clientes-slider-container {
   overflow: hidden;
@@ -1366,21 +1391,73 @@ h2 {
 
 .clientes-slider-wrapper {
   display: flex;
-  gap: 20px;
-  animation: scrollClientes 20s linear infinite;
+  gap: 80px;
   align-items: center;
+  animation: scrollClientes 60s linear infinite;
+  width: max-content; // Muy importante para que todo el contenido tenga su ancho natural
 }
 
 .clientes-slide {
-  flex: 0 0 calc(100% / 6); /* 6 logos en escritorio */
+  flex: 0 0 auto; // Ocupa solo el ancho que necesita cada logo
   text-align: center;
 }
 
 .clientes-slide img {
-  width: 100px;
-  height: auto;
-  filter: grayscale(100%);
+  width: 215px;
+  height: 100%;
   transition: transform 0.3s ease-in-out;
+}
+
+// Proporciones auxiliares personalizadas
+.gmAux {
+  width: 130px !important;
+}
+.motusAux {
+  width: 250px !important;
+}
+.scotiAux {
+  width: 290px !important;
+}
+.iinyxAux {
+  width: 260px !important;
+}
+.geAux {
+  width: 250px !important;
+}
+.delphiAux {
+  width: 260px !important;
+}
+.magnaAux {
+  width: 270px !important;
+}
+
+.evelenAux {
+  width: 110px !important;
+}
+
+.roseiAux {
+  width: 210px !important;
+}
+
+.daimlerAux {
+  width: 270px !important;
+}
+
+.learAux {
+  width: 270px !important;
+}
+
+.liebherrAux {
+  width: 270px !important;
+}
+.pemexAux {
+  width: 270px !important;
+}
+.tecAux {
+  width: 270px !important;
+}
+.aptivAux {
+  width: 290px !important;
 }
 
 .clientes-slide img:hover {
@@ -1388,22 +1465,24 @@ h2 {
   filter: grayscale(0%);
 }
 
+/* Animación de scroll infinito suave */
 @keyframes scrollClientes {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(-100%);
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 /* Responsive para móvil */
 @media (max-width: 768px) {
   .clientes-slide {
-    flex: 0 0 calc(100% / 3); /* 3 logos en móvil */
+    flex: 0 0 auto; // También libre en móvil
   }
+
   .clientes-slider-wrapper {
-    animation-duration: 15s; /* Movemos un poco más rápido en móviles */
+    animation-duration: 20s; // Un poco más rápido en móviles
   }
 }
 

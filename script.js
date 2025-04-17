@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ================== SLIDER PRINCIPAL ==================
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.dot');
 
@@ -20,151 +21,152 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const botonArriba = document.getElementById('botonArriba');
+  // ================== BOTÓN "IR ARRIBA" ==================
+  const boton = document.getElementById('botonArriba');
+  if (boton) {
+    boton.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log('¡Botón clickeado!');
 
-  if (botonArriba) {
-    window.addEventListener('scroll', () => {
-      botonArriba.style.display = window.scrollY > 300 ? 'flex' : 'none';
-    });
-
-    botonArriba.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  const customSlides = document.querySelectorAll('.custom-slide');
-  const customPagination = document.querySelector('.custom-slider-pagination');
-  const sliderWrapper = document.querySelector('.custom-slider-wrapper');
-
-  if (customSlides.length && customPagination && sliderWrapper) {
-    let customCurrentIndex = 0;
-    const customTotalSlides = customSlides.length;
-    const slidesPerPage = window.innerWidth > 768 ? 2 : 1;
-    const dotCount = Math.ceil(customTotalSlides / slidesPerPage);
-
-    for (let i = 0; i < dotCount; i++) {
-      const dot = document.createElement('span');
-      dot.className = `custom-dot${i === 0 ? ' active' : ''}`;
-      dot.dataset.index = i;
-      customPagination.appendChild(dot);
-    }
-
-    const updateCustomSlider = () => {
-      const offset = -((customCurrentIndex * 100) / slidesPerPage);
-      sliderWrapper.style.transform = `translateX(${offset}%)`;
-
-      document
-        .querySelectorAll('.custom-dot')
-        .forEach((dot) => dot.classList.remove('active'));
-      const activeDot =
-        document.querySelectorAll('.custom-dot')[
-          Math.floor(customCurrentIndex / slidesPerPage)
-        ];
-      if (activeDot) activeDot.classList.add('active');
-    };
-
-    const autoCustomSlide = () => {
-      customCurrentIndex =
-        (customCurrentIndex + slidesPerPage) % customTotalSlides;
-      updateCustomSlider();
-    };
-
-    let customInterval = setInterval(autoCustomSlide, 6000);
-
-    customPagination.addEventListener('click', (e) => {
-      if (e.target.classList.contains('custom-dot')) {
-        clearInterval(customInterval);
-        customCurrentIndex = parseInt(e.target.dataset.index) * slidesPerPage;
-        updateCustomSlider();
-        customInterval = setInterval(autoCustomSlide, 6000);
+      // Prueba primero scroll en body
+      if (document.body.scrollTop > 0) {
+        document.body.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      } else if (document.documentElement.scrollTop > 0) {
+        // Si el scroll está en html
+        document.documentElement.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      } else {
+        // Si hay un contenedor con scroll
+        const scrollable = document.querySelector('[style*="overflow"]');
+        if (scrollable) {
+          scrollable.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        }
       }
     });
-
-    updateCustomSlider();
   }
 
-  const slider = document.querySelector('.clientes-slider-wrapper');
+  // ================== TESTIMONIOS AUTO SLIDER ==================
+  const testimonialSlides = document.querySelectorAll('.slide');
+  const testimonialDots = document.querySelectorAll('.dot');
+  const testimonialSliderContainer = document.querySelector(
+    '.testimonios-slider'
+  );
 
-  if (slider) {
-    // En demo, solo usamos el contenido original para no duplicar DOM
-    slider.style.animation = 'scrollClientes 20s linear infinite';
+  if (
+    testimonialSlides.length &&
+    testimonialDots.length &&
+    testimonialSliderContainer
+  ) {
+    let testimonialIndex = 0;
+    let testimonialInterval;
+
+    const showTestimonial = (index) => {
+      testimonialSlides.forEach((slide, i) => {
+        slide.classList.toggle('activo', i === index);
+        testimonialDots[i].classList.toggle('activo', i === index);
+      });
+    };
+
+    const startTestimonialAutoSlide = () => {
+      testimonialInterval = setInterval(() => {
+        testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+        showTestimonial(testimonialIndex);
+      }, 6000);
+    };
+
+    const stopTestimonialAutoSlide = () => {
+      clearInterval(testimonialInterval);
+    };
+
+    // Iniciar auto-slide
+    startTestimonialAutoSlide();
+
+    // Paginación manual (dots)
+    testimonialDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopTestimonialAutoSlide();
+        testimonialIndex = index;
+        showTestimonial(testimonialIndex);
+        startTestimonialAutoSlide();
+      });
+    });
+
+    // Pausar si el cursor está encima
+    testimonialSliderContainer.addEventListener(
+      'mouseenter',
+      stopTestimonialAutoSlide
+    );
+    testimonialSliderContainer.addEventListener(
+      'mouseleave',
+      startTestimonialAutoSlide
+    );
   }
-});
 
-// Formulario
-document.addEventListener('DOMContentLoaded', () => {
+  // ================== SLIDER CLIENTES ==================
+  const clientesSliderWrapper = document.querySelector(
+    '.clientes-slider-wrapper'
+  );
+
+  if (clientesSliderWrapper) {
+    // Duplicamos todos los logos para lograr un scroll infinito
+    const slides = Array.from(clientesSliderWrapper.children);
+
+    slides.forEach((slide) => {
+      const clone = slide.cloneNode(true);
+      clientesSliderWrapper.appendChild(clone);
+    });
+  }
+
+  // ================== FORMULARIO ==================
   const form = document.querySelector('form');
   const mensajeConfirmacion = document.getElementById('mensajeConfirmacion');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevenir el envío real (por ahora)
+  if (form && mensajeConfirmacion) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    // Mostrar el mensaje de confirmación
-    mensajeConfirmacion.style.display = 'block';
+      mensajeConfirmacion.style.display = 'block';
 
-    // Ocultar después de 5 segundos (opcional)
-    setTimeout(() => {
-      mensajeConfirmacion.style.display = 'none';
-    }, 5000);
+      setTimeout(() => {
+        mensajeConfirmacion.style.display = 'none';
+      }, 5000);
 
-    // También puedes limpiar el formulario si quieres:
-    form.reset();
-  });
-});
-
-// Slider de empleados
-document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.slider__track');
-  if (!track) return;
-
-  const items = [...track.children]; // copia todos los slider__item originales
-  const clone = items.map((item) => item.cloneNode(true)); // los clona
-
-  clone.forEach((clonedItem) => {
-    track.appendChild(clonedItem); // los añade al final del slider
-  });
-});
-
-// Slider de clientes
-document.addEventListener('DOMContentLoaded', () => {
-  const customSlides = document.querySelectorAll('.custom-slide');
-  const customPagination = document.querySelector('.custom-slider-pagination');
-  const sliderWrapper = document.querySelector('.custom-slider-wrapper');
-
-  if (customSlides.length && customPagination && sliderWrapper) {
-    let customCurrentIndex = 0;
-    const customTotalSlides = customSlides.length;
-
-    // Generar un punto por cada slide
-    const dotCount = customTotalSlides;
-    customPagination.innerHTML = '';
-
-    for (let i = 0; i < dotCount; i++) {
-      const dot = document.createElement('span');
-      dot.className = `custom-dot${i === 0 ? ' active' : ''}`;
-      dot.dataset.index = i;
-      customPagination.appendChild(dot);
-    }
-
-    const updateCustomSlider = () => {
-      const offset = -(customCurrentIndex * 100);
-      sliderWrapper.style.transform = `translateX(${offset}%)`;
-
-      document
-        .querySelectorAll('.custom-dot')
-        .forEach((dot) => dot.classList.remove('active'));
-      const activeDot =
-        document.querySelectorAll('.custom-dot')[customCurrentIndex];
-      if (activeDot) activeDot.classList.add('active');
-    };
-
-    customPagination.addEventListener('click', (e) => {
-      if (e.target.classList.contains('custom-dot')) {
-        customCurrentIndex = parseInt(e.target.dataset.index);
-        updateCustomSlider();
-      }
+      form.reset();
     });
-
-    updateCustomSlider();
   }
+
+  // ================== SLIDER EMPLEADOS ==================
+  const track = document.querySelector('.slider__track');
+  if (track) {
+    const items = [...track.children];
+    const clone = items.map((item) => item.cloneNode(true));
+    clone.forEach((clonedItem) => {
+      track.appendChild(clonedItem);
+    });
+  }
+
+  // ================== CUSTOM SLIDER (OTRO BLOQUE) ==================
+  // Solo se define una vez arriba, este bloque era duplicado así que no se repite
+});
+
+// Secciones acrive en toolbar
+
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const currentPath = window.location.pathname.split('/').pop(); // Solo el nombre del archivo
+
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute('href');
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+  });
 });
