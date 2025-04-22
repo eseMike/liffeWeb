@@ -1975,168 +1975,6 @@ ul {
 }
 
 .liffe-skills {
-  background: #000 !important;
-  color: white;
-  padding: 60px 0;
-  text-align: center;
-  position: relative;
-}
-.liffe-skills .skills-header {
-  margin-bottom: 30px;
-}
-.liffe-skills .skills-header h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.liffe-skills .skills-header h2 .highlight {
-  color: white;
-}
-.liffe-skills .skills-header p {
-  font-size: 1.2rem;
-  color: #ddd;
-}
-.liffe-skills .skills-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-.liffe-skills .skills-icons svg {
-  width: 40px;
-  height: 40px;
-}
-.liffe-skills .skills-icons svg:nth-of-type(1) {
-  color: #4a9bae;
-}
-.liffe-skills .skills-icons svg:nth-of-type(2) {
-  color: #1c4740;
-}
-.liffe-skills .skills-icons svg:nth-of-type(3) {
-  color: #f15a2d;
-}
-.liffe-skills .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  margin: 2rem 0 !important;
-}
-.liffe-skills .skill-item {
-  padding: 15px 25px;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  display: inline-block;
-  text-align: center;
-  min-width: 220px;
-}
-.liffe-skills .skill-item.red {
-  background: linear-gradient(45deg, #e84920, #ff6933);
-  color: white;
-}
-.liffe-skills .skill-item.white {
-  background: white;
-  color: #e84920;
-}
-
-@media (max-width: 768px) {
-  .skills-header h2 {
-    font-size: 2rem;
-  }
-  .skills-icons {
-    gap: 10px;
-  }
-  .skills-icons img {
-    width: 40px;
-  }
-  .skills-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .skill-item {
-    width: 80%;
-    text-align: center;
-  }
-}
-.liffe-skills {
-  background: #000;
-  color: white;
-  padding: 60px 0;
-  text-align: center;
-  position: relative;
-}
-.liffe-skills .skills-header {
-  margin-bottom: 30px;
-}
-.liffe-skills .skills-header h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.liffe-skills .skills-header h2 .highlight {
-  color: white;
-}
-.liffe-skills .skills-header p {
-  font-size: 1.2rem;
-  color: #ddd;
-}
-.liffe-skills .skills-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.liffe-skills .skills-icons img {
-  width: 50px;
-  height: auto;
-}
-.liffe-skills .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
-  align-items: center;
-}
-.liffe-skills .skill-item {
-  padding: 15px 25px;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  display: inline-block;
-  text-align: center;
-  min-width: 220px;
-}
-.liffe-skills .skill-item.red {
-  background: linear-gradient(45deg, #e84920, #ff6933);
-  color: white;
-}
-.liffe-skills .skill-item.white {
-  background: white;
-  color: #e84920;
-}
-
-@media (max-width: 768px) {
-  .skills-header h2 {
-    font-size: 2rem;
-  }
-  .skills-icons {
-    gap: 10px;
-  }
-  .skills-icons img {
-    width: 40px;
-  }
-  .skills-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .skill-item {
-    width: 80%;
-    text-align: center;
-  }
-}
-.liffe-skills {
   background: #000;
   color: white;
   padding: 60px 0;
@@ -2191,9 +2029,9 @@ ul {
   justify-content: center;
   gap: 15px;
   max-width: 900px;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
 }
-.liffe-skills .skill-item {
+.liffe-skills .skills-grid .skill-item {
   padding: 15px 25px;
   border-radius: 25px;
   font-size: 1rem;
@@ -2201,31 +2039,36 @@ ul {
   display: inline-block;
   text-align: center;
   min-width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.liffe-skills .skill-item.red {
+.liffe-skills .skills-grid .skill-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.liffe-skills .skills-grid .skill-item.red {
   background: linear-gradient(45deg, #e84920, #ff6933);
   color: white;
 }
-.liffe-skills .skill-item.white {
+.liffe-skills .skills-grid .skill-item.white {
   background: white;
   color: #e84920;
 }
 
 @media (max-width: 768px) {
-  .skills-header h2 {
+  .liffe-skills .skills-header h2 {
     font-size: 2rem;
   }
-  .skills-icons {
+  .liffe-skills .skills-icons {
     gap: 10px;
   }
-  .skills-icons img {
+  .liffe-skills .skills-icons img {
     width: 40px;
   }
-  .skills-grid {
+  .liffe-skills .skills-grid {
     flex-direction: column;
     align-items: center;
   }
-  .skill-item {
+  .liffe-skills .skill-item {
     width: 80%;
     text-align: center;
   }
@@ -2292,7 +2135,7 @@ ul {
   margin-bottom: 15px;
 }
 .accesibilidad .accesibilidad-grid .acceso-item p {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #333;
   line-height: 1.4;
 }
@@ -2733,7 +2576,7 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: 196vh;
+  height: 208vh;
   margin: 0;
   padding: 0;
   background-image: url("assets/corporate/corporate.jpg");
@@ -2859,112 +2702,33 @@ ul {
   }
 }
 .corporate__liderazgo {
-  background: #f2f2f2;
-  color: #111;
-  padding: 5rem 2rem;
-  text-align: center;
-  position: relative;
-  border-radius: 2rem 2rem 0 0;
-}
-.corporate__liderazgo .liderazgo__container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-.corporate__liderazgo .liderazgo__intro {
-  font-size: 1.3rem;
-  font-weight: 400;
-  margin-bottom: 3rem;
-  line-height: 1.6;
-}
-.corporate__liderazgo .liderazgo__quote {
-  position: relative;
-  font-family: monospace;
-  font-size: 2.2rem;
-  font-weight: 700;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 10/5;
+  background-image: url("../assets/corporate/pt. 4/fondoLiderazgoDesktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  line-height: 1.8;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  color: #111;
-}
-.corporate__liderazgo .liderazgo__quote .comilla-superior,
-.corporate__liderazgo .liderazgo__quote .comilla-inferior {
-  width: 40px;
-}
-.corporate__liderazgo .liderazgo__quote .texto-cita {
   position: relative;
-  display: inline-block;
-  padding: 0 1rem;
+  overflow: hidden;
+  top: -1rem;
 }
-.corporate__liderazgo .liderazgo__quote .texto-cita .decor-asterisco {
-  position: absolute;
-  top: -2rem;
-  left: -2.5rem;
-  width: 30px;
+@media (min-width: 1024px) {
+  .corporate__liderazgo {
+    aspect-ratio: 10/6.5;
+    background-size: cover;
+    background-position: center;
+  }
 }
-.corporate__liderazgo .liderazgo__quote .texto-cita .decor-rayita {
-  position: absolute;
-  bottom: -2rem;
-  right: -2.5rem;
-  width: 30px;
-}
-.corporate__liderazgo .liderazgo__quote .texto-cita .cita-texto {
-  display: inline;
-  letter-spacing: 0.1rem;
-}
-.corporate__liderazgo .liderazgo__quote .texto-cita .destacado-container {
+.corporate__liderazgo * {
   position: relative;
-  display: inline-block;
-}
-.corporate__liderazgo .liderazgo__quote .texto-cita .destacado-container .destacado {
-  color: #e94e1b;
-  font-weight: bold;
-  position: relative;
-}
-.corporate__liderazgo .liderazgo__quote .texto-cita .destacado-container .subrayado-curvo {
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  pointer-events: none;
-}
-.corporate__liderazgo .liderazgo__final {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .corporate__liderazgo {
-    padding: 3rem 1.5rem;
-  }
-  .corporate__liderazgo .liderazgo__intro {
-    font-size: 1.1rem;
-  }
-  .corporate__liderazgo .liderazgo__quote {
-    font-size: 1.5rem;
-    gap: 1rem;
-  }
-  .corporate__liderazgo .liderazgo__quote .comilla-superior,
-  .corporate__liderazgo .liderazgo__quote .comilla-inferior {
-    width: 28px;
-  }
-  .corporate__liderazgo .liderazgo__quote .texto-cita .decor-asterisco,
-  .corporate__liderazgo .liderazgo__quote .texto-cita .decor-rayita {
-    width: 20px;
-    top: -1.5rem;
-    bottom: -1.5rem;
-  }
-  .corporate__liderazgo .liderazgo__quote .texto-cita .subrayado-curvo {
-    width: 100px;
-  }
-  .corporate__liderazgo .liderazgo__final {
-    font-size: 1rem;
-  }
-}
 .impacto__info {
   display: flex;
   align-items: center;
@@ -3010,6 +2774,8 @@ ul {
   background-color: #0d0d0d;
   color: white;
   padding: 4rem 2rem;
+  position: relative;
+  top: -1rem;
 }
 .corporate__diferenciador .diferenciador__container {
   display: flex;
@@ -3036,6 +2802,7 @@ ul {
 @media (min-width: 768px) {
   .corporate__diferenciador .diferenciador__info .diferenciador__titulo {
     margin-bottom: 1rem;
+    font-size: 3.3rem;
   }
 }
 .corporate__diferenciador .diferenciador__info .diferenciador__titulo .diferenciador__highlight {
@@ -3059,6 +2826,7 @@ ul {
   font-size: 1.5rem;
   line-height: 1.6;
   max-width: 90%;
+  margin-top: -4rem;
 }
 .corporate__diferenciador .diferenciador__imagen {
   flex: 1 1 45%;
@@ -3114,6 +2882,11 @@ ul {
   margin-top: 0.5rem;
   letter-spacing: 1px;
   line-height: 0;
+}
+@media (min-width: 768px) {
+  .diferenciador__highlight {
+    font-size: 3.3rem;
+  }
 }
 
 .corporate__equipo {
@@ -3267,10 +3040,8 @@ ul {
 .headhunting-banner {
   width: 100%;
   height: auto;
-  aspect-ratio: 10/9;
+  aspect-ratio: 10/5;
   background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-  background-size: cover;
-  background-position: center center;
   background-repeat: no-repeat;
   background-color: transparent;
   display: flex;
@@ -3278,6 +3049,18 @@ ul {
   justify-content: center;
   position: relative;
   overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .headhunting-banner {
+    aspect-ratio: 10/6.5;
+    background-size: contain;
+  }
+}
+@media (max-width: 1023px) {
+  .headhunting-banner {
+    background-size: cover;
+    background-position: center;
+  }
 }
 .headhunting-banner * {
   position: relative;
