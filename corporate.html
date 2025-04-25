@@ -113,7 +113,6 @@
     </section>
 
     <!-- Quinta sección - Nuestro equipo y toolbox -->
-    <!-- Quinta sección - Nuestro equipo y toolbox -->
     <section class="corporate__equipo">
       <div class="equipo__intro">
         <h2>Nuestro equipo y nuestro toolbox</h2>
@@ -136,17 +135,25 @@
       <div class="equipo__slider">
         <div class="slider__track">
           <!-- INTEGRANTES ORIGINALES -->
-          <div class="slider__item">
+          <div class="slider__item" id="aleMendoza">
             <img
               src="assets/corporate/pt. 6/Ale Mendoza.png"
               alt="Ale Mendoza"
             />
             <div class="slider__nombre">ALE MENDOZA</div>
           </div>
-          <div class="slider__item">
-            <img src="assets/corporate/pt. 6/Carlos.png" alt="Carlos" />
-            <div class="slider__nombre">CARLOS</div>
-          </div>
+         <div class="slider__item slider__item--hover">
+    <img src="assets/corporate/pt. 6/Carlos.png" alt="Carlos" />
+    <div class="slider__nombre">CARLOS</div>
+    <div class="hover-overlay">
+    <p>
+      Ale Mendoza es un líder apasionado y consultor organizacional con más de
+      25 años de experiencia en el desarrollo de personas, equipos y
+      organizaciones...
+    </p>
+      </div>
+      </div>
+
           <div class="slider__item">
             <img src="assets/corporate/pt. 6/Edisneth.png" alt="Edisneth" />
             <div class="slider__nombre">EDISNETH</div>
@@ -335,8 +342,8 @@
         </div>
       </div>
     </section>
+    <!-- fin de quinta seccion  -->
 
-    <!-- Testimonios  -->
     <!-- Testimonios  -->
     <section class="testimonios">
       <div class="container">
@@ -708,12 +715,30 @@
         </button>
       </div>
     </footer>
-  </body>
 
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    </section>
+
+<!-- Modal Biografía Ale Mendoza -->
+<div class="modal-bio" id="modalAle">
+  <div class="modal-bio__content">
+    <span class="modal-bio__close" id="closeModalAle">&times;</span>
+    <h2>Ale Mendoza</h2>
+    <p>
+      Socio fundador de Liffe Group y anfitrión del Podcast de Liderazgo de John Maxwell en español.<br><br>
+      Ale Mendoza es un líder apasionado y consultor organizacional con más de 25 años de experiencia en el desarrollo de personas, equipos y organizaciones. Su trayectoria abarca sectores como investigación, financiero, educativo y no lucrativo, ocupando posiciones de liderazgo en México y otros países. Como socio fundador de Liffe Group, Ale se dedica a inspirar a otros a descubrir y alcanzar su máximo potencial mediante coaching, mentoring, teambuildings y programas de capacitación diseñados para cerrar brechas clave en competencias.<br><br>
+      Es anfitrión del Podcast de Liderazgo de John Maxwell en español, un espacio que ha impactado a millones de oyentes en América Latina. Además, lidera el programa de certificación de coaches de Maxwell Leadership en español y la División de Soluciones Empresariales, capacitando a miles de profesionales y empresas de toda América Latina en competencias de liderazgo.<br><br>
+      Es un comunicador agudo y desafiante, y ha sido mentor en entornos internacionales, catedrático universitario y conferencista en temas de liderazgo y desarrollo personal. Vive en Saltillo, México, junto a su familia, donde continúa impulsando una nueva cultura de liderazgo a través de alianzas estratégicas y programas transformadores. Su estilo dinámico, cercano y retador convierte cada interacción en una experiencia de aprendizaje única.
+    </p>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

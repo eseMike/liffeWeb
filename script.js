@@ -170,3 +170,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// MODAL
+// Elementos del DOM
+const aleCard = document.getElementById('aleMendoza');
+const modalAle = document.getElementById('modalAle');
+const closeModalAle = document.getElementById('closeModalAle');
+
+// Abrir modal
+aleCard.addEventListener('click', () => {
+  modalAle.style.display = 'flex';
+});
+
+// Cerrar modal
+closeModalAle.addEventListener('click', () => {
+  modalAle.style.display = 'none';
+});
+
+// Cerrar si se hace clic fuera del contenido
+window.addEventListener('click', (e) => {
+  if (e.target === modalAle) {
+    modalAle.style.display = 'none';
+  }
+});

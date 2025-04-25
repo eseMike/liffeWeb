@@ -3128,7 +3128,7 @@ ul {
 }
 .slider__track {
   display: flex;
-  animation: scroll 90s linear infinite; // ⬅ Más lento (antes era 30s)
+  // animation: scroll 90s linear infinite;
   gap: 2rem;
   width: max-content;
 
@@ -3179,7 +3179,7 @@ ul {
 
 @media (max-width: 768px) {
   .slider__track {
-    animation: scroll 90s linear infinite;
+    // animation: scroll 90s linear infinite;
     gap: 1rem;
   }
 
@@ -3296,4 +3296,75 @@ ul {
     position: relative;
     z-index: 2;
   }
+}
+
+// MODALS
+.modal-bio {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.modal-bio__content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.modal-bio__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.slider__item--hover {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.slider__item--hover:hover {
+  transform: scale(1.05);
+}
+
+.slider__item--hover .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.slider__item--hover:hover .hover-overlay {
+  opacity: 1;
 }
