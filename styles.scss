@@ -2248,7 +2248,7 @@ ul {
   }
 
   .subtitulo {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #444;
     margin-bottom: 40px;
     position: relative;
@@ -3057,7 +3057,9 @@ ul {
       font-size: 1.7rem;
       line-height: 1.6;
       max-width: 90%;
-      margin-top: -4rem;
+      @media (min-width: 768px) {
+        margin-top: -4rem;
+      }
     }
   }
 

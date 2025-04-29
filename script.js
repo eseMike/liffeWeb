@@ -163,4 +163,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ================== SLIDER TARJETAS MOVIL ==================
+  const sliderWrapper = document.querySelector('.custom-slider-wrapper');
+  const slidesTarjetas = document.querySelectorAll('.custom-slide');
+  const paginationContainer = document.querySelector(
+    '.custom-slider-pagination'
+  );
+
+  if (sliderWrapper && slidesTarjetas.length > 0 && paginationContainer) {
+    let currentIndex = 0;
+
+    // Crear dots de paginación
+    slidesTarjetas.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.classList.add('custom-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateSlider();
+      });
+      paginationContainer.appendChild(dot);
+    });
+
+    const updateSlider = () => {
+      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      const dots = paginationContainer.querySelectorAll('.custom-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    };
+
+    updateSlider(); // Inicializa
+  }
 });
