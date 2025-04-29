@@ -26,29 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (boton) {
     boton.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log('¡Botón clickeado!');
+      console.log('Scroll forzado al anchor');
 
-      // Prueba primero scroll en body
-      if (document.body.scrollTop > 0) {
-        document.body.scrollTo({
-          top: 0,
+      const anchor = document.getElementById('scroll-top-anchor');
+      if (anchor) {
+        anchor.scrollIntoView({
           behavior: 'smooth',
+          block: 'start',
         });
-      } else if (document.documentElement.scrollTop > 0) {
-        // Si el scroll está en html
-        document.documentElement.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
-      } else {
-        // Si hay un contenedor con scroll
-        const scrollable = document.querySelector('[style*="overflow"]');
-        if (scrollable) {
-          scrollable.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
-        }
       }
     });
   }
@@ -86,10 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(testimonialInterval);
     };
 
-    // Iniciar auto-slide
     startTestimonialAutoSlide();
 
-    // Paginación manual (dots)
     testimonialDots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         stopTestimonialAutoSlide();
@@ -99,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Pausar si el cursor está encima
     testimonialSliderContainer.addEventListener(
       'mouseenter',
       stopTestimonialAutoSlide
@@ -116,9 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   if (clientesSliderWrapper) {
-    // Duplicamos todos los logos para lograr un scroll infinito
     const slides = Array.from(clientesSliderWrapper.children);
-
     slides.forEach((slide) => {
       const clone = slide.cloneNode(true);
       clientesSliderWrapper.appendChild(clone);
@@ -132,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form && mensajeConfirmacion) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
       mensajeConfirmacion.style.display = 'block';
 
       setTimeout(() => {
@@ -153,15 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================== CUSTOM SLIDER (OTRO BLOQUE) ==================
-  // Solo se define una vez arriba, este bloque era duplicado así que no se repite
-});
-
-// Secciones acrive en toolbar
-
-document.addEventListener('DOMContentLoaded', () => {
+  // ================== SECCIONES ACTIVAS EN NAVBAR ==================
   const navLinks = document.querySelectorAll('.nav-link');
-  const currentPath = window.location.pathname.split('/').pop(); // Solo el nombre del archivo
+  const currentPath = window.location.pathname.split('/').pop();
 
   navLinks.forEach((link) => {
     const linkPath = link.getAttribute('href');
@@ -169,27 +142,25 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
-});
 
-// MODAL
-// Elementos del DOM
-const aleCard = document.getElementById('aleMendoza');
-const modalAle = document.getElementById('modalAle');
-const closeModalAle = document.getElementById('closeModalAle');
+  // ================== MODAL DE ALE ==================
+  const aleCard = document.getElementById('aleMendoza');
+  const modalAle = document.getElementById('modalAle');
+  const closeModalAle = document.getElementById('closeModalAle');
 
-// Abrir modal
-aleCard.addEventListener('click', () => {
-  modalAle.style.display = 'flex';
-});
+  if (aleCard && modalAle && closeModalAle) {
+    aleCard.addEventListener('click', () => {
+      modalAle.style.display = 'flex';
+    });
 
-// Cerrar modal
-closeModalAle.addEventListener('click', () => {
-  modalAle.style.display = 'none';
-});
+    closeModalAle.addEventListener('click', () => {
+      modalAle.style.display = 'none';
+    });
 
-// Cerrar si se hace clic fuera del contenido
-window.addEventListener('click', (e) => {
-  if (e.target === modalAle) {
-    modalAle.style.display = 'none';
+    window.addEventListener('click', (e) => {
+      if (e.target === modalAle) {
+        modalAle.style.display = 'none';
+      }
+    });
   }
 });

@@ -1,4 +1,3 @@
-<!-- Sección de Presentación -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,15 +9,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Archivo compilado de SCSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- Fonts  -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
+    <div id="scroll-top-anchor" style="position: absolute; top: 0"></div>
+
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -69,7 +69,6 @@
       </div>
     </nav>
 
-    <!-- HEADHUNTING -->
     <section class="headhunting" aria-labelledby="headhunting-title">
       <div class="container">
         <div class="headhunting-content mainSecond2">
@@ -82,7 +81,6 @@
               class="imgHead"
             />
           </div>
-
           <div class="text-container">
             <div class="headhunting-header">
               <h2 class="monoespaciado headerFlexTXT" id="headhunting-title">
@@ -119,8 +117,6 @@
       </div>
     </section>
 
-    <!-- Frase Inspiradora -->
-    <!-- Banner HeadHunting con fondo responsivo -->
     <section
       class="headhunting-banner"
       aria-label="Banner principal de headhunting"
@@ -128,7 +124,6 @@
       <div class="headhunting-overlay"></div>
     </section>
 
-    <!-- Beneficios -->
     <section class="benefits">
       <div class="container">
         <h2 class="monoespaciado">
@@ -141,8 +136,8 @@
               src="./assets/headhunting/iconosColosRec/firstIcon.svg"
               alt="Icon"
             />
-            Un equipo dedicado de reclutadores con experiencia se asegu- ra de
-            que obtengas a los candidatos más calificados
+            Un equipo dedicado de reclutadores con experiencia se asegura de que
+            obtengas a los candidatos más calificados.
           </div>
           <div class="benefit-card">
             <img
@@ -150,24 +145,23 @@
               alt="Icon"
             />
             Ahorra un 50% de tu tiempo entrevistando solo a los 2-3 mejores
-            candidatos. Utilizamos datos para impulsar nuestra estrategia y
-            detectar brechas obstáculos en el momento perfecto para tener éxito.
+            candidatos. Utilizamos datos para impulsar nuestra estrategia.
           </div>
           <div class="benefit-card">
             <img
               src="./assets/headhunting/iconosColosRec/thirdIcon.svg"
               alt="Icon"
             />
-            Nuestro enfoque en el desarrollo humano en cada proceso aprovecha la
-            capacidad de nuestro equipo para garantizar un ajuste cultural.
+            Nuestro enfoque en el desarrollo humano, en cada proceso, garantiza
+            un ajuste cultural.
           </div>
           <div class="benefit-card">
             <img
               src="./assets/headhunting/iconosColosRec/fourthIcon.svg"
               alt="Icon"
             />
-            Obtén a tus mejores candidatos en un plazo de 5 días la- borables.
-            Manejamos todo el ciclo y estrategia de reclutamiento.
+            Obtén a tus mejores candidatos en un plazo de 5 días laborables.
+            Manejamos todo el ciclo de reclutamiento.
           </div>
           <div class="benefit-card">
             <img
@@ -181,52 +175,35 @@
       </div>
     </section>
 
-    <!-- Opciones de pago -->
     <section class="payment-options">
       <div class="container">
         <h2>2 opciones para ti</h2>
-        <!-- <div class="payment-toggle">
-          <label>
-            <input type="radio" name="payment" checked />
-            <span>Pago único</span>
-          </label>
-          <div class="toggle-switch"></div>
-          <label>
-            <input type="radio" name="payment" />
-            <span>Tarifa mensual Ahorra 30%</span>
-          </label>
-        </div> -->
         <div class="payment-grid">
           <div class="payment-card one-time">
             <h4>cazatalentos</h4>
             <h3>Pago único</h3>
-            <ul>
-              <li>✔️ Todo el funcionamiento compatible</li>
-              <li>✔️ Gran interfaz</li>
-              <li>✔️ Permite el cifrado</li>
-              <li>✔️ Sistema de reconocimiento facial</li>
-              <li>✔️ Soporte completo 24 horas al día, 7 días a la semana</li>
+            <ul class="check-list">
+              <li>Todo el funcionamiento compatible</li>
+              <li>Gran interfaz</li>
+              <li>Permite el cifrado</li>
+              <li>Sistema de reconocimiento facial</li>
+              <li>Soporte completo 24 horas al día, 7 días a la semana</li>
             </ul>
-            <!-- <button>Empieza ahora</button>  -->
           </div>
           <div class="payment-card monthly">
             <h4>Outsourcing del proceso de reclutamiento (RPO)</h4>
             <h3>Tarifa mensual</h3>
-            <ul>
-              <li>✔️ Todo el funcionamiento compatible</li>
-              <li>✔️ Gran interfaz</li>
-              <li>✔️ Permite el cifrado</li>
-              <li>✔️ Sistema de reconocimiento facial</li>
-              <li>✔️ Soporte completo 24 horas al día, 7 días a la semana</li>
+            <ul class="check-list">
+              <li>Todo el funcionamiento compatible</li>
+              <li>Gran interfaz</li>
+              <li>Permite el cifrado</li>
+              <li>Sistema de reconocimiento facial</li>
+              <li>Soporte completo 24 horas al día, 7 días a la semana</li>
             </ul>
-            <!-- <button>Empieza ahora</button>  -->
           </div>
         </div>
       </div>
     </section>
-
-  
-    </div>
 
     <footer class="footer">
       <div class="footer-content">
@@ -242,15 +219,6 @@
                 loading="lazy"
               />
             </a>
-            <!-- <a href="#" aria-label="X">
-              <img
-                src="assets/redesSociales/logoX.png"
-                alt="X"
-                width="24"
-                height="24"
-                loading="lazy"
-              />
-            </a> -->
             <a href="#" aria-label="Instagram">
               <img
                 src="assets/redesSociales/logoIg.png"
@@ -287,12 +255,12 @@
         </button>
       </div>
     </footer>
-  </body>
 
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
