@@ -2417,7 +2417,6 @@ ul {
 @media (min-width: 1024px) {
   .contacto__info {
     max-height: 400px;
-    overflow-y: auto;
   }
 }
 .contacto__info .info__contenedor {
@@ -2452,7 +2451,7 @@ ul {
 .contacto__info .info__icono-megafono {
   position: absolute;
   top: -60px;
-  right: -40px;
+  right: -67px;
   width: 120px;
   animation: flotar 3s ease-in-out infinite;
   z-index: 1;
@@ -3165,6 +3164,7 @@ ul {
   text-align: center;
   font-size: 0.9rem;
   flex-direction: column;
+  border-radius: 35px;
 }
 .slider__item--hover .hover-overlay p {
   font-size: 0.7rem !important;
