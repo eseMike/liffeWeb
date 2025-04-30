@@ -1320,12 +1320,10 @@ h2 {
   width: 160px;
   height: auto;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-  filter: grayscale(100%) brightness(15%) !important;
 }
 
 .clientes-slide img:hover {
   transform: scale(1.1);
-  filter: grayscale(0%) brightness(100%) !important;
 }
 
 .gmAux {
