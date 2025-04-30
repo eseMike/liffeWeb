@@ -3398,6 +3398,9 @@ ul {
   text-align: center;
   font-size: 0.9rem;
   flex-direction: column;
+  p {
+    font-size: 0.7rem !important;
+  }
 }
 
 .slider__item--hover:hover .hover-overlay {
