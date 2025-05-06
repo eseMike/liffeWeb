@@ -3251,4 +3251,19 @@ ul {
 
 .boton-arriba {
   z-index: 9999;
+}
+
+.botonWhatsapp {
+  position: fixed;
+  bottom: 8rem;
+  right: 1.5rem;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.botonWhatsapp:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=styles.css.map */

@@ -3490,3 +3490,19 @@ ul {
 .boton-arriba {
   z-index: 9999; // Asegura que esté por encima de todo
 }
+
+// Whats app
+.botonWhatsapp {
+  position: fixed;
+  bottom: 8rem; // Subimos el botón para evitar el footer
+  right: 1.5rem;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.botonWhatsapp:hover {
+  transform: scale(1.1);
+}
