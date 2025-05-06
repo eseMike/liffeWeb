@@ -2585,7 +2585,6 @@ ul {
         display: flex;
         align-items: flex-start;
         gap: 1rem;
-
         img {
           width: 24px;
           height: 24px;
@@ -2596,7 +2595,7 @@ ul {
         p {
           margin: 0;
           line-height: 1.6; // más aire entre líneas
-          font-size: 1rem;
+          font-size: 1.3rem;
           color: #ccc;
         }
       }
