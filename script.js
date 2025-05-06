@@ -145,14 +145,31 @@ document.addEventListener('DOMContentLoaded', () => {
       track.appendChild(clonedItem);
     });
   }
-
-  // ================== SECCIONES ACTIVAS EN NAVBAR ==================
+  // ========== SECCIONES ACTIVAS EN NAVBAR ==========
   const navLinks = document.querySelectorAll('.nav-link');
-  const currentPath = window.location.pathname.split('/').pop();
+  const currentPath = window.location.pathname
+    .split('/')
+    .pop()
+    .replace('.html', '')
+    .replace('./', '')
+    .toLowerCase(); // <-- Normaliza a minúsculas
 
   navLinks.forEach((link) => {
-    const linkPath = link.getAttribute('href');
+    const linkPath = link
+      .getAttribute('href')
+      .replace('.html', '')
+      .replace('./', '')
+      .toLowerCase(); // <-- También normaliza a minúsculas
+
     if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+
+    // Extra para index.html o raíz
+    if (
+      (currentPath === '' || currentPath === 'index') &&
+      linkPath === 'index'
+    ) {
       link.classList.add('active');
     }
   });
