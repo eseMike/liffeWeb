@@ -212,3 +212,51 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlider(); // Inicializa
   }
 });
+
+// ================== AUTO SLIDER EQUIPO ==================
+const equipoSlider = document.querySelector('.equipo__slider');
+
+if (equipoSlider) {
+  let autoScrollInterval;
+  let isUserScrolling = false;
+  let lastScrollTime = 0;
+
+  const scrollAmount = 270; // depende del width de .slider__item + gap
+
+  const startAutoScroll = () => {
+    autoScrollInterval = setInterval(() => {
+      if (!isUserScrolling) {
+        equipoSlider.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth',
+        });
+      }
+
+      // Reiniciar el scroll si llegamos al final
+      if (
+        equipoSlider.scrollLeft + equipoSlider.clientWidth >=
+        equipoSlider.scrollWidth
+      ) {
+        equipoSlider.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    }, 4000);
+  };
+
+  const stopAutoScroll = () => {
+    clearInterval(autoScrollInterval);
+  };
+
+  equipoSlider.addEventListener('scroll', () => {
+    isUserScrolling = true;
+    lastScrollTime = Date.now();
+  });
+
+  // Reanudar scroll automático después de 6 segundos de inactividad
+  setInterval(() => {
+    if (Date.now() - lastScrollTime > 6000) {
+      isUserScrolling = false;
+    }
+  }, 1000);
+
+  startAutoScroll();
+}

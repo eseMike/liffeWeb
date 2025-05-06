@@ -2941,23 +2941,31 @@ ul {
 }
 
 .equipo__slider {
-  overflow: hidden;
-  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  scroll-padding: 1rem;
+}
+.equipo__slider::-webkit-scrollbar {
+  display: none;
 }
 
 .slider__track {
   display: flex;
-  animation: scroll 90s linear infinite;
   gap: 2rem;
   width: -moz-max-content;
   width: max-content;
-}
-.slider__track:hover {
-  animation-play-state: paused;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: 1rem;
 }
 
 .slider__item {
   flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
