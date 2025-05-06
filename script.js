@@ -22,21 +22,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ================== BOTÓN "IR ARRIBA" ==================
-  const boton = document.getElementById('botonArriba');
-  if (boton) {
-    boton.addEventListener('click', function (e) {
-      e.preventDefault();
-      console.log('Scroll forzado al anchor');
+  window.addEventListener('load', () => {
+    const boton = document.getElementById('botonArriba');
+    if (!boton) return;
 
-      const anchor = document.getElementById('scroll-top-anchor');
-      if (anchor) {
-        anchor.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
+    // Mostrar el botón desde el inicio
+    boton.style.display = 'flex';
+    boton.style.opacity = '1';
+    boton.style.visibility = 'visible';
+
+    // Al hacer clic, sube directamente hasta arriba
+    boton.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Scroll forzado al top');
+
+      // Solución final para todos los navegadores
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+
+      // Fallback por si el smooth se interrumpe (extra)
+      setTimeout(() => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0); // fuerza final
+        }
+      }, 800); // tiempo suficiente para el scroll smooth
     });
-  }
+  });
 
   // ================== TESTIMONIOS AUTO SLIDER ==================
   const testimonialSlides = document.querySelectorAll('.slide');

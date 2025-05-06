@@ -47,11 +47,11 @@ body {
 html,
 body {
   width: 100%;
-  height: 100%;
-  overflow-x: hidden; // ✅ Evita scroll lateral
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
-
 main {
   margin: 0;
   min-height: 100dvh; // ✅ Mínimo alto de viewport completo
@@ -3396,11 +3396,14 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 0.9rem;
+
   flex-direction: column;
   border-radius: 35px;
   p {
     font-size: 0.7rem !important;
+    @media (min-width: 768px) {
+      font-size: 0.9rem !important;
+    }
   }
 }
 
@@ -3467,4 +3470,15 @@ ul {
     font-size: 1.5rem;
     cursor: pointer;
   }
+}
+
+.boton-arriba {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.boton-arriba {
+  z-index: 9999; // Asegura que esté por encima de todo
 }
