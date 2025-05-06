@@ -145,34 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
       track.appendChild(clonedItem);
     });
   }
-  // ========== SECCIONES ACTIVAS EN NAVBAR ==========
-  const navLinks = document.querySelectorAll('.nav-link');
-  const currentPath = window.location.pathname
-    .split('/')
-    .pop()
-    .replace('.html', '')
-    .replace('./', '')
-    .toLowerCase(); // <-- Normaliza a minúsculas
-
-  navLinks.forEach((link) => {
-    const linkPath = link
-      .getAttribute('href')
-      .replace('.html', '')
-      .replace('./', '')
-      .toLowerCase(); // <-- También normaliza a minúsculas
-
-    if (linkPath === currentPath) {
-      link.classList.add('active');
-    }
-
-    // Extra para index.html o raíz
-    if (
-      (currentPath === '' || currentPath === 'index') &&
-      linkPath === 'index'
-    ) {
-      link.classList.add('active');
-    }
-  });
 
   // ================== MODAL DE ALE ==================
   const aleCard = document.getElementById('aleMendoza');
@@ -277,3 +249,32 @@ if (equipoSlider) {
 
   startAutoScroll();
 }
+
+// ========== SECCIONES ACTIVAS EN NAVBAR ==========
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Normalizamos el pathname, considerando casos con o sin .html, y sin barra final
+  const currentPath = window.location.pathname
+    .split('/')
+    .pop()
+    .replace(/\.html$/, '')
+    .toLowerCase();
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    const linkPath = href
+      .split('/')
+      .pop()
+      .replace(/\.html$/, '')
+      .toLowerCase();
+
+    // Compara rutas normalizadas
+    if (
+      currentPath === linkPath ||
+      (currentPath === '' && linkPath === 'index')
+    ) {
+      link.classList.add('active');
+    }
+  });
+});
