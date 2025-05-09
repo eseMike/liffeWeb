@@ -2388,8 +2388,7 @@ ul {
 // Sección Cursos
 .cursos-listado {
   background-color: #fff;
-  padding: 60px 0;
-
+  padding: 20px 0;
   .grid-cursos {
     display: flex;
     flex-wrap: wrap;
@@ -2633,8 +2632,8 @@ ul {
 
     .info__icono-megafono {
       position: absolute;
-      top: -60px;
-      right: -67px;
+      top: -106px;
+      right: -49px;
       width: 120px;
       animation: flotar 3s ease-in-out infinite;
       z-index: 1;
@@ -2674,9 +2673,9 @@ ul {
     }
 
     .info__icono-megafono {
-      top: -50px;
+      top: -74px;
       right: -20px;
-      width: 100px;
+      width: 83px;
     }
   }
 }
@@ -3522,43 +3521,29 @@ ul {
   z-index: 9999; // Asegura que esté por encima de todo
 }
 
-// Whats app
-.botonWhatsapp {
-  position: fixed;
-  bottom: 8rem; // Subimos el botón para evitar el footer
-  right: 1.5rem;
-  z-index: 1000;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.botonWhatsapp:hover {
-  transform: scale(1.1);
-}
-
-// WhatsApp solo flotante cuando no es headhunting ni corporate
-body.page-headhunting .botonWhatsapp,
-body.page-corporate .botonWhatsapp {
-  display: none !important;
-}
-
-// Estático arriba del footer solo en esas dos páginas
-.whatsapp-bottom {
-  display: none;
-  justify-content: center;
-  margin: 2rem 0;
+// WhatsApp botón estático a un lado del botón de subir
+// WhatsApp estático pero alineado visualmente al botón subir
+.whatsapp-bottom-derecha {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rem 4.5rem 0 1.5rem; // right = 1.5rem (naranja) + 60px (ancho del botón subir) + 10px espacio
 
   a.botonWhatsappEstatico {
     width: 60px;
     height: 60px;
     display: inline-block;
+
     svg {
       width: 100%;
       height: 100%;
     }
   }
+}
+
+// Mostrar solo si es una de esas páginas
+body.page-headhunting .whatsapp-bottom,
+body.page-corporate .whatsapp-bottom {
+  display: flex;
 }
 
 // Mostrar solo si es una de esas páginas
@@ -3598,8 +3583,8 @@ body.page-corporate .whatsapp-bottom {
 
     .whatsapp-bottom {
       display: flex;
-      justify-content: flex-start;
-      margin: 2rem 0;
+      justify-content: flex-end;
+      padding: 0rem 4.5rem 0 1.5rem; // 1.5rem base + 60px botón naranja + 10px separación
 
       a.botonWhatsappEstatico {
         width: 60px;
@@ -3612,13 +3597,35 @@ body.page-corporate .whatsapp-bottom {
         }
       }
 
-      // SOLO en escritorio
+      // En escritorio sigue siendo estático pero alineado correctamente
       @media (min-width: 768px) {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 1.5rem;
+        position: static;
         align-items: flex-end;
-        z-index: 10;
+        z-index: auto;
+      }
+    }
+  }
+}
+
+// Contact - botón de WhatsApp junto al botón enviar
+.contacto__formulario {
+  .boton-con-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px; // separa el botón de enviar y el ícono de WhatsApp
+
+    .boton-enviar {
+      margin-bottom: 0; // opcional si quieres alinear perfecto
+    }
+
+    .botonWhatsappEstatico {
+      width: 48px;
+      height: 48px;
+      display: inline-block;
+
+      svg {
+        width: 100%;
+        height: 100%;
       }
     }
   }

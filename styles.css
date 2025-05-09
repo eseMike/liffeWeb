@@ -2258,7 +2258,7 @@ ul {
 
 .cursos-listado {
   background-color: #fff;
-  padding: 60px 0;
+  padding: 20px 0;
 }
 .cursos-listado .grid-cursos {
   display: flex;
@@ -2475,8 +2475,8 @@ ul {
 }
 .contacto__info .info__icono-megafono {
   position: absolute;
-  top: -60px;
-  right: -67px;
+  top: -106px;
+  right: -49px;
   width: 120px;
   animation: flotar 3s ease-in-out infinite;
   z-index: 1;
@@ -2509,9 +2509,9 @@ ul {
     margin-top: 0;
   }
   .contacto .info__icono-megafono {
-    top: -50px;
+    top: -74px;
     right: -20px;
-    width: 100px;
+    width: 83px;
   }
 }
 .mensaje-confirmacion {
@@ -3279,39 +3279,24 @@ ul {
   z-index: 9999;
 }
 
-.botonWhatsapp {
-  position: fixed;
-  bottom: 8rem;
-  right: 1.5rem;
-  z-index: 1000;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
+.whatsapp-bottom-derecha {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rem 4.5rem 0 1.5rem;
 }
-
-.botonWhatsapp:hover {
-  transform: scale(1.1);
-}
-
-body.page-headhunting .botonWhatsapp,
-body.page-corporate .botonWhatsapp {
-  display: none !important;
-}
-
-.whatsapp-bottom {
-  display: none;
-  justify-content: center;
-  margin: 2rem 0;
-}
-.whatsapp-bottom a.botonWhatsappEstatico {
+.whatsapp-bottom-derecha a.botonWhatsappEstatico {
   width: 60px;
   height: 60px;
   display: inline-block;
 }
-.whatsapp-bottom a.botonWhatsappEstatico svg {
+.whatsapp-bottom-derecha a.botonWhatsappEstatico svg {
   width: 100%;
   height: 100%;
+}
+
+body.page-headhunting .whatsapp-bottom,
+body.page-corporate .whatsapp-bottom {
+  display: flex;
 }
 
 body.page-headhunting .whatsapp-bottom,
@@ -3345,8 +3330,8 @@ body.page-corporate .whatsapp-bottom {
 }
 .page-lifeskills .cursos-listado .whatsapp-bottom {
   display: flex;
-  justify-content: flex-start;
-  margin: 2rem 0;
+  justify-content: flex-end;
+  padding: 0rem 4.5rem 0 1.5rem;
 }
 .page-lifeskills .cursos-listado .whatsapp-bottom a.botonWhatsappEstatico {
   width: 60px;
@@ -3359,10 +3344,26 @@ body.page-corporate .whatsapp-bottom {
 }
 @media (min-width: 768px) {
   .page-lifeskills .cursos-listado .whatsapp-bottom {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
+    position: static;
     align-items: flex-end;
-    z-index: 10;
+    z-index: auto;
   }
+}
+
+.contacto__formulario .boton-con-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contacto__formulario .boton-con-whatsapp .boton-enviar {
+  margin-bottom: 0;
+}
+.contacto__formulario .boton-con-whatsapp .botonWhatsappEstatico {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+.contacto__formulario .boton-con-whatsapp .botonWhatsappEstatico svg {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=styles.css.map */
