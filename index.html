@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="styles.css" />
     <!-- Archivo compilado de SCSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swyper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
 
   <body>
@@ -74,7 +80,7 @@
 
     <!-- Video de fondo -->
     <div class="video-container" aria-hidden="true">
-      <video autoplay muted loop playsinline preload="auto">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto">
         <source src="assets/video.mp4" type="video/mp4" />
         Tu navegador no soporta videos HTML5.
       </video>
@@ -359,8 +365,80 @@
         </div>
       </div>
     </section>
+    <!-- ========== SLIDER DE VIDEOS CON FLECHAS ========== -->
+    <section class="video-carousel-container">
+      <h2 class="video-carousel-title">Testimonios en video</h2>
 
-    <!-- Testimonios  -->
+      <div
+        id="videoCarousel"
+        class="carousel carousel-dark"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <video controls class="w-100 rounded shadow-sm">
+                    <source src="assets/videos/video1.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <video controls class="w-100 rounded shadow-sm">
+                    <source src="assets/videos/video2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <video controls class="w-100 rounded shadow-sm">
+                    <source src="assets/videos/video3.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                  <video controls class="w-100 rounded shadow-sm">
+                    <source src="assets/videos/video4.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <video controls class="w-100 rounded shadow-sm">
+                    <source src="assets/videos/video5.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#videoCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#videoCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
     <!-- Testimonios -->
     <section class="testimonios">
       <div class="container">
@@ -576,6 +654,8 @@
 
     <div class="clientes">
       <h3 class="clientes-titulo">Nuestros Clientes</h3>
+
+      <!-- ========== SLIDER DE VIDEOS CON BOOTSTRAP ========== -->
 
       <!-- SLIDER DE LOGOS DE CLIENTES -->
       <section
