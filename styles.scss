@@ -3587,8 +3587,12 @@ body.page-corporate .whatsapp-bottom {
       justify-content: flex-end;
       padding: 0rem 4.5rem 0 1.5rem; // 1.5rem base + 60px botón naranja + 10px separación
       position: relative !important;
-      top: -20rem;
-      right: 21rem;
+      top: 0rem;
+      right: 6rem;
+      @media (min-width: 768px) {
+        top: -20rem;
+        right: 21rem;
+      }
       a.botonWhatsappEstatico {
         width: 60px;
         height: 60px;
@@ -3614,7 +3618,7 @@ body.page-corporate .whatsapp-bottom {
 .contacto__formulario {
   .boton-con-whatsapp {
     display: flex;
-    align-items: center;
+    // align-items: center;
     gap: 10px; // separa el botón de enviar y el ícono de WhatsApp
 
     .boton-enviar {
@@ -3762,16 +3766,16 @@ video.hero__video {
   justify-content: center !important;
 }
 .botonWhatsappEstatico__icono {
-  width: 100px !important;
-  height: 100px !important;
+  width: 85px !important;
+  height: 68px !important;
 }
 
 .btnAuxHead {
   position: relative !important;
-  right: 0rem;
+  right: 6rem;
   top: 1rem;
   @media (min-width: 768px) {
-    right: -25rem;
+    right: 18rem;
     top: -13rem;
   }
 }
