@@ -3495,6 +3495,12 @@ video.hero__video {
 
 .btnAuxHead {
   position: relative !important;
-  right: -25rem;
-  top: -13rem;
+  right: 0rem;
+  top: 1rem;
+}
+@media (min-width: 768px) {
+  .btnAuxHead {
+    right: -25rem;
+    top: -13rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
