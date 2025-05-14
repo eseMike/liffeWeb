@@ -3491,4 +3491,10 @@ video.hero__video {
 .botonWhatsappEstatico__icono {
   width: 100px !important;
   height: 100px !important;
+}
+
+.btnAuxHead {
+  position: relative !important;
+  right: -25rem;
+  top: -13rem;
 }/*# sourceMappingURL=styles.css.map */
