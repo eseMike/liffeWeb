@@ -3187,7 +3187,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 41px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 1rem;
@@ -3198,7 +3198,6 @@ ul {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  border-radius: 35px;
 }
 .slider__item--hover .hover-overlay p {
   font-size: 0.7rem !important;
