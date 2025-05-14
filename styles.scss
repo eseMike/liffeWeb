@@ -3350,7 +3350,7 @@ ul {
   @media (max-width: 1023px) {
     background-size: cover;
     background-position: center;
-    min-height: 360px;
+    min-height: 520px;
     aspect-ratio: unset;
   }
 
@@ -3587,8 +3587,10 @@ body.page-corporate .whatsapp-bottom {
       justify-content: flex-end;
       padding: 0rem 4.5rem 0 1.5rem; // 1.5rem base + 60px botón naranja + 10px separación
       position: relative !important;
-      top: 0rem;
+      top: 1rem;
       right: 6rem;
+      padding-bottom: 2rem;
+      padding-top: 1.5rem;
       @media (min-width: 768px) {
         top: -20rem;
         right: 21rem;
