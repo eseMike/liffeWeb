@@ -3766,6 +3766,8 @@ video.hero__video {
   align-items: center !important;
   justify-content: center !important;
 }
+
+// end video
 .botonWhatsappEstatico__icono {
   width: 85px !important;
   height: 68px !important;
@@ -3775,8 +3777,14 @@ video.hero__video {
   position: relative !important;
   right: 6rem;
   top: 1rem;
-  @media (min-width: 768px) {
-    right: 18rem;
+  // Tablet (768px a 1023px aprox.)
+  @media (min-width: 768px) and (max-width: 1023px) {
+    right: 3rem;
+    top: -8rem;
+  }
+  // Escritorio (1024px en adelante)
+  @media (min-width: 1024px) {
+    right: 11rem;
     top: -13rem;
   }
 }

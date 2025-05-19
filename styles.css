@@ -3504,9 +3504,15 @@ video.hero__video {
   right: 6rem;
   top: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .btnAuxHead {
-    right: 18rem;
+    right: 3rem;
+    top: -8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .btnAuxHead {
+    right: 11rem;
     top: -13rem;
   }
 }/*# sourceMappingURL=styles.css.map */
