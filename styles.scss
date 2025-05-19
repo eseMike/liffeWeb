@@ -3580,7 +3580,6 @@ body.page-corporate .whatsapp-bottom {
 .page-lifeskills {
   .cursos-listado {
     position: relative;
-
     .whatsapp-bottom {
       display: flex;
       justify-content: flex-end;
@@ -3590,10 +3589,7 @@ body.page-corporate .whatsapp-bottom {
       right: 6rem;
       padding-bottom: 2rem;
       padding-top: 1.5rem;
-      @media (min-width: 768px) {
-        top: -20rem;
-        right: 21rem;
-      }
+
       a.botonWhatsappEstatico {
         width: 60px;
         height: 60px;
@@ -3605,11 +3601,18 @@ body.page-corporate .whatsapp-bottom {
         }
       }
 
-      // En escritorio sigue siendo estático pero alineado correctamente
-      @media (min-width: 768px) {
+      // 📲 Tablet (768px a 1023px)
+      @media (min-width: 768px) and (max-width: 1023px) {
+        top: 1rem;
+        right: 17rem;
+      }
+
+      // 🖥️ Escritorio (1024px en adelante)
+      @media (min-width: 1024px) {
         position: static;
         align-items: flex-end;
         z-index: auto;
+        top: -20rem;
       }
     }
   }
