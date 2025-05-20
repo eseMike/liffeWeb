@@ -3386,16 +3386,21 @@ body.page-corporate .whatsapp-bottom {
 }
 
 .video-carousel-title {
-  font-size: 2rem;
+  font-size: 4.5rem;
   margin-bottom: 2rem;
   font-weight: bold;
+}
+
+.video-test-aux {
+  font-size: 2.5rem;
+  margin-top: -2rem;
 }
 
 .video-carousel-container video {
   width: 100%;
   max-height: 360px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 0 !important;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
