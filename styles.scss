@@ -3650,14 +3650,20 @@ body.page-corporate .whatsapp-bottom {
 }
 
 .video-carousel-title {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  @media (min-width: 768px) {
+    font-size: 4.5rem;
+  }
 }
 
 .video-test-aux {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-top: -2rem;
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
 }
 
 // Estilo global SOLO para videos del slider

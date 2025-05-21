@@ -52,25 +52,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ================== TESTIMONIOS AUTO SLIDER ==================
   const testimonialSlides = document.querySelectorAll('.slide');
-  const testimonialDots = document.querySelectorAll('.dot');
   const testimonialSliderContainer = document.querySelector(
     '.testimonios-slider'
   );
+  const paginacionContainer = document.querySelector('.paginacion');
 
   if (
     testimonialSlides.length &&
-    testimonialDots.length &&
-    testimonialSliderContainer
+    testimonialSliderContainer &&
+    paginacionContainer
   ) {
     let testimonialIndex = 0;
     let testimonialInterval;
 
+    // Limpiamos y generamos paginación dinámica
+    paginacionContainer.innerHTML = '';
+
+    testimonialSlides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      dot.setAttribute('data-slide', i);
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Ver testimonio ${i + 1}`);
+      paginacionContainer.appendChild(dot);
+    });
+
+    const testimonialDots = paginacionContainer.querySelectorAll('.dot');
+
     const showTestimonial = (index) => {
       testimonialSlides.forEach((slide, i) => {
         slide.classList.toggle('activo', i === index);
-        testimonialDots[i].classList.toggle('activo', i === index);
+      });
+      testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('activo', i === index);
       });
     };
 
@@ -85,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(testimonialInterval);
     };
 
+    showTestimonial(testimonialIndex);
     startTestimonialAutoSlide();
 
     testimonialDots.forEach((dot, index) => {
