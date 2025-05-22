@@ -26,32 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const boton = document.getElementById('botonArriba');
     if (!boton) return;
 
-    // Mostrar el botón desde el inicio
     boton.style.display = 'flex';
     boton.style.opacity = '1';
     boton.style.visibility = 'visible';
 
-    // Al hacer clic, sube directamente hasta arriba
     boton.addEventListener('click', (e) => {
       e.preventDefault();
-      console.log('Scroll forzado al top');
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 
-      // Solución final para todos los navegadores
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth',
-      });
-
-      // Fallback por si el smooth se interrumpe (extra)
       setTimeout(() => {
         if (window.scrollY > 0) {
-          window.scrollTo(0, 0); // fuerza final
+          window.scrollTo(0, 0);
         }
-      }, 800); // tiempo suficiente para el scroll smooth
+      }, 800);
     });
   });
 
+  // ================== TESTIMONIOS ==================
   const testimonialSlides = document.querySelectorAll('.slide');
   const testimonialSliderContainer = document.querySelector(
     '.testimonios-slider'
@@ -66,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let testimonialIndex = 0;
     let testimonialInterval;
 
-    // Limpiamos y generamos paginación dinámica
     paginacionContainer.innerHTML = '';
 
     testimonialSlides.forEach((_, i) => {
@@ -126,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const clientesSliderWrapper = document.querySelector(
     '.clientes-slider-wrapper'
   );
-
   if (clientesSliderWrapper) {
     const slides = Array.from(clientesSliderWrapper.children);
     slides.forEach((slide) => {
@@ -138,16 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================== FORMULARIO ==================
   const form = document.querySelector('form');
   const mensajeConfirmacion = document.getElementById('mensajeConfirmacion');
-
   if (form && mensajeConfirmacion) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       mensajeConfirmacion.style.display = 'block';
-
       setTimeout(() => {
         mensajeConfirmacion.style.display = 'none';
       }, 5000);
-
       form.reset();
     });
   }
@@ -162,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================== MODAL DE ALE ==================
+  // ================== MODAL ALE ==================
   const aleCard = document.getElementById('aleMendoza');
   const modalAle = document.getElementById('modalAle');
   const closeModalAle = document.getElementById('closeModalAle');
@@ -183,100 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ================== SLIDER TARJETAS MOVIL ==================
-  const sliderWrapper = document.querySelector('.custom-slider-wrapper');
-  const slidesTarjetas = document.querySelectorAll('.custom-slide');
-  const paginationContainer = document.querySelector(
-    '.custom-slider-pagination'
-  );
-
-  if (sliderWrapper && slidesTarjetas.length > 0 && paginationContainer) {
-    let currentIndex = 0;
-
-    // Crear dots de paginación
-    slidesTarjetas.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.classList.add('custom-dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => {
-        currentIndex = i;
-        updateSlider();
-      });
-      paginationContainer.appendChild(dot);
-    });
-
-    const updateSlider = () => {
-      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-      const dots = paginationContainer.querySelectorAll('.custom-dot');
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-      });
-    };
-
-    updateSlider(); // Inicializa
-  }
-});
-
-// ================== AUTO SLIDER EQUIPO ==================
-const equipoSlider = document.querySelector('.equipo__slider');
-
-if (equipoSlider) {
-  let autoScrollInterval;
-  let isUserScrolling = false;
-  let lastScrollTime = 0;
-
-  const scrollAmount = 270; // depende del width de .slider__item + gap
-
-  const startAutoScroll = () => {
-    autoScrollInterval = setInterval(() => {
-      if (!isUserScrolling) {
-        equipoSlider.scrollBy({
-          left: scrollAmount,
-          behavior: 'smooth',
-        });
-      }
-
-      // Reiniciar el scroll si llegamos al final
-      if (
-        equipoSlider.scrollLeft + equipoSlider.clientWidth >=
-        equipoSlider.scrollWidth
-      ) {
-        equipoSlider.scrollTo({ left: 0, behavior: 'smooth' });
-      }
-    }, 4000);
-  };
-
-  const stopAutoScroll = () => {
-    clearInterval(autoScrollInterval);
-  };
-
-  equipoSlider.addEventListener('scroll', () => {
-    isUserScrolling = true;
-    lastScrollTime = Date.now();
-  });
-
-  // Reanudar scroll automático después de 6 segundos de inactividad
-  setInterval(() => {
-    if (Date.now() - lastScrollTime > 6000) {
-      isUserScrolling = false;
-    }
-  }, 1000);
-
-  startAutoScroll();
-}
-
-// ========== SECCIONES ACTIVAS EN NAVBAR ==========
-document.addEventListener('DOMContentLoaded', () => {
+  // ========== NAVBAR ACTIVA ==========
   const navLinks = document.querySelectorAll('.nav-link');
-
-  // Normalizamos el pathname, considerando casos con o sin .html, y sin barra final
   const currentPath = window.location.pathname
     .split('/')
     .pop()
     .replace(/\.html$/, '')
     .toLowerCase();
-
   navLinks.forEach((link) => {
     const href = link.getAttribute('href');
     const linkPath = href
@@ -284,8 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .pop()
       .replace(/\.html$/, '')
       .toLowerCase();
-
-    // Compara rutas normalizadas
     if (
       currentPath === linkPath ||
       (currentPath === '' && linkPath === 'index')
@@ -294,3 +191,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ================== SLIDER TARJETAS MOVIL (CARGA CON `window.load`) ==================
+window.addEventListener('load', () => {
+  const sliderWrapper = document.querySelector('.custom-slider-wrapper');
+  const slidesTarjetas = document.querySelectorAll('.custom-slide');
+  const paginationContainer = document.querySelector(
+    '.custom-slider-pagination'
+  );
+
+  if (sliderWrapper && slidesTarjetas.length > 0 && paginationContainer) {
+    console.log('✅ Entramos al bloque de slider tarjetas');
+
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    paginationContainer.innerHTML = '';
+
+    slidesTarjetas.forEach((_, i) => {
+      console.log('🔘 Creando dot', i);
+
+      const dot = document.createElement('span');
+      dot.classList.add('custom-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateSlider();
+        restartAutoSlide();
+      });
+      paginationContainer.appendChild(dot);
+    });
+
+    const updateSlider = () => {
+      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      const dots = paginationContainer.querySelectorAll('.custom-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    };
+
+    const startAutoSlide = () => {
+      autoSlideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slidesTarjetas.length;
+        updateSlider();
+      }, 6000);
+    };
+
+    const restartAutoSlide = () => {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    };
+
+    updateSlider();
+    startAutoSlide();
+  } else {
+    console.warn('⚠️ No se encontró el slider de tarjetas o sus elementos');
+  }
+});
+
+console.log('🔥 El archivo JS está cargando');
