@@ -3347,7 +3347,7 @@ body.page-corporate .whatsapp-bottom {
   justify-content: flex-end;
   padding: 0rem 4.5rem 0 1.5rem;
   position: fixed !important;
-  bottom: 77px;
+  bottom: 190px;
   right: -57px;
   padding-bottom: 2rem;
   padding-top: 1.5rem;
@@ -3521,7 +3521,7 @@ video.hero__video {
 .btnAuxHead {
   position: fixed !important;
   z-index: 9999;
-  bottom: 120px;
+  bottom: 233px;
   right: 20px;
 }
 .custom-slider-pagination {
