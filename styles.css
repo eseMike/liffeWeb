@@ -944,7 +944,7 @@ h2 {
   transition: transform 0.3s ease;
 }
 .boton-arriba img {
-  width: 50px;
+  width: 43px;
   transition: transform 0.3s ease;
 }
 .boton-arriba:hover {
@@ -3361,7 +3361,7 @@ body.page-corporate .whatsapp-bottom {
   .page-lifeskills .cursos-listado .whatsapp-bottom {
     position: static;
     align-items: flex-end;
-    z-index: auto;
+    z-index: 9999;
   }
 }
 

@@ -991,7 +991,7 @@ h2 {
   transition: transform 0.3s ease;
 
   img {
-    width: 50px;
+    width: 43px;
     transition: transform 0.3s ease;
   }
 
@@ -3629,7 +3629,7 @@ body.page-corporate .whatsapp-bottom {
       @media (min-width: 1024px) {
         position: static;
         align-items: flex-end;
-        z-index: auto;
+        z-index: 9999;
         // top: -20rem;
         // right: auto;
       }
