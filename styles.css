@@ -3378,7 +3378,7 @@ body.page-corporate .whatsapp-bottom {
     align-items: flex-end;
     z-index: auto;
     top: -20rem;
-    right: 30rem;
+    right: auto;
   }
 }
 
@@ -3548,7 +3548,7 @@ video.hero__video {
 }
 @media (min-width: 1024px) {
   .btnAuxHead {
-    right: 25rem;
+    right: auto;
     top: -13rem;
   }
 }

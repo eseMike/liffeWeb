@@ -1983,7 +1983,6 @@ $button-hover: #e64a19;
     display: flex;
     justify-content: flex-start;
     margin: 2rem 0;
-
     a.botonWhatsappEstatico {
       width: 60px;
       height: 60px;
@@ -3632,7 +3631,7 @@ body.page-corporate .whatsapp-bottom {
         align-items: flex-end;
         z-index: auto;
         top: -20rem;
-        right: 30rem;
+        right: auto;
       }
     }
   }
@@ -3818,7 +3817,7 @@ video.hero__video {
   }
   // Escritorio (1024px en adelante)
   @media (min-width: 1024px) {
-    right: 25rem;
+    right: auto;
     top: -13rem;
   }
 }
