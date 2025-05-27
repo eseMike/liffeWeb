@@ -3809,6 +3809,7 @@ video.hero__video {
 
   @media (max-width: 767px) {
     right: 16px;
-    bottom: 232px; // puede ajustarse si se cruza con el botón naranja en móvil
+    bottom: 232px;
+    z-index: 99999; // para asegurarnos que esté encima de todo
   }
 }

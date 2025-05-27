@@ -3534,5 +3534,6 @@ video.hero__video {
   .whatsapp-bottom {
     right: 16px;
     bottom: 232px;
+    z-index: 99999;
   }
 }/*# sourceMappingURL=styles.css.map */
