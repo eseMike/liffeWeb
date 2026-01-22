@@ -1566,6 +1566,7 @@ $button-hover: #e64a19;
   }
 
   .headhunting-content {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 3rem;
@@ -1579,6 +1580,34 @@ $button-hover: #e64a19;
     @media (min-width: 1200px) {
       padding-top: 17rem;
     }
+
+    // Logo dentro del bloque blanco (debe quedar cerca de la foto)
+    .headhunting-logo-inside {
+      // Dejamos de posicionarlo con valores fijos para que sea estable en todas las resoluciones
+      position: relative;
+      inset: auto;
+      z-index: 5;
+
+      // Que se vaya a su propia fila arriba de la imagen
+      flex: 0 0 100%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      // Mucho aire arriba lo controla el padding-top del contenedor,
+      // aquí solo controlamos el aire con la foto (poquito)
+      margin: 0 0 0.05rem 0;
+
+      // Ajuste de sangría responsiva (para que no quede pegado al borde)
+      padding-left: clamp(16px, 3.2vw, 44px);
+
+      img {
+        width: clamp(140px, 18vw, 230px);
+        height: auto;
+        display: block;
+      }
+    }
   }
 
   .image-container img {
@@ -1591,7 +1620,7 @@ $button-hover: #e64a19;
   .imgHead {
     max-width: 376px;
     position: relative;
-    top: 4.5rem;
+    top: 0;
   }
 
   .text-container {
@@ -1907,11 +1936,11 @@ $button-hover: #e64a19;
   .benefit-card {
     background: #205b65; // Azul medio
     color: white;
-    padding: 20px;
+    padding: 28px 22px;
     border-radius: 10px;
     text-align: center;
     width: 200px;
-    height: 350px;
+    height: 360px;
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -1919,6 +1948,8 @@ $button-hover: #e64a19;
     justify-content: center;
     gap: 1rem;
     font-size: 15px;
+    line-height: 1.5;
+    min-height: 320px;
     &:first-child {
       background: #62ba97; // Verde claro
       @media (min-width: 768px) {
@@ -1956,6 +1987,38 @@ $button-hover: #e64a19;
     img {
       width: 70px;
       height: auto;
+    }
+
+    ul {
+      margin-top: 12px;
+      padding-left: 18px;
+
+      li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+    }
+    padding-right: 16px;
+
+    .benefit-text {
+      overflow-y: auto;
+      flex: 1;
+      width: 100%;
+      padding-right: 6px;
+    }
+
+    .benefit-text::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .benefit-text::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    .benefit-text::-webkit-scrollbar-track {
+      background: transparent;
     }
   }
 }
@@ -3811,5 +3874,22 @@ video.hero__video {
     right: 16px;
     bottom: 232px;
     z-index: 99999; // para asegurarnos que esté encima de todo
+  }
+}
+
+// Ajustes finos del logo en headhunting (sin posición fija)
+@media (max-width: 1024px) {
+  .headhunting .headhunting-content .headhunting-logo-inside {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .headhunting .headhunting-content .headhunting-logo-inside {
+    margin-bottom: 0.5rem;
+    padding-left: 16px;
+    .headhunting-logo-inside img {
+      width: 160px;
+    }
   }
 }

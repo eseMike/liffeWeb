@@ -1480,6 +1480,7 @@ h2 {
   }
 }
 .headhunting .headhunting-content {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 3rem;
@@ -1497,6 +1498,23 @@ h2 {
     padding-top: 17rem;
   }
 }
+.headhunting .headhunting-content .headhunting-logo-inside {
+  position: relative;
+  inset: auto;
+  z-index: 5;
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 0 0.05rem 0;
+  padding-left: clamp(16px, 3.2vw, 44px);
+}
+.headhunting .headhunting-content .headhunting-logo-inside img {
+  width: clamp(140px, 18vw, 230px);
+  height: auto;
+  display: block;
+}
 .headhunting .image-container img {
   width: 100%;
   border-radius: 10px;
@@ -1505,7 +1523,7 @@ h2 {
 .headhunting .imgHead {
   max-width: 376px;
   position: relative;
-  top: 4.5rem;
+  top: 0;
 }
 .headhunting .text-container {
   max-width: 848px;
@@ -1824,11 +1842,11 @@ h2 {
 .benefits .benefit-card {
   background: #205b65;
   color: white;
-  padding: 20px;
+  padding: 28px 22px;
   border-radius: 10px;
   text-align: center;
   width: 200px;
-  height: 350px;
+  height: 360px;
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -1836,6 +1854,9 @@ h2 {
   justify-content: center;
   gap: 1rem;
   font-size: 15px;
+  line-height: 1.5;
+  min-height: 320px;
+  padding-right: 16px;
 }
 .benefits .benefit-card:first-child {
   background: #62ba97;
@@ -1880,6 +1901,31 @@ h2 {
 .benefits .benefit-card img {
   width: 70px;
   height: auto;
+}
+.benefits .benefit-card ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+.benefits .benefit-card ul li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.benefits .benefit-card .benefit-text {
+  overflow-y: auto;
+  flex: 1;
+  width: 100%;
+  padding-right: 6px;
+}
+.benefits .benefit-card .benefit-text::-webkit-scrollbar {
+  width: 6px;
+}
+.benefits .benefit-card .benefit-text::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+.benefits .benefit-card .benefit-text::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .payment-options {
@@ -3535,5 +3581,20 @@ video.hero__video {
     right: 16px;
     bottom: 232px;
     z-index: 99999;
+  }
+}
+
+@media (max-width: 1024px) {
+  .headhunting .headhunting-content .headhunting-logo-inside {
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .headhunting .headhunting-content .headhunting-logo-inside {
+    margin-bottom: 0.5rem;
+    padding-left: 16px;
+  }
+  .headhunting .headhunting-content .headhunting-logo-inside .headhunting-logo-inside img {
+    width: 160px;
   }
 }/*# sourceMappingURL=styles.css.map */
