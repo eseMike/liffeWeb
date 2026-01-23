@@ -1936,20 +1936,20 @@ $button-hover: #e64a19;
   .benefit-card {
     background: #205b65; // Azul medio
     color: white;
-    padding: 28px 22px;
-    border-radius: 10px;
+    padding: 30px 24px;
+    border-radius: 12px;
     text-align: center;
-    width: 200px;
-    height: 360px;
+    width: 220px;
+    height: 390px;
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    font-size: 15px;
-    line-height: 1.5;
-    min-height: 320px;
+    gap: 1.1rem;
+    font-size: 15.5px;
+    line-height: 1.55;
+    min-height: 350px;
     &:first-child {
       background: #62ba97; // Verde claro
       @media (min-width: 768px) {
@@ -2019,6 +2019,16 @@ $button-hover: #e64a19;
 
     .benefit-text::-webkit-scrollbar-track {
       background: transparent;
+    }
+
+    .benefit-title {
+      margin: 10px 0 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #ffffff;
     }
   }
 }
@@ -3891,5 +3901,11 @@ video.hero__video {
     .headhunting-logo-inside img {
       width: 160px;
     }
+  }
+}
+@media (max-width: 600px) {
+  .benefit-card .benefit-title {
+    font-size: 0.85rem;
+    margin: 8px 0 6px;
   }
 }
