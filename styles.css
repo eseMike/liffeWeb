@@ -272,8 +272,6 @@ main {
   .soluciones .txtFlexFirst {
     position: relative;
     margin-top: 7rem;
-    display: flex;
-    align-items: stretch;
   }
   .soluciones .txtFlexFirst > div {
     position: relative;
@@ -288,6 +286,10 @@ main {
     height: 100%;
     background-color: #767575;
     opacity: 1;
+  }
+  .soluciones .txtFlexFirst {
+    display: flex;
+    align-items: stretch;
   }
   .soluciones .txtFlexFirst > div {
     display: flex;
@@ -1856,7 +1858,6 @@ h2 {
   font-size: 15.5px;
   line-height: 1.55;
   min-height: 350px;
-  padding-right: 16px;
 }
 .benefits .benefit-card:first-child {
   background: #62ba97;
@@ -1910,6 +1911,9 @@ h2 {
   margin-bottom: 8px;
   font-size: 0.9rem;
   line-height: 1.4;
+}
+.benefits .benefit-card {
+  padding-right: 16px;
 }
 .benefits .benefit-card .benefit-text {
   overflow-y: auto;
@@ -3155,14 +3159,6 @@ ul {
   width: 100%;
   height: auto;
   aspect-ratio: 10/5;
-  background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
-  background-repeat: no-repeat;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
 }
 @media (min-width: 1024px) {
   .headhunting-banner {
@@ -3177,6 +3173,16 @@ ul {
     min-height: 520px;
     aspect-ratio: unset;
   }
+}
+.headhunting-banner {
+  background-image: url("./assets/headhunting/fondoHeadHuntingfirst.jpg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 .headhunting-banner * {
   position: relative;
@@ -3193,8 +3199,7 @@ ul {
   height: 100%;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.8);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
   padding: 2rem;
