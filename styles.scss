@@ -1603,9 +1603,13 @@ $button-hover: #e64a19;
       padding-left: clamp(16px, 3.2vw, 44px);
 
       img {
-        width: clamp(140px, 18vw, 230px);
+        width: clamp(160px, 20vw, 260px);
         height: auto;
         display: block;
+        background: #111;
+        border-radius: 18px;
+        padding: 1rem 1.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
       }
     }
   }
