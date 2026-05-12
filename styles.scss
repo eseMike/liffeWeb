@@ -1683,20 +1683,33 @@ $button-hover: #e64a19;
 
     .headhunting-layout-new {
       width: 100%;
+      margin-top: 2rem;
 
       @media (min-width: 1024px) {
         display: grid;
         grid-template-columns: 1.15fr 0.85fr 0.75fr;
-        align-items: center;
+        align-items: flex-start;
         gap: 1.2rem;
         max-width: 1180px;
-        margin: 0 auto;
+        margin: 2rem auto 0;
+      }
+
+      > * {
+        align-self: flex-start;
+      }
+
+      > .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
       }
     }
 
     .headhunting-long-text,
     .headhunting-short-text {
       text-align: left;
+      text-align: justify;
+      margin-top: 0 !important;
     }
 
     .headhunting-center-content {
@@ -1712,6 +1725,9 @@ $button-hover: #e64a19;
       margin-bottom: 0 !important;
       left: 0 !important;
       text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
 
       @media (min-width: 1024px) {
         margin-top: 5rem !important;
@@ -1732,8 +1748,9 @@ $button-hover: #e64a19;
 
     .headhunting-short-wrapper {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 1rem;
+      margin-top: 0 !important;
     }
 
     @media (max-width: 1023px) {
@@ -1754,19 +1771,25 @@ $button-hover: #e64a19;
 
     .headhunting-header {
       margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       h2 {
         font-size: 45px;
         line-height: 1.1;
-        text-align: left;
+        text-align: center;
         position: relative;
-        left: 0;
-        margin: 1.5rem 0 0 0;
+        left: 0 !important;
+        margin: 1.5rem auto 0 auto;
         margin-top: 4rem;
+        width: fit-content;
+
         @media (min-width: 768px) {
           font-size: 70px;
           margin-top: 17rem;
           position: relative;
-          left: 1rem;
+          left: 0 !important;
         }
 
         .icon img {
