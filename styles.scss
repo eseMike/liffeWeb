@@ -1378,7 +1378,7 @@ h2 {
 
 .clientes {
   background-color: #f2f2f2;
-  padding: 40px 0;
+  padding: 110px 0 40px 0;
   text-align: center;
 }
 
@@ -1628,7 +1628,8 @@ $button-hover: #e64a19;
   }
 
   .text-container {
-    max-width: 848px;
+    width: 100%;
+    max-width: 1180px;
     h2 {
       position: relative; // Esto es importante
       gap: 10px;
@@ -1664,18 +1665,91 @@ $button-hover: #e64a19;
       display: flex;
       align-items: center;
       gap: 1rem;
-      font-size: 23px;
+      font-size: 20px;
       padding: 1.2rem;
+      line-height: 1.5;
+
       @media (min-width: 768px) {
-        font-size: 24px;
-        align-items: flex-start;
-        gap: 32px;
-        line-height: 1.6;
+        font-size: 20px;
+        align-items: center;
+        gap: 24px;
       }
     }
+
     .headhunting-text p {
       margin: 0;
       flex: 1;
+    }
+
+    .headhunting-layout-new {
+      width: 100%;
+
+      @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr 0.75fr;
+        align-items: center;
+        gap: 1.2rem;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+    }
+
+    .headhunting-long-text,
+    .headhunting-short-text {
+      text-align: left;
+    }
+
+    .headhunting-center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .headhunting-center-content h2 {
+      margin-top: 2.5rem !important;
+      margin-bottom: 0 !important;
+      left: 0 !important;
+      text-align: center;
+
+      @media (min-width: 1024px) {
+        margin-top: 5rem !important;
+      }
+    }
+
+    .headhunting-center-content .image-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .headhunting-center-content .imgHead {
+      max-width: 320px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .headhunting-short-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (max-width: 1023px) {
+      .headhunting-layout-new {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .headhunting-long-text,
+      .headhunting-short-text {
+        text-align: center;
+      }
+
+      .headhunting-short-wrapper {
+        flex-direction: column;
+      }
     }
 
     .headhunting-header {
@@ -1707,7 +1781,7 @@ $button-hover: #e64a19;
   }
 
   .divider {
-    width: 5px;
+    width: 2px;
     height: 261px;
     background: #000;
     transform: rotate(-90deg);

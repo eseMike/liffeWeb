@@ -1290,7 +1290,7 @@ h2 {
 /* Estilos del Slider de Clientes */
 .clientes {
   background-color: #f2f2f2;
-  padding: 40px 0;
+  padding: 110px 0 40px 0;
   text-align: center;
 }
 
@@ -1532,7 +1532,8 @@ h2 {
   top: 0;
 }
 .headhunting .text-container {
-  max-width: 848px;
+  width: 100%;
+  max-width: 1180px;
 }
 .headhunting .text-container h2 {
   position: relative;
@@ -1572,20 +1573,83 @@ h2 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 23px;
+  font-size: 20px;
   padding: 1.2rem;
+  line-height: 1.5;
 }
 @media (min-width: 768px) {
   .headhunting .text-container .headhunting-text {
-    font-size: 24px;
-    align-items: flex-start;
-    gap: 32px;
-    line-height: 1.6;
+    font-size: 20px;
+    align-items: center;
+    gap: 24px;
   }
 }
 .headhunting .text-container .headhunting-text p {
   margin: 0;
   flex: 1;
+}
+.headhunting .text-container .headhunting-layout-new {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .headhunting .text-container .headhunting-layout-new {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr 0.75fr;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+}
+.headhunting .text-container .headhunting-long-text,
+.headhunting .text-container .headhunting-short-text {
+  text-align: left;
+}
+.headhunting .text-container .headhunting-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.headhunting .text-container .headhunting-center-content h2 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 0 !important;
+  left: 0 !important;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .headhunting .text-container .headhunting-center-content h2 {
+    margin-top: 5rem !important;
+  }
+}
+.headhunting .text-container .headhunting-center-content .image-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.headhunting .text-container .headhunting-center-content .imgHead {
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+.headhunting .text-container .headhunting-short-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 1023px) {
+  .headhunting .text-container .headhunting-layout-new {
+    flex-direction: column;
+    text-align: center;
+  }
+  .headhunting .text-container .headhunting-long-text,
+  .headhunting .text-container .headhunting-short-text {
+    text-align: center;
+  }
+  .headhunting .text-container .headhunting-short-wrapper {
+    flex-direction: column;
+  }
 }
 .headhunting .text-container .headhunting-header {
   margin-bottom: 1.5rem;
@@ -1617,7 +1681,7 @@ h2 {
   }
 }
 .headhunting .divider {
-  width: 5px;
+  width: 2px;
   height: 261px;
   background: #000;
   transform: rotate(-90deg);
